@@ -5,6 +5,7 @@ import Reader from './components/readData';
 import {nanoid} from 'nanoid';
 
 function App() {
+
   return( 
       <div>
         <Adder key={nanoid()}/>

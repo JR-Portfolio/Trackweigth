@@ -1,66 +1,68 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { useState } from "react";
 import "../erno.css";
-import Datetime from "react-datetime";
-import Reader from './readData'
 
 const AddDetails = () => {
-  const [data, setData] = React.useState();
-  const [id, setId] = React.useState();
-  const [pvm, setPVM] = React.useState();
-  const [paino, setPaino] = React.useState()
-  const [vyotaro, setVyotaro] = React.useState()
+  const [formData, setFormData] = useState([{}]);
+  const [error, setError] = useState("");
 
-  const openRecords = (r) => {
-    console.log('openRecords - function')
-    r.preventDefault();
-    return <Reader/>
-  }
+  const handleChange = (e) => {
+    e.preventDefault();
+    console.log(e.target.name, e.target.value);
+    setFormData({[e.target.name]: e.target.value});
+  };
 
   const onSubmit = (e) => {
-    console.log('onSubmit - function')
+    console.log("onSubmit - function");
     e.preventDefault();
-    const today = new Date().toLocaleDateString('fi-FI');
-    console.log('today: ', today)    
-    console.log('paino:', paino)
-    const record = {today, id, paino, vyotaro} 
+
+    const today = new Date().toLocaleDateString("fi-FI");
+    console.log("today:", today)
+    console.log("formData:", formData)
     
-    fetch("http://localhost:8000/mitat", {
+    fetch("http://localhost:8000/Mitat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(record),
-    })  
-    .then(() => {
-      console.log('new record added')
-    })      
+      body: JSON.stringify(
+        {
+          pvm: today,
+          paino: formData.paino,
+          vyotaro: formData.vyotaro   
+      }),
+    })
+      .then(() => {
+        console.log("Uusi rekisteri luotu");
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setError(err.message);
+      });
   };
-
-
 
   return (
     <div className="adder">
       <h1>8 viikon haaste</h1>
 
-      <form onClick={onSubmit}>
-        <input type="number" placeholder="id" value = {pvm} onChange={(e) => setId(e.target.value)}/>
+      <form>
         <input
           type="number"
-          value = {vyotaro}
-          onChange={(e) => setVyotaro(e.target.value)}
+          name="vyotaro"
+          onChange={handleChange}
           placeholder="vyotaro"
+          value = {formData.vyotaro}
         />
         <input
           type="number"
-          value = {paino}
-          onChange={(e) => setPaino(e.target.value)}
+          name="paino"
+          onChange={handleChange}
           placeholder="paino"
-        />        
-        <input type = "submit" value = "Lähetä"/>
+          value = {formData.paino}
+        />
+        <button onClick={onSubmit}>Lisaa data</button>
       </form>
     </div>
   );
-  };
-  
+};
+
 export default AddDetails;

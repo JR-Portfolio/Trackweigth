@@ -40,21 +40,13 @@ const Reader = () => {
 
   const erno = data.map((item) => item);
 
-  console.log("erno: ", erno);
-
-  const handleSave = (a) => {
-    console.log("handleSave funkkari");
-    return <Adder />;
-  };
-
   return (
     <div className="reader">
       <h3>8 viikon dataa</h3>
       {data.map((item) => {
         return (
           <li key={nanoid()}>
-            <strong> PVM: </strong>
-            {item.today} -<strong> Paino: </strong> {item.paino} kg -
+            <strong> Paino: </strong> {item.paino} kg -
             <strong> Vyötärö: </strong> {item.vyotaro} cm
           </li>
         );
