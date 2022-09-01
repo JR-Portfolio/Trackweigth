@@ -1,0 +1,18 @@
+.reader {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;    
+    margin-top: 10%;
+    column-gap: 10px;
+}
+
+.adder {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    margin-top: 10%;
+    column-gap: 10px;
+}

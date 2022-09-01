@@ -1,0 +1,8 @@
+.adder {
+    display:flex;
+    flex-direction:row;
+    flex-flow: column wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content:center;
+}
