@@ -45,11 +45,15 @@ const Reader = () => {
       <h3>8 viikon dataa</h3>
       {data.map((item) => {
         return (
-          <li key={nanoid()}>
-            <strong> PVM: </strong> {item.today} -
-            <strong> Paino: </strong> {item.paino} kg -
-            <strong> Vyötärö: </strong> {item.vyotaro} cm
-          </li>
+          <table key={nanoid()}>
+            <tbody>
+              <tr>
+                <td> <strong> PVM: </strong> {item.today} </td>
+                <td> <strong> Paino: </strong> {item.paino} kg </td>
+                <td> <strong> Vyötärö: </strong> {item.vyotaro} cm </td>
+              </tr>
+            </tbody>
+          </table>
         );
       })}
 
