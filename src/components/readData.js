@@ -46,6 +46,7 @@ const Reader = () => {
       {data.map((item) => {
         return (
           <li key={nanoid()}>
+            <strong> PVM: </strong> {item.today} -
             <strong> Paino: </strong> {item.paino} kg -
             <strong> Vyötärö: </strong> {item.vyotaro} cm
           </li>
