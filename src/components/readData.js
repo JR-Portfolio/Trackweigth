@@ -2,6 +2,7 @@ import "../eight.css";
 import { render, useEffect, useState } from "react";
 import Adder from "./addDetails";
 import { nanoid } from "nanoid";
+// import { Line } from './Line.ts';
 
 const Reader = () => {
   const [data, setData] = useState([]);
@@ -38,6 +39,20 @@ const Reader = () => {
     console.log("error:", error);
   }
 
+  //Delete path
+  const handleChange = (e) => {
+    console.log("record id", e);
+    //delete json item
+    fetch("http://localhost:8000/Mitat/" + e, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        window.location.reload();
+        return console.log("Record ", e + " deleted");
+      });
+  };
+
   const erno = data.map((item) => item);
 
   return (
@@ -48,19 +63,36 @@ const Reader = () => {
           <table key={nanoid()}>
             <tbody>
               <tr>
-                <td> <strong> PVM: </strong> {item.today} </td>
-                <td> <strong> Paino: </strong> {item.paino} kg </td>
-                <td> <strong> Vyötärö: </strong> {item.vyotaro} cm </td>
+                <td>
+                  <strong>ID:</strong> {item.id}
+                </td>
+                <td>
+                  {" "}
+                  <strong> PVM: </strong> {item.today}{" "}
+                </td>
+                <td>
+                  {" "}
+                  <strong> Paino: </strong> {item.paino} kg{" "}
+                </td>
+                <td>
+                  {" "}
+                  <strong> Vyötärö: </strong> {item.vyotaro} cm{" "}
+                </td>
+                <td>
+                  <button onClick={(e) => handleChange(item.id)}>x</button>
+                </td>
               </tr>
+
               <tr>
-                <td className="reader--kommentti"> <strong> Kommentti: </strong> {item.kommentti}</td>
+                <td className="reader--kommentti">
+                  {" "}
+                  <strong> Kommentti: </strong> {item.kommentti}
+                </td>
               </tr>
             </tbody>
           </table>
         );
       })}
-
-  
     </div>
   );
 };
