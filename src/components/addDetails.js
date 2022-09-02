@@ -34,6 +34,7 @@ const AddDetails = () => {
     })
       .then(() => {
         console.log("Uusi rekisteri luotu");
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err.message);
@@ -42,23 +43,24 @@ const AddDetails = () => {
   };
 
   return (
-    <div className="adder">
+    <div className="adder--header">
       <h1>8 viikon haaste</h1>
 
-      <form>
-        <input
-          type="number"
-          name="vyotaro"
-          onChange={(e) => setVyotaro(e.target.value)}
-          placeholder="vyotaro"
-          value = {vyotaro}
-        />
-        <input
+      <form className="adder--form">
+      <input
           type="number"
           name="paino"
           onChange={(e) => setPaino(e.target.value)}
           placeholder="paino"
           value = {paino}
+        />
+
+        <input 
+          type="number"
+          name="vyotaro"
+          onChange={(e) => setVyotaro(e.target.value)}
+          placeholder="vyotaro"
+          value = {vyotaro}
         />
         <button onClick={onSubmit}>Lisaa data</button>
       </form>

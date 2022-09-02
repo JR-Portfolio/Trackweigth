@@ -5,17 +5,27 @@
     justify-content: center;
     align-items: center;    
     margin-top: 10%;
-    column-gap: 10px;
+    gap: 10px 20px;
 }
 
-.adder {
+.adder--header {
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;    
     margin-top: 10%;
-    column-gap: 10px;
+    gap: 10px;
 }
+
+.adder--form {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;    
+    margin-top: 5%;
+    gap: 30px;
+}
+
 
 table {
     border: solid 1px;
