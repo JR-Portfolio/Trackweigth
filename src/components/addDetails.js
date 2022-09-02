@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "../erno.css";
+import DA from './dynamicTextArea'
 
 const AddDetails = () => {
   //const [formData, setFormData] = useState({paino:"", vyotaro:""});
   const [vyotaro, setVyotaro] = useState();
   const [paino, setPaino] = useState();
+  const [kommentti, setKommentti] = useState();
   const [error, setError] = useState("");
 
   /*
@@ -23,7 +25,7 @@ const AddDetails = () => {
     console.log("today:", today)
     //console.log("formData:", formData)
     
-    const data = {today, paino, vyotaro}
+    const data = {today, paino, vyotaro, kommentti}
 
     fetch("http://localhost:8000/Mitat", {
       method: "POST",
@@ -62,6 +64,8 @@ const AddDetails = () => {
           placeholder="vyotaro"
           value = {vyotaro}
         />
+        <DA onChange = {(e) => setKommentti(e.target.value)}/>
+        
         <button onClick={onSubmit}>Lisaa data</button>
       </form>
     </div>

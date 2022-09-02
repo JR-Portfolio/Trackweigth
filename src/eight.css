@@ -8,6 +8,11 @@
     gap: 10px 20px;
 }
 
+.reader--kommentti{
+    flex-wrap: wrap;
+    overflow-wrap: 'break-word' 
+}
+
 .adder--header {
     display:flex;
     flex-direction: column;
@@ -28,5 +33,6 @@
 
 
 table {
+    display:flex;
     border: solid 1px;
 }

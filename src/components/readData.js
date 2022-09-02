@@ -52,6 +52,9 @@ const Reader = () => {
                 <td> <strong> Paino: </strong> {item.paino} kg </td>
                 <td> <strong> Vyötärö: </strong> {item.vyotaro} cm </td>
               </tr>
+              <tr>
+                <td className="reader--kommentti"> <strong> Kommentti: </strong> {item.kommentti}</td>
+              </tr>
             </tbody>
           </table>
         );
