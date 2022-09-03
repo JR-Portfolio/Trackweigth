@@ -1,7 +1,7 @@
 import "../eight.css";
 import { render, useEffect, useState } from "react";
 import Adder from "./addDetails";
-import Hello from './Hello'
+import Hello from "./Hello";
 
 import { nanoid } from "nanoid";
 import { prettyDOM } from "@testing-library/react";
@@ -12,7 +12,6 @@ const Reader = () => {
   const [data, setData] = useState([]);
   const [isPending, setPending] = useState(true);
   const [error, setError] = useState(null);
-  const [hello, setHello] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -60,59 +59,47 @@ const Reader = () => {
 
   const erno = data.map((item) => item);
 
-
-  const callHello = () => {
-    setHello(pre => !pre) 
-   }
-
   return (
-    <div className="reader">
+    <div>
       <h3>8 viikon dataa</h3>
-      {data.map((item) => {
-        return (
-          <div>
-          <table key={nanoid()}>
-            <tbody>
-              <tr>
-                <td>
-                  <strong>ID:</strong> {item.id}
-                </td>
-                <td>
-                  {" "}
-                  <strong> PVM: </strong> {item.today}{" "}
-                </td>
-                <td>
-                  {" "}
-                  <strong> Paino: </strong> {item.paino} kg{" "}
-                </td>
-                <td>
-                  {" "}
-                  <strong> Vyötärö: </strong> {item.vyotaro} cm{" "}
-                </td>
-                <td>
-                  <button onClick={(e) => handleChange(item.id)}>x</button>
-                </td>
-              </tr>
 
-              <tr>
-                <td className="reader--kommentti">
-                  {" "}
-                  <strong> Kommentti: </strong> {item.kommentti}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          
-          <p></p>
-          {hello && <Hello key = {nanoid()} name = "Jone" />}
-        </div>
-        );
-      })}
-    <button onClick = {callHello}>Hello click</button>    
+      <div className="reader">
+        {data.map((item) => {
+          return (
+            <div>
+              <table key={nanoid()}>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong> PVM: </strong> {item.today}
+                    </td>
+                    <td>
+                      <strong> Paino: </strong> {item.paino} kg
+                    </td>
+                    <td>
+                      <strong> Vyötärö: </strong> {item.vyotaro} cm
+                    </td>
+                    <td>
+                      <button onClick={(e) => handleChange(item.id)}>x</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td className="reader--kommentti">
+                      {" "}
+                      <strong> Kommentti: </strong> {item.kommentti}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p></p>
+            </div>
+          );
+        })}
+      </div>
     </div>
-    
   );
-  
 };
 
 export default Reader;

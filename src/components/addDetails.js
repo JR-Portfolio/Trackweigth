@@ -9,14 +9,6 @@ const AddDetails = () => {
   const [kommentti, setKommentti] = useState();
   const [error, setError] = useState("");
 
-  /*
-  const handleChange = (e) => {
-    e.preventDefault();
-    console.log(e.target.name, e.target.value);
-    setFormData({[e.target.name]: e.target.value});
-  };
-  */
-
   const onSubmit = (e) => {
     console.log("onSubmit - function");
     e.preventDefault();
@@ -45,8 +37,8 @@ const AddDetails = () => {
   };
 
   return (
-    <div className="adder--header">
-      <h1>8 viikon haaste</h1>
+    <div>
+      <h3>Rekisteröi uudet mitat</h3>
 
       <form className="adder--form">
       <input
