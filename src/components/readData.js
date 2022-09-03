@@ -1,13 +1,18 @@
 import "../eight.css";
 import { render, useEffect, useState } from "react";
 import Adder from "./addDetails";
+import Hello from './Hello'
+
 import { nanoid } from "nanoid";
+import { prettyDOM } from "@testing-library/react";
+
 // import { Line } from './Line.ts';
 
 const Reader = () => {
   const [data, setData] = useState([]);
   const [isPending, setPending] = useState(true);
   const [error, setError] = useState(null);
+  const [hello, setHello] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -55,11 +60,17 @@ const Reader = () => {
 
   const erno = data.map((item) => item);
 
+
+  const callHello = () => {
+    setHello(pre => !pre) 
+   }
+
   return (
     <div className="reader">
       <h3>8 viikon dataa</h3>
       {data.map((item) => {
         return (
+          <div>
           <table key={nanoid()}>
             <tbody>
               <tr>
@@ -91,10 +102,17 @@ const Reader = () => {
               </tr>
             </tbody>
           </table>
+          
+          <p></p>
+          {hello && <Hello key = {nanoid()} name = "Jone" />}
+        </div>
         );
       })}
+    <button onClick = {callHello}>Hello click</button>    
     </div>
+    
   );
+  
 };
 
 export default Reader;
