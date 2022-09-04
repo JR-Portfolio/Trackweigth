@@ -59,7 +59,7 @@ const Food = () => {
         <input type = "number" placeholder = "Saadut calorit" name = "tulo" value = {plusCalories} onChange={(e) => setPlusCalories(e.target.value)}/>
         <input type = "number" name = "meno" placeholder = "Liikunta calorit" value = {lostCalories} onChange={(e) => setLostCalories(e.target.value)}/>
 
-        <button onClick={onSubmit}>Luo resepti</button>
+        <button onClick={onSubmit}>Luo recordi</button>
       </form>
       {error && error}
     </div>

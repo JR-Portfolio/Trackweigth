@@ -37,6 +37,24 @@
       "lostCalories": "650",
       "diff": -100,
       "id": 2
+    },
+    {
+      "today": "4.9.2022",
+      "category": "Paivallinen",
+      "receipt": "Kana wokkia 200gr + ruisleipä viipale ja vettä.",
+      "plusCalories": "300",
+      "lostCalories": 0,
+      "diff": 300,
+      "id": 3
+    },
+    {
+      "today": "4.9.2022",
+      "category": "Iltapala",
+      "receipt": "Lasi mansikka & banaani smoothia (100 kcal). Vaasan ruispala yksi siivu kinkulla ja paprikalla 100 kcal.",
+      "plusCalories": "200",
+      "lostCalories": 0,
+      "diff": 200,
+      "id": 4
     }
   ]
 }
