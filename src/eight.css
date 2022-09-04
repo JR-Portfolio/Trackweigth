@@ -85,6 +85,24 @@ h6{
     width:80% !important;
     border:1px solid;
 }
+
+td {
+    border: 1px solid;
+}
+
+.big{
+    width: 500px;
+}
+
+.medium{
+    width: 70px;
+}
+
+.small{
+    width: 100px;
+}
+
+
 th{
     text-align:left !important;
     background-color: gray;

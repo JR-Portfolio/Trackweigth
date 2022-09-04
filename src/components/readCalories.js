@@ -107,15 +107,16 @@ const ReadReceipts = () => {
           return (
             <div>
               <table key={nanoid()}>
-                <th>PVM</th><th>Luokitus</th><th>Nautittu</th><th>+ kalorit</th><th>- kalorit</th><th>Erotus</th>
+                
+
                 <tbody>
                   <tr>
-                  <td>{safka.today}</td>
-                    <td>{safka.category}</td>
-                    <td>{safka.receipt}</td>
-                    <td>{safka.plusCalories}</td>
-                    <td>{safka.lostCalories}</td>
-                    <td>{safka.diff}</td>
+                  <td className="medium"><b>PVM: </b>{safka.today}</td>
+                    <td className="medium"><b>Luokitus: </b>{safka.category}</td>
+                    <td className="big"><b>Safka: </b>{safka.receipt}</td>
+                    <td className="small"><b>+ kalorit: </b>{safka.plusCalories}</td>
+                    <td className="small"><b>- kalorit: </b>{safka.lostCalories}</td>
+                    <td className="small"><b>Erotus: </b>{safka.diff}</td>
                     <td>
                       <button onClick={(e) => handleChange(safka.id)}>x</button>
                     </td>
