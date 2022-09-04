@@ -4,25 +4,37 @@ import Adder from './components/addDetails';
 import Reader from './components/readData';
 import Objectives from './components/objectives';
 import './eight.css'
+import CreateReceipt from './components/receipts'
+import ReadReceipts from './components/readReceipts'
 
 import {nanoid} from 'nanoid';
 import { useState } from 'react';
 
 const App = () => {
-  const [showObj, setObj] = useState(false)
-  const [add, setAdder] = useState(false)
-  const [read, setReader] = useState(false)
+  const [obj, setObj] = useState(false)
+  const [addMeasures, setAddMeasures] = useState(false)
+  const [readMeasures, setReadMeasures] = useState(false)
+  const [createResepti, setCreateResepti] = useState(false)
+  const [readReceipts, setReadReceipts] = useState(false)
+  
+  const toggleReadResepti = () => {
+    setReadReceipts(pre => !readReceipts)
+  }
 
   const toggleObj = () => {
-    setObj(pre => !showObj)
+    setObj(pre => !obj)
   }
   const toggleAdder = () => {
-    setAdder(pre => !add)
+    setAddMeasures(pre => !addMeasures)
   }
   const toggleReader = () => {
-    setReader(pre => !read)
+    setReadMeasures(pre => !readMeasures)
   }
 
+  const toggleResepti = () => {
+    setCreateResepti(pre => !createResepti)    
+  }
+  
   return( 
       <div>
         <h1>8 viikon haaste</h1>
@@ -31,7 +43,7 @@ const App = () => {
           <input
             name="objCB"
             type="checkbox"
-            checked={false}
+            checked={obj}
             onChange={toggleObj} 
             />   
           </label>
@@ -39,23 +51,41 @@ const App = () => {
           <input
             name="addCB"
             type="checkbox"
-            checked={false}
+            checked={addMeasures}
             onChange={toggleAdder} 
             />   
           </label>   
-          <label>Lue recordit
+          <label>Näytä mitat
           <input
             name="readCB"
             type="checkbox"
-            checked={false}
+            checked={readMeasures}
             onChange={toggleReader} 
             />   
           </label>              
+          <label>Lisää resepti
+          <input
+            name="reseptiCB"
+            type="checkbox"
+            checked={createResepti}
+            onChange={toggleResepti} 
+            />   
+          </label>         
+          <label>Ateria historia
+          <input
+            name="showReceiptsCB"
+            type="checkbox"
+            checked={readReceipts}
+            onChange={toggleReadResepti} 
+            />   
+          </label>                   
         </div>
 
-        {showObj && <Objectives key={nanoid()}/>}
-        {add && <Adder key={nanoid()}/>}
-        {read && <Reader key={nanoid()}/>}
+        {obj && <Objectives key={nanoid()}/>}
+        {addMeasures && <Adder key={nanoid()}/>}
+        {readMeasures && <Reader key={nanoid()} subj = "mitat"/>}
+        {createResepti && <CreateReceipt key={nanoid()}/>}        
+        {readReceipts && <ReadReceipts key={nanoid()}/>}        
       </div>
   )
 }

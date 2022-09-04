@@ -18,5 +18,18 @@
       "vyotaro": "104",
       "id": 3
     }
+  ],
+  "Reseptit": [
+    {
+      "category": "aamiainen",
+      "receipt": "Munakas kahvilla.",
+      "id": 1
+    },
+    {
+      "today": "4.9.2022",
+      "category": "lounas",
+      "receipt": "Kanasalaatti",
+      "id": 2
+    }
   ]
 }

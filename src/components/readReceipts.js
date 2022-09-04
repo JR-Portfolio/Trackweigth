@@ -4,15 +4,15 @@ import { nanoid } from "nanoid";
 
 // import { Line } from './Line.ts';
 
-const Reader = () => {
-  const [data, setData] = useState([]);
-  const [rData, setResepti] = useState([]);
+const ReadReceipts = () => {
+  const [rData, setReceipt] = useState([]);
   const [isPending, setPending] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    console.log("Haetaan reseptit");
     setTimeout(() => {
-      fetch("http://localhost:8000/Mitat")
+      fetch("http://localhost:8000/Reseptit")
         .then((res) => {
           if (!res.ok) {
             throw Error(
@@ -21,9 +21,9 @@ const Reader = () => {
           }
           return res.json();
         })
-        .then((data) => {
-          console.log("readData data:", data);
-          setData(data);
+        .then((rData) => {
+          console.log("resepti data:", rData);
+          setReceipt(rData);
           setPending(false);
           setError(null);
         })
@@ -42,59 +42,45 @@ const Reader = () => {
   const handleChange = (e) => {
     console.log("record id", e);
     //delete json item
-    fetch("http://localhost:8000/Mitat/" + e, {
+    fetch("http://localhost:8000/Reseptit/" + e, {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then((data) => {
+      .then((rData) => {
         window.location.reload();
         return console.log("Record ", e + " deleted");
       });
   };
 
-   return (
+  return (
     <div>
-      <h3>8 viikon dataa</h3>
-
+      <h3>Safkat / reseptit</h3>
       <div className="reader">
-        {data.map((item) => {
+        {rData.map((safka) => {
           return (
             <div>
               <table key={nanoid()}>
                 <tbody>
                   <tr>
+                  <td><strong> PVM: </strong> {safka.today} </td>
                     <td>
-                      <strong> PVM: </strong> {item.today}
-                    </td>
-                    <td>
-                      <strong> Paino: </strong> {item.paino} kg
+                      <strong> Luokitus: </strong> {safka.category}
                     </td>
                     <td>
-                      <strong> Vyötärö: </strong> {item.vyotaro} cm
+                      <strong> Resepti: </strong> {safka.receipt}
                     </td>
                     <td>
-                      <button onClick={(e) => handleChange(item.id)}>x</button>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td className="reader--kommentti">
-                      <strong> Kommentti: </strong> {item.kommentti}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="reader--kommentti">                      
-                      <strong> Kommentti: </strong> {item.kommentti}
+                      <button onClick={(e) => handleChange(safka.id)}>x</button>
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <p></p>
             </div>
           );
         })}
-        </div>
-        </div>
-)}
+      </div>
+    </div>
+  );
+};
 
-export default Reader
+export default ReadReceipts;
