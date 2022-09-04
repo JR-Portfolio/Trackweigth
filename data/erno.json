@@ -23,15 +23,19 @@
     {
       "today": "4.9.2022",
       "category": "Aamiainen",
-      "receipt": "Eloveena puuro, vesi, 3 kuppia kahvia, Ohut jyvä näkkäri jossa kanamuna, 2 x kinkku & tomaatti.",
-      "valuation": 300,
+      "receipt": "Eloveena puuro, vesi, 3 kuppia kahvia, Ohut jyvä näkkäri jossa kanamuna, 2 x kinkku & tomaatti ja vettä.",
+      "plusCalories": 300,
+      "lostCalories": 0,
+      "diff": -500,
       "id": 1
     },
     {
       "today": "4.9.2022",
       "category": "Lounas",
-      "receipt": "test",
-      "valuation": "2000",
+      "receipt": "Subwayn kana teryjaki salaatti (makea chili kastike) zero kokiksella.",
+      "plusCalories": "550",
+      "lostCalories": "650",
+      "diff": -100,
       "id": 2
     }
   ]

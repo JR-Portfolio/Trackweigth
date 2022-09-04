@@ -3,8 +3,8 @@ h1{
     margin-left:30%;
 }
 
-h3{
-    margin-top:5%;
+h3, h4{
+    margin-top:2%;
     margin-left:30%;
 }
 
@@ -24,7 +24,7 @@ h3{
     margin-left:30%;
     justify-content: left;
     align-items: left;   
-    margin-top: 5%;
+    margin-top: 1%;
     gap: 10px 20px;
 }
 
@@ -58,7 +58,7 @@ h3{
     margin-left: -22%;
     align-items: center;
     justify-content: space-evenly;    
-    margin-top: 5%;
+    margin-top: 1%;
     gap: 30px;
 }
 
@@ -82,6 +82,7 @@ h3{
 }
 th{
     text-align:left !important;
+    background-color: gray;
 }
 
 .row {

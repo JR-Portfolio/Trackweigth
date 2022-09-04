@@ -8,9 +8,13 @@ const ReadReceipts = () => {
   const [rData, setReceipt] = useState([]);
   const [isPending, setPending] = useState(true);
   const [error, setError] = useState(null);
-  const [sumValuation, setSumValuation] = useState([])
+  const [sumPlusCalories, setPlusCalories] = useState()
+  const [sumMinusCalories, setMinusCalories] = useState()
 
-  let list = []
+  let plusList = []
+  let minusList = []
+  let sum = 0;
+  let minusSum = 0;
 
   useEffect(() => {
     console.log("Haetaan reseptit");
@@ -25,17 +29,26 @@ const ReadReceipts = () => {
           return res.json();
         })
         .then((rData) => {
-          console.log("resepti data:", rData);
+          console.log("Resepti data:", rData);
           setReceipt(rData);
           setPending(false);
           setError(null);
           
-          list = rData.filter(({ valuation }) => {
-            console.log('list valuation:', valuation)
-            let newVal = valuation++;
-            setSumValuation(newVal)
-            return valuation > 0;
+          plusList = rData.filter(({ plusCalories }) => {
+            console.log('plusList plusCalories:', plusCalories)
+            sum += parseInt(plusCalories);
+            console.log('Sum:', sum)
+            setPlusCalories(sum)
+            return plusCalories > 0;
           });
+          minusList = rData.filter(({ lostCalories }) => {
+            console.log('lostList lostCalories:', lostCalories)
+            minusSum += parseInt(lostCalories);
+            console.log('Sum of lost calories:', minusSum)
+            setMinusCalories(minusSum)
+            return lostCalories > 0;
+          });
+
         })
         
         .catch((err) => {
@@ -49,7 +62,7 @@ const ReadReceipts = () => {
     console.log("error:", error);
   }
 
-  console.log("sum of valuation: ", sumValuation)
+  console.log("sum of plusCalories: ", plusList)
 
   //Delete path
   const handleChange = (e) => {
@@ -65,26 +78,27 @@ const ReadReceipts = () => {
       });
   };
 
+
   return (
     <div>
-      <h3>Safkat / reseptit</h3>
+      <h3>Safkat / reseptit<p/></h3>
+      <h4>Hankittujen kaloreiden summa {sumPlusCalories}, kulutettujen kaloreiden summa {sumMinusCalories}</h4>
+    
       <div className="reader">
         {rData.map((safka) => {
+      
           return (
             <div>
               <table key={nanoid()}>
+                <th>PVM</th><th>Luokitus</th><th>Nautittu</th><th>+ kalorit</th><th>- kalorit</th><th>Erotus</th>
                 <tbody>
                   <tr>
-                  <td><strong> PVM: </strong> {safka.today} </td>
-                    <td>
-                      <strong> Luokitus: </strong> {safka.category}
-                    </td>
-                    <td>
-                      <strong> Nautittu: </strong> {safka.receipt}
-                    </td>
-                    <td>
-                      <strong> Arvio: </strong> {safka.valuation}
-                    </td>
+                  <td>{safka.today}</td>
+                    <td>{safka.category}</td>
+                    <td>{safka.receipt}</td>
+                    <td>{safka.plusCalories}</td>
+                    <td>{safka.lostCalories}</td>
+                    <td>{safka.diff}</td>
                     <td>
                       <button onClick={(e) => handleChange(safka.id)}>x</button>
                     </td>
