@@ -21,14 +21,17 @@
   ],
   "Reseptit": [
     {
-      "category": "aamiainen",
-      "receipt": "Munakas kahvilla.",
+      "today": "4.9.2022",
+      "category": "Aamiainen",
+      "receipt": "Eloveena puuro, vesi, 3 kuppia kahvia, Ohut jyvä näkkäri jossa kanamuna, 2 x kinkku & tomaatti.",
+      "valuation": 300,
       "id": 1
     },
     {
       "today": "4.9.2022",
-      "category": "lounas",
-      "receipt": "Kanasalaatti",
+      "category": "Lounas",
+      "receipt": "test",
+      "valuation": "2000",
       "id": 2
     }
   ]

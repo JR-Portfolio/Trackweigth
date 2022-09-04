@@ -8,6 +8,9 @@ const ReadReceipts = () => {
   const [rData, setReceipt] = useState([]);
   const [isPending, setPending] = useState(true);
   const [error, setError] = useState(null);
+  const [sumValuation, setSumValuation] = useState([])
+
+  let list = []
 
   useEffect(() => {
     console.log("Haetaan reseptit");
@@ -26,7 +29,15 @@ const ReadReceipts = () => {
           setReceipt(rData);
           setPending(false);
           setError(null);
+          
+          list = rData.filter(({ valuation }) => {
+            console.log('list valuation:', valuation)
+            let newVal = valuation++;
+            setSumValuation(newVal)
+            return valuation > 0;
+          });
         })
+        
         .catch((err) => {
           setError(err.message);
           setPending(false);
@@ -37,6 +48,8 @@ const ReadReceipts = () => {
   if (error) {
     console.log("error:", error);
   }
+
+  console.log("sum of valuation: ", sumValuation)
 
   //Delete path
   const handleChange = (e) => {
@@ -67,7 +80,10 @@ const ReadReceipts = () => {
                       <strong> Luokitus: </strong> {safka.category}
                     </td>
                     <td>
-                      <strong> Resepti: </strong> {safka.receipt}
+                      <strong> Nautittu: </strong> {safka.receipt}
+                    </td>
+                    <td>
+                      <strong> Arvio: </strong> {safka.valuation}
                     </td>
                     <td>
                       <button onClick={(e) => handleChange(safka.id)}>x</button>

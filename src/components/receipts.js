@@ -6,6 +6,7 @@ const Food = () => {
   const [category, setCategory] = useState("");
   const [receipt, setReceipt] = useState("");
   const [error, setError] = useState("");
+  const [valuation, setValuation] = useState(0);
 
   console.log('luokitus:', category)
   console.log('resepti:', receipt)
@@ -17,7 +18,7 @@ const Food = () => {
     const today = new Date().toLocaleDateString("fi-FI");
     console.log("today:", today);
 
-    const data = { today, category, receipt };
+    const data = { today, category, receipt, valuation };
 
     fetch("http://localhost:8000/Reseptit", {
       method: "POST",
@@ -45,14 +46,15 @@ const Food = () => {
       <label>
           Valitse ruokailu:
           <select name="tapahtuma" value={category} onChange={(e) => setCategory(e.target.value)}>
-            <option value="aamiainen">Aamiainen</option>
-            <option value="lounas">Lounas</option>
-            <option value="valipala">Välipala</option>
-            <option value="paivallinen">Päivällinen</option>
-            <option value="iltapala">Iltapala</option>
+            <option value="Aamiainen" selected>Aamiainen</option>
+            <option value="Lounas">Lounas</option>
+            <option value="Valipala">Välipala</option>
+            <option value="Paivallinen">Päivällinen</option>
+            <option value="Iltapala">Iltapala</option>
           </select>
         </label>
         <textarea name = "resepti" onChange={(e) => setReceipt(e.target.value)} />
+        <input type = "number" name = "arvio" value = {valuation} onChange={(e) => setValuation(e.target.value)}/>
 
         <button onClick={onSubmit}>Luo resepti</button>
       </form>
