@@ -4,8 +4,8 @@ import Adder from './components/addDetails';
 import Reader from './components/readData';
 import Objectives from './components/objectives';
 import './eight.css'
-import CreateReceipt from './components/receipts'
-import ReadReceipts from './components/readReceipts'
+import CreateCalories from './components/calories'
+import ReadCalories from './components/readCalories'
 
 import {nanoid} from 'nanoid';
 import { useState } from 'react';
@@ -14,11 +14,11 @@ const App = () => {
   const [obj, setObj] = useState(false)
   const [addMeasures, setAddMeasures] = useState(false)
   const [readMeasures, setReadMeasures] = useState(false)
-  const [createResepti, setCreateResepti] = useState(false)
-  const [readReceipts, setReadReceipts] = useState(false)
+  const [calories, setCalories] = useState(false)
+  const [readCalories, setReadCalories] = useState(false)
   
   const toggleReadResepti = () => {
-    setReadReceipts(pre => !readReceipts)
+    setReadCalories(pre => !readCalories)
   }
 
   const toggleObj = () => {
@@ -32,7 +32,7 @@ const App = () => {
   }
 
   const toggleResepti = () => {
-    setCreateResepti(pre => !createResepti)    
+    setCalories(pre => !calories)    
   }
   
   return( 
@@ -63,19 +63,19 @@ const App = () => {
             onChange={toggleReader} 
             />   
           </label>              
-          <label>Lisää resepti
+          <label>Lisää kulutus
           <input
             name="reseptiCB"
             type="checkbox"
-            checked={createResepti}
+            checked={calories}
             onChange={toggleResepti} 
             />   
           </label>         
-          <label>Ateria historia
+          <label>Kalori historia
           <input
             name="showReceiptsCB"
             type="checkbox"
-            checked={readReceipts}
+            checked={readCalories}
             onChange={toggleReadResepti} 
             />   
           </label>                   
@@ -84,8 +84,8 @@ const App = () => {
         {obj && <Objectives key={nanoid()}/>}
         {addMeasures && <Adder key={nanoid()}/>}
         {readMeasures && <Reader key={nanoid()} subj = "mitat"/>}
-        {createResepti && <CreateReceipt key={nanoid()}/>}        
-        {readReceipts && <ReadReceipts key={nanoid()}/>}        
+        {calories && <CreateCalories key={nanoid()}/>}        
+        {readCalories && <ReadCalories key={nanoid()}/>}        
       </div>
   )
 }

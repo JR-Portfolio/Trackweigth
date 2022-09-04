@@ -8,13 +8,13 @@ const ReadReceipts = () => {
   const [rData, setReceipt] = useState([]);
   const [isPending, setPending] = useState(true);
   const [error, setError] = useState(null);
-  const [sumPlusCalories, setPlusCalories] = useState()
-  const [sumMinusCalories, setMinusCalories] = useState()
+  const [sumPlusCalories, setPlusCalories] = useState(0)
+  const [sumMinusCalories, setMinusCalories] = useState(0)
 
   let plusList = []
   let minusList = []
   let sum = 0;
-  let minusSum = 0;
+  let minSum = 0;
 
   useEffect(() => {
     console.log("Haetaan reseptit");
@@ -33,21 +33,23 @@ const ReadReceipts = () => {
           setReceipt(rData);
           setPending(false);
           setError(null);
-          
+      
+          /*
           plusList = rData.filter(({ plusCalories }) => {
             console.log('plusList plusCalories:', plusCalories)
             sum += parseInt(plusCalories);
             console.log('Sum:', sum)
-            setPlusCalories(sum)
             return plusCalories > 0;
           });
+
           minusList = rData.filter(({ lostCalories }) => {
             console.log('lostList lostCalories:', lostCalories)
-            minusSum += parseInt(lostCalories);
-            console.log('Sum of lost calories:', minusSum)
-            setMinusCalories(minusSum)
+            minSum += parseInt(lostCalories);
+            console.log('Sum of lost calories:', minSum)
+            setMinusCalories(minSum)
             return lostCalories > 0;
           });
+          */
 
         })
         
@@ -57,6 +59,20 @@ const ReadReceipts = () => {
         });
     }, 1000);
   }, []);
+
+  const plusResult = rData.map(r => {
+    sum += parseInt(r.plusCalories)
+    console.log('sum', sum)
+    return sum
+  })
+
+  const minusResult = rData.map(r => {
+    minSum += parseInt(r.lostCalories)
+    console.log('minSum', minSum)
+    return minSum
+  })
+
+  console.log('Minus result:', minSum)
 
   if (error) {
     console.log("error:", error);
@@ -82,7 +98,8 @@ const ReadReceipts = () => {
   return (
     <div>
       <h3>Safkat / reseptit<p/></h3>
-      <h4>Hankittujen kaloreiden summa {sumPlusCalories}, kulutettujen kaloreiden summa {sumMinusCalories}</h4>
+      <h4>Hankittujen kaloreiden summa {sum}, kulutettujen kaloreiden summa {minSum}, erotus {sum - minSum}</h4>
+      <h5>Jos alle 1500 plussalla päivän lopuksi niin aika yes.</h5>
     
       <div className="reader">
         {rData.map((safka) => {
