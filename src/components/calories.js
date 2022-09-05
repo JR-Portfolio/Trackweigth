@@ -40,7 +40,7 @@ const Food = () => {
   };
 
   return (
-    <div>
+    <div className="adder-form">
       {error && error}
       <h3>Uusi resepti</h3>
 
@@ -48,7 +48,7 @@ const Food = () => {
       <label>
           Valitse ruokailu:
           <select name="tapahtuma" value={category} onChange={(e) => setCategory(e.target.value)}>
-            <option value="Aamiainen" selected>Aamiainen</option>
+            <option value="Aamiainen">Aamiainen</option>
             <option value="Lounas">Lounas</option>
             <option value="Valipala">Välipala</option>
             <option value="Paivallinen">Päivällinen</option>

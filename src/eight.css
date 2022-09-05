@@ -30,7 +30,7 @@ h6{
     justify-content: left;
     align-items: left;   
     margin-top: 1%;
-    gap: 10px 20px;
+
 }
 
 .reader--kommentti{
@@ -50,9 +50,7 @@ h6{
 .adder--form {
     display: flex;
     flex-direction: column;
-    margin-left: -22%;
-    align-items: center;
-    justify-content: space-evenly;    
+    flex-basis: auto;
     margin-top: 5%;
     gap: 30px;
 }
@@ -60,7 +58,7 @@ h6{
 .resepti--form {
     display: flex;
     flex-direction: column;
-    margin-left: -22%;
+    margin-left: -32%;
     align-items: center;
     justify-content: space-evenly;    
     margin-top: 1%;
@@ -78,16 +76,21 @@ h6{
     column-gap: 30px;
 }
 
+#cal td, #cal th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+#cal tr:nth-child(even){background-color: lightblue}
+#cal tr:hover {background-color: rgb(233, 227, 227);}
+  
+
 .table {
     display:table;
     text-align:left;
     margin-left:-20%;
     width:80% !important;
     border:1px solid;
-}
-
-td {
-    border: 1px solid;
 }
 
 .big{
@@ -101,7 +104,6 @@ td {
 .small{
     width: 100px;
 }
-
 
 th{
     text-align:left !important;

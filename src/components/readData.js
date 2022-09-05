@@ -52,7 +52,7 @@ const Reader = () => {
       });
   };
 
-   return (
+  return (
     <div>
       <h3>8 viikon dataa</h3>
 
@@ -60,7 +60,7 @@ const Reader = () => {
         {data.map((item) => {
           return (
             <div>
-              <table key={nanoid()}>
+              <table id="cal" key={nanoid()}>
                 <tbody>
                   <tr>
                     <td>
@@ -76,7 +76,6 @@ const Reader = () => {
                       <button onClick={(e) => handleChange(item.id)}>x</button>
                     </td>
                   </tr>
-
                   <tr>
                     <td className="reader--kommentti">
                       <strong> Kommentti: </strong> {item.kommentti}
@@ -88,8 +87,9 @@ const Reader = () => {
             </div>
           );
         })}
-        </div>
-        </div>
-)}
+      </div>
+    </div>
+  );
+};
 
-export default Reader
+export default Reader;

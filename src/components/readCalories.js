@@ -33,24 +33,6 @@ const ReadReceipts = () => {
           setReceipt(rData);
           setPending(false);
           setError(null);
-      
-          /*
-          plusList = rData.filter(({ plusCalories }) => {
-            console.log('plusList plusCalories:', plusCalories)
-            sum += parseInt(plusCalories);
-            console.log('Sum:', sum)
-            return plusCalories > 0;
-          });
-
-          minusList = rData.filter(({ lostCalories }) => {
-            console.log('lostList lostCalories:', lostCalories)
-            minSum += parseInt(lostCalories);
-            console.log('Sum of lost calories:', minSum)
-            setMinusCalories(minSum)
-            return lostCalories > 0;
-          });
-          */
-
         })
         
         .catch((err) => {
@@ -71,8 +53,6 @@ const ReadReceipts = () => {
     console.log('minSum', minSum)
     return minSum
   })
-
-  console.log('Minus result:', minSum)
 
   if (error) {
     console.log("error:", error);
@@ -98,17 +78,18 @@ const ReadReceipts = () => {
   return (
     <div>
       <h3>Safkat / reseptit<p/></h3>
-      <h4>Hankittujen kaloreiden summa {sum}, kulutettujen kaloreiden summa {minSum}, erotus {sum - minSum}</h4>
+      <h4>Hankittujen kaloreiden summa {sum}, kulutettujen kaloreiden summa {minSum}, {sum-minSum}</h4>
       <h5>Jos alle 1500 plussalla päivän lopuksi niin aika yes.</h5>
     
       <div className="reader">
         {rData.map((safka) => {
+          if (safka.lostCalories === 0){
+            safka.diff = 0;
+          }
       
           return (
             <div>
-              <table key={nanoid()}>
-                
-
+              <table id="cal" key={nanoid()}>
                 <tbody>
                   <tr>
                   <td className="medium"><b>PVM: </b>{safka.today}</td>
