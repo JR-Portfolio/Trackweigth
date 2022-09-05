@@ -66,7 +66,7 @@
       "today": "5.9.2022",
       "category": "Aamiainen",
       "receipt": "Kahvia, puuro, kananmuna, 2 realia kinkulla, tomaatilla ja salaatinlehdillä.  Lasillinen tuoremehua..",
-      "plusCalories": "350",
+      "plusCalories": "450",
       "lostCalories": 0,
       "diff": 350,
       "id": 5
@@ -88,6 +88,15 @@
       "lostCalories": 0,
       "diff": 350,
       "id": 7
+    },
+    {
+      "today": "5.9.2022",
+      "category": "Iltapala",
+      "receipt": "Tee ja 2 hapankorppua kinkuilla ja paprikalla.",
+      "plusCalories": "200",
+      "lostCalories": 0,
+      "diff": 200,
+      "id": 8
     }
   ]
 }
