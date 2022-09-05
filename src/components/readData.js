@@ -82,11 +82,6 @@ const Reader = () => {
                       <strong> Kommentti: </strong> {item.kommentti}
                     </td>
                   </tr>
-                  <tr>
-                    <td className="reader--kommentti">                      
-                      <strong> Kommentti: </strong> {item.kommentti}
-                    </td>
-                  </tr>
                 </tbody>
               </table>
               <p></p>
