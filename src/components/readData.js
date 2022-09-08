@@ -76,9 +76,9 @@ const Reader = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="reader--kommentti">
+                    {data.kommentti && <td className="reader--kommentti">
                       <strong> Kommentti: </strong> {item.kommentti}
-                    </td>
+                    </td>}
                   </tr>
                 </tbody>
               </table>
