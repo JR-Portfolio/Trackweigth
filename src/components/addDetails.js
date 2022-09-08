@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../erno.css";
+import "../addMeasures.css";
 import DA from './dynamicTextArea'
 
 const AddDetails = () => {

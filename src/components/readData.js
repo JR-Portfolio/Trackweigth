@@ -56,7 +56,6 @@ const Reader = () => {
     <div>
       <h3>8 viikon dataa</h3>
 
-      <div className="reader">
         {data.map((item) => {
           return (
             <div>
@@ -87,7 +86,7 @@ const Reader = () => {
             </div>
           );
         })}
-      </div>
+      
     </div>
   );
 };
