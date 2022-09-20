@@ -6,9 +6,8 @@ import Objectives from './components/objectives';
 import './eight.css'
 import CreateCalories from './components/calories'
 import ReadCalories from './components/readCalories'
-
 import {nanoid} from 'nanoid';
-import { useState } from 'react';
+import React, { useInsertionEffect, useState } from 'react';
 
 const App = () => {
   const [obj, setObj] = useState(false)
@@ -17,6 +16,20 @@ const App = () => {
   const [calories, setCalories] = useState(false)
   const [readCalories, setReadCalories] = useState(false)
   
+
+  //node test
+  const helloNode = () => {
+    console.log('helloNode - funktiossa')
+    fetch('http://localhost:3001/api/test', {
+      method:'GET',
+      header:{
+        'Content-Type':'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message))
+  }
+
   const toggleReadResepti = () => {
     setReadCalories(pre => !readCalories)
   }
@@ -78,7 +91,8 @@ const App = () => {
             checked={readCalories}
             onChange={toggleReadResepti} 
             />   
-          </label>                   
+          </label> 
+          <input type = 'button' value="test node" onClick = {helloNode}></input>                  
         </div>
 
         {obj && <Objectives key={nanoid()}/>}

@@ -38,6 +38,15 @@ const Reader = () => {
     console.log("error:", error);
   }
 
+
+  data.map(ditem => {
+    if (ditem.kommentti != undefined || ditem.kommentti != ''){
+      let tekstikommentti = ditem.kommentti;
+      console.log('Kommentit joissa tekstiä: ', tekstikommentti)
+    }
+  })  
+  
+
   //Delete path
   const handleChange = (e) => {
     console.log("record id", e);
@@ -73,13 +82,14 @@ const Reader = () => {
                     </td>
                     <td>
                       <button onClick={(e) => handleChange(item.id)}>x</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    {data.kommentti && <td className="reader--kommentti">
+                      {data.kommentti != '' && <td>
                       <strong> Kommentti: </strong> {item.kommentti}
                     </td>}
+
+                    </td>
                   </tr>
+                  
+                  
                 </tbody>
               </table>
               <p></p>

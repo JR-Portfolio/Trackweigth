@@ -12,6 +12,9 @@
     "react-datetime": "^3.1.1",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "require": "^2.4.20",
+    "sequelize-cli": "^6.4.1",
+    "sqlite3": "^5.0.11",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

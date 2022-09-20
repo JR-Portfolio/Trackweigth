@@ -6,7 +6,7 @@ const AddDetails = () => {
   //const [formData, setFormData] = useState({paino:"", vyotaro:""});
   const [vyotaro, setVyotaro] = useState();
   const [paino, setPaino] = useState();
-  const [kommentti, setKommentti] = useState();
+  const [kommentti, setKommentti] = useState('');
   const [error, setError] = useState("");
 
   const onSubmit = (e) => {
@@ -15,7 +15,7 @@ const AddDetails = () => {
     //console.log('Vyotaro:',formData.vyotaro)
     const today = new Date().toLocaleDateString("fi-FI");
     console.log("today:", today)
-    //console.log("formData:", formData)
+    console.log("Kommentti:", kommentti)
     
     const data = {today, paino, vyotaro, kommentti}
 
@@ -56,7 +56,7 @@ const AddDetails = () => {
           placeholder="vyotaro"
           value = {vyotaro}
         />
-        <DA onChange = {(e) => setKommentti(e.target.value)}/>
+        <textarea onChange = {(e) => setKommentti(e.target.value)}/>
         
         <button onClick={onSubmit}>Lisaa data</button>
       </form>

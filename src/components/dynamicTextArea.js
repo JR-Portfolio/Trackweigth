@@ -21,7 +21,7 @@ export default class dynamicTextArea extends React.Component {
             <textarea                
                 ref={this.textAreaRef}
                 placeholder="Kommentti"
-                onChange={(e) => this.textAreaChange(e.target)}
+                onChange={(e) => this.textAreaChange(e.target.value)}
             />
         );
     }
