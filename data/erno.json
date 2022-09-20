@@ -121,5 +121,14 @@
       "diff": 200,
       "id": 8
     }
+  ],
+  "Tavoitteet": [ 
+    {
+      "today": "20.9.2022",
+      "objective": "Aamulenkkien aloitus, liikunta ylipäätänsä, ruokien jaksotus.",
+      "week": "4",
+      "addInfo": "Viikko viittaa kasi viikon ohjelmaan.",
+      "id": 1
+    }
   ]
 }

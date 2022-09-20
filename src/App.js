@@ -8,9 +8,12 @@ import CreateCalories from './components/calories'
 import ReadCalories from './components/readCalories'
 import {nanoid} from 'nanoid';
 import React, { useInsertionEffect, useState } from 'react';
+import AddObjectives from './components/addObjectives';
+import ReadObjectives from './components/readObjectives';
 
 const App = () => {
   const [obj, setObj] = useState(false)
+  const [addObj, setAddObj] = useState(false)
   const [addMeasures, setAddMeasures] = useState(false)
   const [readMeasures, setReadMeasures] = useState(false)
   const [calories, setCalories] = useState(false)
@@ -28,6 +31,10 @@ const App = () => {
     })
     .then(res => res.json())
     .then(data => alert(data.message))
+  }
+
+  const toggleAddObj = () => {
+    setAddObj(pre => !addObj)
   }
 
   const toggleReadResepti = () => {
@@ -60,6 +67,16 @@ const App = () => {
             onChange={toggleObj} 
             />   
           </label>
+
+          <label>Lisää tavoite
+          <input
+            name="addObjCB"
+            type="checkbox"
+            checked={addObj}
+            onChange={toggleAddObj} 
+            />   
+          </label>
+
           <label>Lisää mitat
           <input
             name="addCB"
@@ -95,7 +112,8 @@ const App = () => {
           <input type = 'button' value="test node" onClick = {helloNode}></input>                  
         </div>
 
-        {obj && <Objectives key={nanoid()}/>}
+        {obj && <ReadObjectives key={nanoid()}/>}
+        {addObj && <AddObjectives key={nanoid()}/>}
         {addMeasures && <Adder key={nanoid()}/>}
         {readMeasures && <Reader key={nanoid()} subj = "mitat"/>}
         {calories && <CreateCalories key={nanoid()}/>}        
