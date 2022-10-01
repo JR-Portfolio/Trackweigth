@@ -10,6 +10,7 @@ import {nanoid} from 'nanoid';
 import React, { useInsertionEffect, useState } from 'react';
 import AddObjectives from './components/addObjectives';
 import ReadObjectives from './components/readObjectives';
+import FetchFS from './components/fetchFS';
 
 const App = () => {
   const [obj, setObj] = useState(false)
@@ -18,6 +19,7 @@ const App = () => {
   const [readMeasures, setReadMeasures] = useState(false)
   const [calories, setCalories] = useState(false)
   const [readCalories, setReadCalories] = useState(false)
+  const [fs, setFS] = useState(false)
   
 
   //node test
@@ -33,11 +35,15 @@ const App = () => {
     .then(data => alert(data.message))
   }
 
+  const toggleFS = () => {
+    setFS(pre => !fs)
+  }
+
   const toggleAddObj = () => {
     setAddObj(pre => !addObj)
   }
 
-  const toggleReadResepti = () => {
+  const toggleReadResepti = () => {    
     setReadCalories(pre => !readCalories)
   }
 
@@ -59,6 +65,15 @@ const App = () => {
       <div>
         <h1>8 viikon haaste</h1>
         <div className = "selections">
+        <label>Hae FS:stä
+          <input
+            name="fs"
+            type="checkbox"
+            checked={fs}
+            onChange={toggleFS} 
+            />   
+          </label>
+
           <label>Tavoitteet
           <input
             name="objCB"
@@ -117,7 +132,8 @@ const App = () => {
         {addMeasures && <Adder key={nanoid()}/>}
         {readMeasures && <Reader key={nanoid()} subj = "mitat"/>}
         {calories && <CreateCalories key={nanoid()}/>}        
-        {readCalories && <ReadCalories key={nanoid()}/>}        
+        {readCalories && <ReadCalories key={nanoid()}/>}
+        {fs && <FetchFS key={nanoid()}/>}        
       </div>
   )
 }

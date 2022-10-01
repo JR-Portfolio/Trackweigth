@@ -46,6 +46,34 @@
       "paino": "89.2",
       "vyotaro": "100",
       "id": 8
+    },
+    {
+      "today": "21.9.2022",
+      "paino": "89.4",
+      "vyotaro": "99.5",
+      "kommentti": "Parhaimillaan paino oli 22.9 89.2 kg.",
+      "id": 9
+    },
+    {
+      "today": "26.9.2022",
+      "paino": "89.2",
+      "vyotaro": "98",
+      "kommentti": "Puolimatkan krouvi eli 4 viikkoa 8:sta takana. Painoa tippunut 5.1 kg ja senttejä 9.",
+      "id": 10
+    },
+    {
+      "today": "28.9.2022",
+      "paino": "88.5",
+      "vyotaro": "98",
+      "kommentti": "5.8 kg ja 9 cm tippunut.",
+      "id": 11
+    },
+    {
+      "today": "1.10.2022",
+      "paino": "88.2",
+      "vyotaro": "97",
+      "kommentti": "6.1 kg ja 10 cm pudotus, jeee. Nyt lauantaina hiilari tankkaus..",
+      "id": 12
     }
   ],
   "Reseptit": [
@@ -122,13 +150,21 @@
       "id": 8
     }
   ],
-  "Tavoitteet": [ 
+  "FS":[{}],
+  "Tavoitteet": [
     {
       "today": "20.9.2022",
       "objective": "Aamulenkkien aloitus, liikunta ylipäätänsä, ruokien jaksotus.",
       "week": "4",
       "addInfo": "Viikko viittaa kasi viikon ohjelmaan.",
       "id": 1
+    },
+    {
+      "today": "28.9.2022",
+      "objective": "6.5 kg painonpudotus ja 10 cm pois vyötäröltä.",
+      "week": "5",
+      "addInfo": "Viides viikko = vk 39",
+      "id": 2
     }
   ]
 }
