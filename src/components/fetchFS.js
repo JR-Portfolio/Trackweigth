@@ -1,5 +1,5 @@
 
-//https://oauth.fatsecret.com/connect/token?user=0e3f4844a889418fb915b3223a5c3e04&password=9a30f6bbcc754a27bf80a2fefc74135f
+
 import { useState } from "react";
 import client from "../.fsdata";
 //import secret from "../.fsdata"
@@ -8,9 +8,6 @@ const FetchFS = () => {
   //const [formData, setFormData] = useState({paino:"", vyotaro:""});
   const [data, setData] = useState();
   const [error, setError] = useState("");
-
-  const client = "0e3f4844a889418fb915b3223a5c3e04"
-  const secret = "9a30f6bbcc754a27bf80a2fefc74135f"
 
   const onSubmit = async(e) => {
     e.preventDefault();
