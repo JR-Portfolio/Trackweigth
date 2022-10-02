@@ -1,23 +1,17 @@
 
-//https://oauth.fatsecret.com/connect/token?user=0e3f4844a889418fb915b3223a5c3e04&password=9a30f6bbcc754a27bf80a2fefc74135f
+
 import { useState } from "react";
 import client from "../.fsdata";
-//import secret from "../.fsdata"
+import secret from "../.fsdata"
 
 const FetchFS = () => {
   //const [formData, setFormData] = useState({paino:"", vyotaro:""});
   const [data, setData] = useState();
   const [error, setError] = useState("");
 
-  const client = "0e3f4844a889418fb915b3223a5c3e04"
-  const secret = "9a30f6bbcc754a27bf80a2fefc74135f"
-
-  const onSubmit = async(e) => {
-    e.preventDefault();
-    const today = new Date().toLocaleDateString("fi-FI");
-    console.log(client + ', ' + secret)
-    //fetch access oauth token
-      fetch("https://oauth.fatsecret.com/connect/token",{
+  var authResp = ""
+  const getAuth = async () =>
+  authResp = await fetch("https://oauth.fatsecret.com/connect/token",{
       mode:'no-cors',
       method: "POST",
       auth: {
@@ -32,7 +26,26 @@ const FetchFS = () => {
         scope: "basic",
       },
       json: true,    
-  });
+  })
+
+
+
+var auth = getAuth()
+var bearerAuth = "Bearer " + auth
+
+  const getFoodResp = fetch('https://platform.fatsecret.com/rest/server.api', {
+    method: 'foods.search&search_expression=toast&format=json',    
+    headers: {
+      Authorization: bearerAuth,
+      "Content-Type": "application/json",
+    },
+})
+  
+  const onSubmit = async(e) => {
+    e.preventDefault();
+    const today = new Date().toLocaleDateString("fi-FI");
+    getAuth()
+    getFoodResp()
   }
 
   return (
