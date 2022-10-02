@@ -9,9 +9,8 @@ const FetchFS = () => {
   const [data, setData] = useState();
   const [error, setError] = useState("");
 
-  var authResp = ""
   const getAuth = async () =>
-  authResp = await fetch("https://oauth.fatsecret.com/connect/token",{
+    authResp = await fetch("https://oauth.fatsecret.com/connect/token",{
       mode:'no-cors',
       method: "POST",
       auth: {
@@ -34,7 +33,8 @@ var auth = getAuth()
 var bearerAuth = "Bearer " + auth
 
   const getFoodResp = fetch('https://platform.fatsecret.com/rest/server.api', {
-    method: 'foods.search&search_expression=toast&format=json',    
+    method: 'foods.search&search_expression=toast&format=json',
+    
     headers: {
       Authorization: bearerAuth,
       "Content-Type": "application/json",
