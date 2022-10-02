@@ -1,17 +1,16 @@
-
-
 import { useState } from "react";
 import client from "../.fsdata";
-import secret from "../.fsdata"
+import secret from "../.fsdata";
 
 const FetchFS = () => {
   //const [formData, setFormData] = useState({paino:"", vyotaro:""});
   const [data, setData] = useState();
   const [error, setError] = useState("");
 
-  const getAuth = async () =>
-    authResp = await fetch("https://oauth.fatsecret.com/connect/token",{
-      mode:'no-cors',
+  //Get authentication token
+  const getAuth = async () => {
+    await fetch("https://oauth.fatsecret.com/connect/token", {
+      mode: "no-cors",
       method: "POST",
       auth: {
         user: client,
@@ -24,29 +23,39 @@ const FetchFS = () => {
         grant_type: "client_credentials",
         scope: "basic",
       },
-      json: true,    
-  })
+      json: true,
+    });
+  };
 
+  //Modify token to be usable with FS method.
+  var auth = getAuth();
+  var bearerAuth = "Bearer " + auth;
 
+  //Fetch data
+  /*
+    POST https://platform.fatsecret.com/rest/server.api
+    Content-Type: application/json
+    Header: Authorization: Bearer <Access Token>
+    Parameters: method=foods.search&search_expression=toast&format=json
+    */
 
-var auth = getAuth()
-var bearerAuth = "Bearer " + auth
+  const getFoodResp = async () => {
+    fetch("https://platform.fatsecret.com/rest/server.api", {
+      method: "POST",
+      headers: {
+        Authorization: bearerAuth,
+        "Content-Type": "application/json",
+      },
+      body: "foods.search&search_expression=toast&format=json",
+    });
+  };
 
-  const getFoodResp = fetch('https://platform.fatsecret.com/rest/server.api', {
-    method: 'foods.search&search_expression=toast&format=json',
-    
-    headers: {
-      Authorization: bearerAuth,
-      "Content-Type": "application/json",
-    },
-})
-  
-  const onSubmit = async(e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const today = new Date().toLocaleDateString("fi-FI");
-    getAuth()
-    getFoodResp()
-  }
+    getAuth();
+    getFoodResp();
+  };
 
   return (
     <div>
@@ -58,7 +67,6 @@ var bearerAuth = "Bearer " + auth
           name="ruoka"
           onChange={(e) => setData(e.target.value)}
           placeholder="Ruoka tarvike"
-          value={data}
         />
 
         <button onClick={onSubmit}>Lisaa data</button>
@@ -67,5 +75,4 @@ var bearerAuth = "Bearer " + auth
   );
 };
 
-
-export default FetchFS
+export default FetchFS;
