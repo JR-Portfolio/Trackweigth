@@ -1,8 +1,7 @@
-import { render } from '@testing-library/react';
+//import { render } from '@testing-library/react';
 import './App.css';
 import Adder from './components/addDetails';
 import Reader from './components/readData';
-import Objectives from './components/objectives';
 import './eight.css'
 import CreateCalories from './components/calories'
 import ReadCalories from './components/readCalories'
@@ -25,7 +24,7 @@ const App = () => {
   //node test
   const helloNode = () => {
     console.log('helloNode - funktiossa')
-    fetch('http://localhost:3001/api/test', {
+    fetch('http://localhost:3000/api/test', {
       method:'GET',
       header:{
         'Content-Type':'application/json'
@@ -65,33 +64,6 @@ const App = () => {
       <div>
         <h1>8 viikon haaste</h1>
         <div className = "selections">
-        <label>Hae FS:stä
-          <input
-            name="fs"
-            type="checkbox"
-            checked={fs}
-            onChange={toggleFS} 
-            />   
-          </label>
-
-          <label>Tavoitteet
-          <input
-            name="objCB"
-            type="checkbox"
-            checked={obj}
-            onChange={toggleObj} 
-            />   
-          </label>
-
-          <label>Lisää tavoite
-          <input
-            name="addObjCB"
-            type="checkbox"
-            checked={addObj}
-            onChange={toggleAddObj} 
-            />   
-          </label>
-
           <label>Lisää mitat
           <input
             name="addCB"
@@ -108,23 +80,7 @@ const App = () => {
             onChange={toggleReader} 
             />   
           </label>              
-          <label>Lisää kulutus
-          <input
-            name="reseptiCB"
-            type="checkbox"
-            checked={calories}
-            onChange={toggleResepti} 
-            />   
-          </label>         
-          <label>Kalori historia
-          <input
-            name="showReceiptsCB"
-            type="checkbox"
-            checked={readCalories}
-            onChange={toggleReadResepti} 
-            />   
-          </label> 
-          <input type = 'button' value="test node" onClick = {helloNode}></input>                  
+            <input type = 'button' value="test node" onClick = {helloNode}></input>                  
         </div>
 
         {obj && <ReadObjectives key={nanoid()}/>}

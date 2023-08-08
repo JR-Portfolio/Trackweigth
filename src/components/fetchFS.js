@@ -1,13 +1,13 @@
 import { useState } from "react";
-import client from "../.fsdata";
-import secret from "../.fsdata";
+//import client from "../.fsdata";
+//import secret from "../.fsdata";
 
 const FetchFS = () => {
   //const [formData, setFormData] = useState({paino:"", vyotaro:""});
   const [data, setData] = useState();
   const [error, setError] = useState("");
 
-  //Get authentication token
+  /*Get authentication token
   const getAuth = async () => {
     await fetch("https://oauth.fatsecret.com/connect/token", {
       mode: "no-cors",
@@ -26,11 +26,11 @@ const FetchFS = () => {
       json: true,
     });
   };
-
+*/
   //Modify token to be usable with FS method.
-  var auth = getAuth();
+  /*var auth = getAuth();
   var bearerAuth = "Bearer " + auth;
-
+*/
   //Fetch data
   /*
     POST https://platform.fatsecret.com/rest/server.api
@@ -43,7 +43,7 @@ const FetchFS = () => {
     fetch("https://platform.fatsecret.com/rest/server.api", {
       method: "POST",
       headers: {
-        Authorization: bearerAuth,
+        //Authorization: bearerAuth,
         "Content-Type": "application/json",
       },
       body: "foods.search&search_expression=toast&format=json",
@@ -53,7 +53,7 @@ const FetchFS = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     const today = new Date().toLocaleDateString("fi-FI");
-    getAuth();
+    //getAuth();
     getFoodResp();
   };
 

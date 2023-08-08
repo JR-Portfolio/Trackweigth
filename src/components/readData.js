@@ -5,6 +5,7 @@ import { nanoid } from "nanoid";
 // import { Line } from './Line.ts';
 
 const Reader = () => {
+  debugger
   const [data, setData] = useState([]);
   const [rData, setResepti] = useState([]);
   const [isPending, setPending] = useState(true);
@@ -39,7 +40,9 @@ const Reader = () => {
   }
 
 
+  let valid = false
   data.map(ditem => {
+    ditem.today.includes("2023") ? valid = true : valid = false; 
     if (ditem.kommentti != undefined || ditem.kommentti != ''){
       let tekstikommentti = ditem.kommentti;
       console.log('Kommentit joissa tekstiä: ', tekstikommentti)
@@ -70,7 +73,7 @@ const Reader = () => {
             <div>
               <table id="cal" key={nanoid()}>
                 <tbody>
-                  <tr>
+                  {item.today.includes("2023") && <tr>
                     <td>
                       <strong> PVM: </strong> {item.today}
                     </td>
@@ -87,7 +90,7 @@ const Reader = () => {
                     </td>}
 
                     </td>
-                  </tr>
+                  </tr>}
                   
                   
                 </tbody>
