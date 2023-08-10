@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../addMeasures.css";
-import DA from './dynamicTextArea'
+//import {dynamicTextArea} from './dynamicTextArea'
 
 const AddObjectives = () => {
   const [week, setWeek] = useState();

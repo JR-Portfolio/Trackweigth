@@ -7,6 +7,7 @@
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2",
     "react-scripts": "^5.0.1",
     "request": "^2.88.2",
     "require": "^0.4.4",
@@ -20,7 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "migrate": "node scripts/migrate.js"
+    "migrate": "node scripts/migrate.js",
+    "runner": "json-server --watch ./data/erno2.json --port 8000 && npm start"
   },
   "eslintConfig": {
     "extends": [
