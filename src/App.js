@@ -3,6 +3,9 @@ import "./App.css";
 import Main from "./components/Main";
 import AddMeasures from "./components/AddMeasures";
 import ReadMeasures from "./components/ReadMeasures";
+import ReadObjectives from "./components/ReadObjectives"
+import AddObjectives from "./components/AddObjectives"
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./eight.css";
 import { nanoid } from "nanoid";
@@ -26,6 +29,17 @@ const App = () => {
               path="/readMeasures"
               element={<ReadMeasures key={nanoid()} />}
             />
+
+            <Route
+              path="/addObjectives"
+              element={<AddObjectives key={nanoid()} />}
+            />
+
+            <Route
+              path="/readObjectives"
+              element={<ReadObjectives key={nanoid()} />}
+            />
+
           </Routes>
         
       </BrowserRouter>

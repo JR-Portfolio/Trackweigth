@@ -1,6 +1,8 @@
 import "../eight.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
+import '../eight.css'
+import { useNavigate } from "react-router-dom";
 
 // import { Line } from './Line.ts';
 
@@ -10,6 +12,7 @@ const ReadObjectives = () => {
   const [error, setError] = useState(null);
   const [sumPlusCalories, setPlusCalories] = useState(0)
   const [sumMinusCalories, setMinusCalories] = useState(0)
+  const navigate = useNavigate()
 
   let plusList = []
   let minusList = []
@@ -62,13 +65,18 @@ const ReadObjectives = () => {
   return (
     <div>
       {!obj && <h3>Ei asetettuja tavoitteita<p/></h3>}
-    
-      <div className="reader">      
+
+      <div className="main taulu">      
+
+      <button className="main-button" onClick={() => navigate("/")}>
+        Pääsivu
+      </button>
+      <h1 className="main-otsikko">Tavoitteet</h1>    
 
         {obj.map(o => {
           return(
             <div>
-              {obj && <table id="cal" key={nanoid()}>
+              {obj.length > 0 && <table id="cal" key={nanoid()}>
                 <tbody>
                   <tr>
                   <td className="medium"><b>PVM: </b>{o.today}</td>

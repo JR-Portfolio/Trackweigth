@@ -107,7 +107,8 @@ h6 {
   margin: 0 auto;
   box-sizing: border-box;
   border-radius: 1rem;
-  justify-content: center; 
+  justify-content: center;
+  margin-top:20px; 
   padding: 2rem;
   background-color: hsl(0, 28%, 95%);
 }
