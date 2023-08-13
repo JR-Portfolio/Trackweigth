@@ -79,16 +79,6 @@ h6 {
   background-color: hsl(0, 28%, 95%);
 }
 
-.resepti--form {
-  display: flex;
-  flex-direction: column;
-  margin-left: -32%;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-top: 1%;
-  gap: 30px;
-}
-
 .objectives {
   display: flex;
   flex-direction: column;
@@ -99,33 +89,26 @@ h6 {
   column-gap: 30px;
 }
 
-#cal td,
-#cal th {
-  border: 1px solid #ddd;
-  padding: 8px;
+.main-otsikko{
+ text-align: center;
 }
 
-#cal tr:nth-child(even) {
-  background-color: lightblue;
-}
-#cal tr:hover {
-  background-color: rgb(233, 227, 227);
+.main-button{
+  margin-top:3%;
+  margin-left:5%;
 }
 
 .taulu {
   display: table;
   table-layout: auto;
   width: fit-content;
-  border-collapse: collapse;
   border: 1px solid black;
   text-align: left;
   margin: 0 auto;
-  margin-top: 3%;
   box-sizing: border-box;
   border-radius: 1rem;
-  justify-content: center;
-  gap: 2rem;
-  padding: 4rem;
+  justify-content: center; 
+  padding: 2rem;
   background-color: hsl(0, 28%, 95%);
 }
 
@@ -147,5 +130,6 @@ th {
 }
 
 button {
-  margin-left: 0%;
+  margin-right: 10%;
+  padding:10px;
 }
