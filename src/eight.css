@@ -42,6 +42,18 @@ h6 {
   color: #333;
 }
 
+.main-button{
+  margin-top:3%;
+  margin-left:5%;
+}
+
+.main img{
+  display:flex;
+  width:200px;
+  max-height: 300px;  
+  align-items:center;
+}
+
 .adder--header {
   display: grid;
   grid-template-columns: auto;
@@ -91,11 +103,6 @@ h6 {
 
 .main-otsikko{
  text-align: center;
-}
-
-.main-button{
-  margin-top:3%;
-  margin-left:5%;
 }
 
 .taulu {

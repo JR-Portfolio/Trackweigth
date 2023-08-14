@@ -2,6 +2,7 @@ import "../eight.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
+import bmi from '../Images/Screenshot_20230814_081657_BodyFast.jpg'
 
 // import { Line } from './Line.ts';
 
@@ -66,7 +67,7 @@ const Reader = () => {
       <button className="main-button" onClick={() => navigate("/")}>
         Pääsivu
       </button>
-      <h1 className="main-otsikko">Mittari</h1>
+      <h1 className="main-otsikko"><a href = {bmi}>Mittari</a></h1>
 
       {data.map((item, index) => {
         return (
