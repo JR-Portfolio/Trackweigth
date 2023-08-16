@@ -44,7 +44,7 @@ h6 {
 
 .main-button{
   margin-top:3%;
-  margin-left:5%;
+  margin-left:0%;
 }
 
 .main img{
@@ -138,6 +138,6 @@ th {
 }
 
 button {
-  margin-right: 10%;
+  margin-right: -10%;
   padding:10px;
 }

@@ -8,87 +8,32 @@ function Main(props) {
   const [readMeasureData, setReadMeasureData] = useState(false);
   const navigate = useNavigate();
 
-  function addData(e) {
-    console.log(e);
-    if (e) {
-      navigate("/addMeasures");
-    } else {
-      navigate("/");
-    }
-  }
-
-  function readMeasures(e) {
-    console.log(e);
-    if (e) {
+  const handler = (e) => {
+    if (e.target.value === "readMess") {
       navigate("/readMeasures");
-    } else {
-      navigate("/");
-    }
-  }
-
-  function readObjectives(e) {
-    console.log(e);
-    if (e) {
-      navigate("/readObjectives");
-    } else {
-      navigate("/");
-    }
-  }
-
-  function addObjectives(e) {
-    console.log(e);
-    if (e) {
+    } else if (e.target.value === "addMess") {
+      navigate("/addMeasures");
+    } else if (e.target.value === "addObjectives") {
       navigate("/addObjectives");
-    } else {
-      navigate("/");
+    } else if (e.target.value === "readObjectives") {
+      navigate("/readObjectives");
     }
-  }
+  };
 
   return (
     <>
       <div className="selections">
         <h1>8 viikon haaste</h1>
-        <label>
-          Lisää mitat
-          <ErrorBoundary>
-            <input
-              name="measures"
-              type="checkbox"
-              onChange={(event) => addData(event.target.checked)}
-            />
-          </ErrorBoundary>
-        </label>
-        <label>
-          Näytä mitat
-          <ErrorBoundary>
-            <input
-              name="readCB"
-              type="checkbox"
-              onChange={(event) => readMeasures(event.target.checked)}
-            />
-          </ErrorBoundary>
-        </label>
-        <label>
-          <p></p>
-          Näytä tavoitteet
-          <ErrorBoundary>
-            <input
-              name="readObjectives"
-              type="checkbox"
-              onChange={(event) => readObjectives(event.target.checked)}
-            />
-          </ErrorBoundary>
-        </label>
-        <label>
-          Aseta tavoite
-          <ErrorBoundary>
-            <input
-              name="addObjectives"
-              type="checkbox"
-              onChange={(event) => addObjectives(event.target.checked)}
-            />
-          </ErrorBoundary>
-        </label>
+
+        <ErrorBoundary>
+          <select name="mitat" onChange={(event) => handler(event)}>
+            <option value="def">Valitse</option>
+            <option value="addMess">Lisää mitat</option>
+            <option value="readMess">Lue mitat</option>
+            <option value="addObjectives">Aseta tavoite</option>
+            <option value="readObjectives">Tavoitteet</option>
+          </select>
+        </ErrorBoundary>
       </div>
     </>
   );

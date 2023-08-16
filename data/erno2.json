@@ -105,6 +105,13 @@
       "week": "32",
       "addInfo": "Pudota metabosmin kautta useita senttejä + kiloja.",
       "id": 1
+    },
+    {
+      "today": "16.8.2023",
+      "objective": "Paastoaminen testaus",
+      "week": "33",
+      "addInfo": "Tavoitteena nähdä onko body fast toimiva ratkaisu minulle.",
+      "id": 2
     }
   ]
 }
