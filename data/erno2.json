@@ -1,0 +1,117 @@
+{
+  "Mitat": [
+    {
+      "today": "10.8.2023",
+      "paino": "90.2",
+      "vyotaro": "107",
+      "kommentti": "Loman jälkeinen herääminen.",
+      "id": 1
+    },
+    {
+      "today": "13.8.2023",
+      "vyotaro": "102",
+      "kommentti": "Turvotus häipyy, katsotaan auttaako ruoka-aikojen muutokset.",
+      "id": 2
+    },
+    {
+      "today": "14.8.2023",
+      "paino": "87.3",
+      "vyotaro": "101",
+      "kommentti": "Ylipainoisena mennään, + 20 tunnin fasting ohi ja vettä kului, mutta painoakin lähti. Nyt metabolis kuntoon hiilareilla.",
+      "id": 3
+    }
+  ],
+  "Reseptit": [
+    {
+      "today": "4.9.2022",
+      "category": "Aamiainen",
+      "receipt": "Eloveena puuro, vesi, 3 kuppia kahvia, Ohut jyvä näkkäri jossa kanamuna, 2 x kinkku & tomaatti ja vettä.",
+      "plusCalories": 300,
+      "lostCalories": 0,
+      "diff": -500,
+      "id": 1
+    },
+    {
+      "today": "4.9.2022",
+      "category": "Lounas",
+      "receipt": "Subwayn kana teryjaki salaatti (makea chili kastike) zero kokiksella.",
+      "plusCalories": "550",
+      "lostCalories": "650",
+      "diff": -100,
+      "id": 2
+    },
+    {
+      "today": "4.9.2022",
+      "category": "Paivallinen",
+      "receipt": "Kana wokkia 200gr + ruisleipä viipale ja vettä.",
+      "plusCalories": "300",
+      "lostCalories": 0,
+      "diff": 300,
+      "id": 3
+    },
+    {
+      "today": "4.9.2022",
+      "category": "Iltapala",
+      "receipt": "Lasi mansikka & banaani smoothia (100 kcal). Vaasan ruispala yksi siivu kinkulla ja paprikalla 100 kcal.",
+      "plusCalories": "200",
+      "lostCalories": 0,
+      "diff": 200,
+      "id": 4
+    },
+    {
+      "today": "5.9.2022",
+      "category": "Aamiainen",
+      "receipt": "Kahvia, puuro, kananmuna, 2 realia kinkulla, tomaatilla ja salaatinlehdillä.  Lasillinen tuoremehua..",
+      "plusCalories": "450",
+      "lostCalories": 0,
+      "diff": 350,
+      "id": 5
+    },
+    {
+      "today": "5.9.2022",
+      "category": "Lounas",
+      "receipt": "Risotto (210 gr), iso salaatti ja vettä.",
+      "plusCalories": "250",
+      "lostCalories": 0,
+      "diff": 250,
+      "id": 6
+    },
+    {
+      "today": "5.9.2022",
+      "category": "Paivallinen",
+      "receipt": "Uunilohi salaattipedillä.",
+      "plusCalories": "350",
+      "lostCalories": 0,
+      "diff": 350,
+      "id": 7
+    },
+    {
+      "today": "5.9.2022",
+      "category": "Iltapala",
+      "receipt": "Tee ja 2 hapankorppua kinkuilla ja paprikalla.",
+      "plusCalories": "200",
+      "lostCalories": 0,
+      "diff": 200,
+      "id": 8
+    }
+  ],
+  "FS": [
+    {}
+  ],
+  "Tavoitteet": [
+    {
+      "today": "13.8.2023",
+      "objective": "Pudotus",
+      "week": "32",
+      "addInfo": "Pudota metabosmin kautta useita senttejä + kiloja.",
+      "id": 1
+    },
+    {
+      "today": "16.8.2023",
+      "objective": "Paastoaminen testaus",
+      "week": "33",
+      "addInfo": "Tavoitteena nähdä onko body fast toimiva ratkaisu minulle.",
+      "id": 2
+    }
+  ]
+}

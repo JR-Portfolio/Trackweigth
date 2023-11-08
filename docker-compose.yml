@@ -10,5 +10,5 @@ services:
     ports:
       - '4321:5432'
     environment: 
-      POSTGRES_PASSWORD:'800056'
+      POSTGRES_PASSWORD:'123456'
       POSTGRES__USER:'docker'

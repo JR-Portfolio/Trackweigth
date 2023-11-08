@@ -32,7 +32,6 @@ const ReadReceipts = () => {
           setPending(false);
           setError(null);
         })
-
         .catch((err) => {
           setError(err.message);
           setPending(false);
