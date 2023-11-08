@@ -1,0 +1,227 @@
+{
+  "Paasto": [
+    {
+      "wk": 0,
+      "paasto": [
+        {
+          "alku": "1700-09-30T23:00",
+          "loppu": "1700-10-01T17:00"
+        },
+        {
+          "alku": "1700-10-01T19:00",
+          "loppu": "1700-10-02T09:00"
+        }
+      ],
+      "id": 0
+    },
+    {
+      "wk": 40,
+      "paasto": [
+        {
+          "alku": "2023-10-10T14:51",
+          "loppu": "2023-10-18T14:51"
+        },
+        {
+          "alku": "2023-10-03T14:51",
+          "loppu": "2023-10-12T14:51"
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "Harjoitus": [
+    {
+      "today": "17.9.2023",
+      "harjoitus": "3 X Punnerruksia: 1 min, tauko: 30 sec.Vatsarullaus: 1min, tauko: 30 sec.Kahvakuula  nosto ylös:1m.",
+      "kommentti": "Ei kelloa, interval timer apilla. Kahvakuula sessio 2x eli minuutti kummallekkin kädelle.Kolmannella kieroksella 30 sec max normaali punneruksilla, loput tyttö punnerruksia. Vatsa rulla vaihtoi vatsan liikkeisiin jossa jalkateriä nostellaan ja pyöritellään hartiat ylhäällä. 30 sec lepo ok, ei voi olla vähempää.",
+      "id": 1
+    },
+    {
+      "today": "19.9.2023",
+      "harjoitus": "3 X: Vaihtotauot 5 sekunttia.Punnerruksia 30 sek + vatsalihaksia 30 sekunttia.Kahvakuula heilautus 1 min.Käsipaino rinnalleveto + työntöä per käsi 1 m.Lankku 1 min.Lepo minuutti.",
+      "kommentti": "Erien välit voisivat olla 10 sekunttia.",
+      "id": 2
+    },
+    {
+      "today": "30.9.2023",
+      "harjoitus": "3 x (5 x 1 interval treenejä).",
+      "kommentti": "Autotallissa juoksua, pyöräilyä, painolla, yleisliikeitä, punnerruksia ja vatsalihaksia.",
+      "id": 3
+    },
+    {
+      "today": "17.10.2023",
+      "harjoitus": "Keinukallion porras treeni.",
+      "kommentti": "Suoritettu 16.10.2023, 10 x meni.",
+      "id": 4
+    }
+  ],
+  "Mitat": [
+    {
+      "today": "10.8.2023",
+      "paino": "90.2",
+      "vyotaro": "107",
+      "kommentti": "Loman jälkeinen herääminen.",
+      "id": 1
+    },
+    {
+      "today": "13.8.2023",
+      "vyotaro": "102",
+      "kommentti": "Turvotus häipyy, katsotaan auttaako ruokaaikojen muutokset.",
+      "id": 2
+    },
+    {
+      "today": "14.8.2023",
+      "paino": "87.3",
+      "vyotaro": "101",
+      "kommentti": "Ylipainoisena mennään, + 20 tunnin fasting ohi ja vettä kului, mutta painoakin lähti. Nyt metabolis kuntoon hiilareilla.",
+      "id": 3
+    },
+    {
+      "today": "10.9.2023",
+      "paino": "85.3",
+      "kommentti": "",
+      "id": 4
+    },
+    {
+      "today": "10.9.2023",
+      "paino": "85.3",
+      "vyotaro": "96",
+      "kommentti": "Fasting apin tuella mennään, paastoamista päivittäin. Normi paastoamisaika siinä 14  16 tuntia vuorokaudessa. Makeisten ja sipsien mussutus ollut pitkään holdissa.",
+      "id": 5
+    },
+    {
+      "today": "12.9.2023",
+      "paino": "85.4",
+      "vyotaro": "95",
+      "kommentti": "Actual ehkä vähän alle 95.",
+      "id": 6
+    },
+    {
+      "today": "15.9.2023",
+      "paino": "84.9",
+      "vyotaro": "95",
+      "kommentti": "Aamupaino",
+      "id": 7
+    },
+    {
+      "today": "17.9.2023",
+      "kommentti": "16.9.2023 vietetty possu päivää. Aamulla munakas (pari kananmunaa + pätkä hk:n sinistä), iltapäivällä kahvi + herkullinen korvapuusti ja neljän maissa Salossa Timon kanssa kebabit (itselleni salaatti kebab + zero). Kotona sitten illemalla karsu mässyä + kolme 0%:sta ja yksi pepsi max ja pari kourallista näkkileipä sipsejä. Hyvin tuli kyllä nukuttua, kun Reettakin oli ehtinyt töihin ennen heräämistäni.",
+      "id": 8
+    }
+  ],
+  "Reseptit": [
+    {
+      "today": "4.9.2022",
+      "category": "Aamiainen",
+      "receipt": "Eloveena puuro, vesi, 3 kuppia kahvia, Ohut jyvä näkkäri jossa kanamuna, 2 x kinkku & tomaatti ja vettä.",
+      "plusCalories": 300,
+      "lostCalories": 0,
+      "diff": 500,
+      "id": 1
+    },
+    {
+      "today": "4.9.2022",
+      "category": "Lounas",
+      "receipt": "Subwayn kana teryjaki salaatti (makea chili kastike) zero kokiksella.",
+      "plusCalories": "550",
+      "lostCalories": "650",
+      "diff": 100,
+      "id": 2
+    },
+    {
+      "today": "4.9.2022",
+      "category": "Paivallinen",
+      "receipt": "Kana wokkia 200gr + ruisleipä viipale ja vettä.",
+      "plusCalories": "300",
+      "lostCalories": 0,
+      "diff": 300,
+      "id": 3
+    },
+    {
+      "today": "4.9.2022",
+      "category": "Iltapala",
+      "receipt": "Lasi mansikka & banaani smoothia (100 kcal). Vaasan ruispala yksi siivu kinkulla ja paprikalla 100 kcal.",
+      "plusCalories": "200",
+      "lostCalories": 0,
+      "diff": 200,
+      "id": 4
+    },
+    {
+      "today": "5.9.2022",
+      "category": "Aamiainen",
+      "receipt": "Kahvia, puuro, kananmuna, 2 realia kinkulla, tomaatilla ja salaatinlehdillä.  Lasillinen tuoremehua..",
+      "plusCalories": "450",
+      "lostCalories": 0,
+      "diff": 350,
+      "id": 5
+    },
+    {
+      "today": "5.9.2022",
+      "category": "Lounas",
+      "receipt": "Risotto (210 gr), iso salaatti ja vettä.",
+      "plusCalories": "250",
+      "lostCalories": 0,
+      "diff": 250,
+      "id": 6
+    },
+    {
+      "today": "5.9.2022",
+      "category": "Paivallinen",
+      "receipt": "Uunilohi salaattipedillä.",
+      "plusCalories": "350",
+      "lostCalories": 0,
+      "diff": 350,
+      "id": 7
+    },
+    {
+      "today": "5.9.2022",
+      "category": "Iltapala",
+      "receipt": "Tee ja 2 hapankorppua kinkuilla ja paprikalla.",
+      "plusCalories": "200",
+      "lostCalories": 0,
+      "diff": 200,
+      "id": 8
+    }
+  ],
+  "Tavoitteet": [
+    {
+      "today": "13.8.2023",
+      "objective": "Pudotus",
+      "week": "32",
+      "addInfo": "Pudota metabosmin kautta useita senttejä + kiloja.",
+      "id": 1,
+      "done": true
+    },
+    {
+      "today": "12.9.2023",
+      "objective": "Aineenvaihdunta ",
+      "week": 37,
+      "addInfo": "Kiihdytä aineenvaihduntaa paastoamisella vaihtamalla sequenssia ja sopivilla välipaloilla. Useampia välipaloja, mutta vähän kerrallaan. Ei liian isoja päivällisiä.",
+      "done": true,
+      "id": 2
+    },
+    {
+      "today": "24.9.2023",
+      "week": 39,
+      "addInfo": "Jatka paastoamista, jätä viikolla pepsit ja holittomat pois. Karkit pois for now. Omenoita & porkkanoita + veden juonnin lisäämistä.",
+      "done": true,
+      "id": 3
+    },
+    {
+      "today": "30.9.2023",
+      "objective": "3 interval harjoitusta per viikko ja yksi porras / vastaava harjoitus. \n\nYleisesti hiilareiden ja sokerien vähentäminen tavoitteena.",
+      "week": 40,
+      "addInfo": "",
+      "done": false,
+      "id": 4
+    },
+    {
+      "today": "7.11.2023",
+      "item": "Flunssan hoito",
+      "item2": 45,
+      "item3": "Ei mene hyvin",
+      "item4": false,
+      "id": 5
+    }
+  ]
+}
