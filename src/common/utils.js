@@ -1,9 +1,10 @@
-export function postFetch(url, item, item2, item3 = null, item4 = null) {
-  console.log("Posting exercices, ", item + ", ", item2 + ', ' + item3 + ', ' + item4);
+export function postFetch(url, paino, vyotaro, kommentti = null) {
+  console.log("Posting exercices, ", paino + ", ", vyotaro + ', ' + kommentti);
 
   const today = new Date().toLocaleDateString("fi-FI");
+  const fToday = today.replace(".","-")
 
-  const data = { today, item, item2, item3, item4 };
+  const data = { today, paino, vyotaro, kommentti };
 
   fetch(url, {
     method: "POST",

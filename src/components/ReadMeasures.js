@@ -34,18 +34,6 @@ const Reader = () => {
   if (error) {
   }
 
- 
-  /*
-  data.map((ditem) => {
-    let valid = false;
-    ditem.today.includes("2023") ? (valid = true) : (valid = false);
-    if (ditem.kommentti !== undefined || ditem.kommentti !== "") {
-      let tekstikommentti = ditem.kommentti;
-    }
-    return valid;
-  });
-  */
-
   //Delete path
   const handleChange = (e) => {
     //delete json item
@@ -72,57 +60,68 @@ const Reader = () => {
         const vyotaroMuutos = (item.vyotaro - data[0].vyotaro).toFixed(2);
         const painonMuutos = (item.paino - data[0].paino).toFixed(2);
         const bmi = item.paino / (1.75 * 1.75).toFixed(2);
-        var lines = item.kommentti.split(".");
+        var lines = item.kommentti?.split(".");
         let kommenttiLine = "";
+
         return (
           <>
             <table className="taulu">
+              <thead>
+                <th>PVM</th>
+                <th>Paino</th>
+                <th>Vyötärö</th>
+                <th>V.muutos</th>
+                <th>P.muutos</th>
+                <th>BMI</th>
+                <th>Kommentti</th>                
+              </thead>
               <tbody key={nanoid()}>
-                {item.today?.includes("2023") && (
+                {data.map((item) =>  (
                   <tr key={nanoid()}>
                     <td>
-                      <strong key={index}> PVM: </strong> {item.today}
+                      {item.today}
                     </td>
                     {!!item.paino && (
                       <td>
-                        <strong key={index}> Paino: </strong> {item.paino} kg
+                        {item.paino} kg
                       </td>
                     )}
                     {!!item.vyotaro && (
                       <td>
-                        <strong key={index}> Vyötärö: </strong> {item.vyotaro}{" "}
+                        {item.vyotaro}{" "}
                         cm
                       </td>
                     )}
                     {!isNaN(vyotaroMuutos) && (
-                      <td>
-                        <strong key={index}>Vyötärön muutos:</strong>{" "}
+                      <td>                        
                         {vyotaroMuutos}
                       </td>
                     )}
 
                     {!isNaN(painonMuutos) && (
-                      <td>
-                        <strong key={index}>Painon muutos (kg):</strong>{" "}
+                      <td>                        
                         {painonMuutos}
                       </td>
                     )}
 
                     {!isNaN(bmi) && (
                       <td>
-                        <strong key={index}> BMI: </strong> {bmi}
+                        {bmi}
                       </td>
                     )}
 
-                    {lines.map((l) => (
-                      <td>{l}</td>
+                    {lines?.map((l) => (
+                      <tr>
+                        <td>{l}</td>
+                      </tr>
                     ))}
 
                     <td>
                       <button onClick={(e) => handleChange(item.id)}>x</button>
                     </td>
                   </tr>
-                )}
+                  ))
+                }
               </tbody>
             </table>
           </>

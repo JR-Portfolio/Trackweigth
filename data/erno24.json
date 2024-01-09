@@ -1,24 +1,12 @@
 {
   "Mitat": [
+   
     {
-      "today": "10.8.2023",
-      "paino": "90.2",
-      "vyotaro": "107",
-      "kommentti": "Loman jälkeinen herääminen.",
-      "id": 1
-    },
-    {
-      "today": "13.8.2023",
+      "today": "8.1.2024",
+      "paino": "92.9",
       "vyotaro": "102",
-      "kommentti": "Turvotus häipyy, katsotaan auttaako ruoka-aikojen muutokset.",
-      "id": 2
-    },
-    {
-      "today": "14.8.2023",
-      "paino": "87.3",
-      "vyotaro": "101",
-      "kommentti": "Ylipainoisena mennään, + 20 tunnin fasting ohi ja vettä kului, mutta painoakin lähti. Nyt metabolis kuntoon hiilareilla.",
-      "id": 3
+      "kommentti": "Erno 2:n aloituspäivä 8-1-2024\n\nLantio: 105\n",
+      "id": 4
     }
   ],
   "Reseptit": [
