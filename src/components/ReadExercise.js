@@ -13,7 +13,7 @@ const Readexercises = () => {
  
   exercises.map((training) => {
     let valid = false;
-    training.today.includes("2023") ? (valid = true) : (valid = false);
+    
 
     if (training.kommentti !== undefined || training.kommentti !== "") {
       let tekstikommentti = training.kommentti;
@@ -34,10 +34,10 @@ const deleteExercise = (e) => {
         <a href={bmi}>Harjoitus Mittari</a>
       </h1>
 
-      {exercises.map((training, index) => {
+      {exercises?.map((training, index) => {
         console.log(exercises)
-        var kommenttiLines = training.kommentti.split(".");
-        var harjoitusLines = training.harjoitus.split(".");
+        var kommenttiLines = training?.kommentti?.split(".");
+        var harjoitusLines = training?.harjoitus?.split(".");
 
         return (
           <>
@@ -48,16 +48,16 @@ const deleteExercise = (e) => {
                 <th>Kommentit</th>
               </thead>
               <tbody key={nanoid()}>
-                {training.today.includes("2023") && (
+                
                   <tr key={nanoid()}>
                     <td>{training.today}</td>
-                    {harjoitusLines.map((t) => (
+                    {harjoitusLines?.map((t) => (
                       <tr>
                         <td>{t}</td>
                       </tr>
                     ))}
 
-                    {kommenttiLines.map((l) => (
+                    {kommenttiLines?.map((l) => (
                       <td>{l}</td>
                     ))}
 
@@ -67,7 +67,7 @@ const deleteExercise = (e) => {
                       </button>
                     </td>
                   </tr>
-                )}
+                
               </tbody>
             </table>
           </>

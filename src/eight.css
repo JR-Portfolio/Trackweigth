@@ -14,6 +14,19 @@ h6 {
   margin-left: 30%;
 }
 
+.highLevel:{
+  background-color: red;
+}
+
+.midLevel:{
+  background-color: orange;
+}
+
+.lowLevel:{
+  background-color: green;
+}
+
+
 .selections {
   box-sizing: border-box;
   border-radius: 1rem;
@@ -149,9 +162,9 @@ h6 {
   border-radius: 10px;
   margin-top: 20px;
   padding: 2rem;
-  background-color: lightgray;
 }
 
+ 
 td,
 th {
   padding: 8px;
@@ -159,9 +172,6 @@ th {
   vertical-align: middle;
   padding: 2px;
   border-spacing: 10px;
-}
-tr:nth-child(even) {
-  background-color: #f2f2f2;
 }
 
 th {

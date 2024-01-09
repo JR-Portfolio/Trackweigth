@@ -9,10 +9,13 @@ const AddMeasures = () => {
   const [kommentti, setKommentti] = useState("");
   const navigate = useNavigate();
 
+  const data = {
+    paino, vyotaro, kommentti
+  }
 
   const onSubmit = (e) => {
     e.preventDefault(); 
-    postFetch("http://localhost:8000/Mitat", paino, vyotaro, kommentti)
+    postFetch("http://localhost:8000/Mitat", data)
   };
 
   return (

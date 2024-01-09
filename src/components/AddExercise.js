@@ -4,13 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { postFetch } from "../common/utils";
 
 const AddExercise = () => {
+  
   const [harjoitus, setHarjoitus] = useState();
   const [kommentti, setKommentti] = useState("");
 
   const navigate = useNavigate();
 
+  const data = {harjoitus, kommentti}
+
   const handleSubmit = () => {
-    postFetch("http://localhost:8000/Harjoitus", harjoitus, kommentti);
+    postFetch("http://localhost:8000/Harjoitus", data)
   };
 
   return (

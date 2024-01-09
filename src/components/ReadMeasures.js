@@ -56,6 +56,7 @@ const Reader = () => {
         <a href={bmi}>Mittari</a>
       </h1>
 
+    
       {data.map((item, index) => {
         const vyotaroMuutos = (item.vyotaro - data[0].vyotaro).toFixed(2);
         const painonMuutos = (item.paino - data[0].paino).toFixed(2);
@@ -63,57 +64,58 @@ const Reader = () => {
         var lines = item.kommentti?.split(".");
         let kommenttiLine = "";
 
+        const level = bmi > 28 ? 'highLevel' : 'orangeLevel'
+
         return (
           <>
-            <table className="taulu">
-              <thead>
-                <th>PVM</th>
-                <th>Paino</th>
-                <th>Vyötärö</th>
-                <th>V.muutos</th>
-                <th>P.muutos</th>
-                <th>BMI</th>
-                <th>Kommentti</th>                
+            <table key={nanoid()} className="taulu">
+              <thead key={nanoid()}>
+                <th key={nanoid()}>PVM</th>
+                <th key={nanoid()}>Paino</th>
+                <th key={nanoid()}>Vyötärö</th>
+                <th key={nanoid()}>V.muutos</th>
+                <th key={nanoid()}>P.muutos</th>
+                <th key={nanoid()}>BMI</th>
+                <th key={nanoid()}>Kommentti</th>                
               </thead>
               <tbody key={nanoid()}>
                 {data.map((item) =>  (
-                  <tr key={nanoid()}>
-                    <td>
+                  <tr className={level} key={nanoid()} >
+                    <td key={nanoid()}>
                       {item.today}
                     </td>
                     {!!item.paino && (
-                      <td>
+                      <td key={nanoid()}>
                         {item.paino} kg
                       </td>
                     )}
                     {!!item.vyotaro && (
-                      <td>
+                      <td key={nanoid()}>
                         {item.vyotaro}{" "}
                         cm
                       </td>
                     )}
                     {!isNaN(vyotaroMuutos) && (
-                      <td>                        
+                      <td key={nanoid()}>                        
                         {vyotaroMuutos}
                       </td>
                     )}
 
                     {!isNaN(painonMuutos) && (
-                      <td>                        
+                      <td key={nanoid()}>                        
                         {painonMuutos}
                       </td>
                     )}
 
                     {!isNaN(bmi) && (
-                      <td>
+                      <td key={nanoid()}>
                         {bmi}
                       </td>
                     )}
 
                     {lines?.map((l) => (
-                      <tr>
-                        <td>{l}</td>
-                      </tr>
+                        <td key={nanoid()}>{l}</td>
+
                     ))}
 
                     <td>
