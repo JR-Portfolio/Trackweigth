@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 import bmi from "../Images/Screenshot_20230814_081657_BodyFast.jpg";
+import { deleteItem } from "../common/utils";
 
 // import { Line } from './Line.ts';
 
@@ -37,14 +38,7 @@ const Reader = () => {
   //Delete path
   const handleChange = (e) => {
     //delete json item
-    fetch("http://localhost:8000/Mitat/" + e, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        window.location.reload();
-        return;
-      });
+    deleteItem("http://localhost:8000/Mitat/", e);
   };
 
   return (
@@ -56,7 +50,6 @@ const Reader = () => {
         <a href={bmi}>Mittari</a>
       </h1>
 
-    
       {data.map((item, index) => {
         const vyotaroMuutos = (item.vyotaro - data[0].vyotaro).toFixed(2);
         const painonMuutos = (item.paino - data[0].paino).toFixed(2);
@@ -64,7 +57,18 @@ const Reader = () => {
         var lines = item.kommentti?.split(".");
         let kommenttiLine = "";
 
-        const level = bmi > 28 ? 'highLevel' : 'orangeLevel'
+        //const level = bmi > 28 ? 'highLevel' : 'orangeLevel'
+        let level = "";
+        console.log("bmi: ", bmi);
+        if (bmi > 28) {
+          level = "highLevel";
+        } else if (bmi < 28 && bmi > 26) {
+          level = "midLevel";
+        } else if (bmi < 26) {
+          level = "lowLevel";
+        }
+
+        console.log("level: ", level);
 
         return (
           <>
@@ -76,54 +80,35 @@ const Reader = () => {
                 <th key={nanoid()}>V.muutos</th>
                 <th key={nanoid()}>P.muutos</th>
                 <th key={nanoid()}>BMI</th>
-                <th key={nanoid()}>Kommentti</th>                
+                <th key={nanoid()}>Kommentti</th>
               </thead>
               <tbody key={nanoid()}>
-                {data.map((item) =>  (
-                  <tr className={level} key={nanoid()} >
-                    <td key={nanoid()}>
-                      {item.today}
-                    </td>
-                    {!!item.paino && (
-                      <td key={nanoid()}>
-                        {item.paino} kg
-                      </td>
-                    )}
+                {data.map((item) => (
+                  <tr className={level} key={nanoid()}>
+                    <td key={nanoid()}>{item.today}</td>
+                    {!!item.paino && <td key={nanoid()}>{item.paino} kg</td>}
                     {!!item.vyotaro && (
-                      <td key={nanoid()}>
-                        {item.vyotaro}{" "}
-                        cm
-                      </td>
+                      <td key={nanoid()}>{item.vyotaro} cm</td>
                     )}
                     {!isNaN(vyotaroMuutos) && (
-                      <td key={nanoid()}>                        
-                        {vyotaroMuutos}
-                      </td>
+                      <td key={nanoid()}>{vyotaroMuutos}</td>
                     )}
 
                     {!isNaN(painonMuutos) && (
-                      <td key={nanoid()}>                        
-                        {painonMuutos}
-                      </td>
+                      <td key={nanoid()}>{painonMuutos}</td>
                     )}
 
-                    {!isNaN(bmi) && (
-                      <td key={nanoid()}>
-                        {bmi}
-                      </td>
-                    )}
+                    {!isNaN(bmi) && <td key={nanoid()}>{bmi}</td>}
 
                     {lines?.map((l) => (
-                        <td key={nanoid()}>{l}</td>
-
+                      <td key={nanoid()}>{l}</td>
                     ))}
 
                     <td>
                       <button onClick={(e) => handleChange(item.id)}>x</button>
                     </td>
                   </tr>
-                  ))
-                }
+                ))}
               </tbody>
             </table>
           </>

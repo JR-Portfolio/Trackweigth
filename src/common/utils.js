@@ -4,7 +4,7 @@ export function postFetch(url, data) {
   const fToday = today.replace(".","-")
 
   //const data = { today, paino, vyotaro, kommentti };
-
+  data.today = fToday;
   fetch(url, {
     method: "POST",
     headers: {
@@ -23,12 +23,14 @@ export function postFetch(url, data) {
 
 
 //WIP
-export function deleteExercise(e) {
-  fetch("http://localhost:8000/Harjoitus/" + e, {
+export function deleteItem(url, e) {
+  console.log(url, e)
+  fetch(url + e, {
     method: "DELETE",
   })
     .then((res) => res.json())
-    .then((exercises) => {
+    .then((data) => {
+      console.log("delete response: ", data)
       window.location.reload();
       return;
     });

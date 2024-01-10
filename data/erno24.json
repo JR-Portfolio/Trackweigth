@@ -8,7 +8,7 @@
       "id": 4
     }
   ],
-  "Reseptit": [
+  "Safka": [
     {
       "today": "4.9.2022",
       "category": "Aamiainen",
@@ -80,10 +80,45 @@
       "lostCalories": 0,
       "diff": 200,
       "id": 8
+    },
+    {
+      "today": "10.1.2024",
+      "category": "",
+      "receipt": "Pikapuuro mustikoilla ja ruisleipä leikkeillä, kahvia + vettä.",
+      "plusCalories": "350",
+      "lostCalories": 0,
+      "diff": 350,
+      "id": 9
+    },
+    {
+      "today": "10.1.2024",
+      "category": "Lounas",
+      "receipt": "Wokkia, salaatti ja vettä.",
+      "plusCalories": "500",
+      "lostCalories": 0,
+      "diff": 500,
+      "id": 10
+    },
+    {
+      "today": "10.1.2024",
+      "category": "Valipala",
+      "receipt": "Porkkana (iso) + leipä kinkulla ja paprikalla + kurkulla, Kahvia pari kuppia.",
+      "plusCalories": "200",
+      "lostCalories": 0,
+      "diff": 200,
+      "id": 11
+    },
+    {
+      "today": "10.1.2024",
+      "category": "Paivallinen",
+      "receipt": "Wingsejä + salaattia ja vettä.",
+      "plusCalories": "400",
+      "lostCalories": 0,
+      "diff": 400,
+      "id": 12
     }
   ],
-  "Harjoitus": [
-  ],
+  "Harjoitus": [],
   "Tavoitteet": [
     {
       "today": "13.8.2023",
@@ -98,6 +133,13 @@
       "week": "33",
       "addInfo": "Tavoitteena nähdä onko body fast toimiva ratkaisu minulle.",
       "id": 2
+    },
+    {
+      "today": "10.1.2024",
+      "objective": "Steppi parempaan.",
+      "week": "2",
+      "addInfo": "Liikuntaa 3 krt viikko, sokerit ja liika hiilari pois.",
+      "id": 3
     }
   ]
 }

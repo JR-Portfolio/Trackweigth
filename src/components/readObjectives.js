@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import '../eight.css'
 import { useNavigate } from "react-router-dom";
+import { deleteItem } from "../common/utils";
 
 // import { Line } from './Line.ts';
 
@@ -49,16 +50,7 @@ const ReadObjectives = () => {
 
   //Delete path
   const handleChange = (e) => {
-    console.log("record id", e);
-    //delete json item
-    fetch("http://localhost:8000/Tavoitteet/" + e, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((obj) => {
-        window.location.reload();
-        return console.log("Record ", e + " deleted");
-      });
+    deleteItem("http://localhost:8000/Tavoitteet", e)
   };
 
 

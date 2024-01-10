@@ -1,6 +1,10 @@
 //import { render } from '@testing-library/react';
 import "./App.css";
 import Main from "./components/Main";
+
+import AddSafka from "./components/AddSafka";
+import ReadSafka from "./components/ReadSafka";
+
 import AddMeasures from "./components/AddMeasures";
 import ReadMeasures from "./components/ReadMeasures";
 import AddExercise from "./components/AddExercise";
@@ -22,6 +26,15 @@ const App = () => {
       <HashRouter>
         <Routes>
           <Route path="/" element={<Main key={nanoid()} />} />
+
+
+          <Route path="/addSafka" element={<AddSafka key={nanoid()} />} />
+
+          <Route
+            path="/readSafka"
+            element={<ReadSafka key={nanoid()} />}
+          />
+
 
           <Route path="/addMeasures" element={<AddMeasures key={nanoid()} />} />
 

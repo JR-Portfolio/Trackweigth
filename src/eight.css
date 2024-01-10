@@ -14,15 +14,16 @@ h6 {
   margin-left: 30%;
 }
 
-.highLevel:{
-  background-color: red;
+.highLevel{
+  color: red;
+  font-weight: bold;
 }
 
-.midLevel:{
+.midLevel{
   background-color: orange;
 }
 
-.lowLevel:{
+.lowLevel{
   background-color: green;
 }
 
@@ -41,22 +42,22 @@ h6 {
   margin-top: 10%;
   gap: 2rem;
   padding: 4rem;
-  background-color: hsl(0, 28%, 95%);
+  background-color: lightsalmon;
   width: fit-content;
 }
 
 .main {
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 0px;
   padding: 6rem;
   width: 100%;
   max-width: 50rem;
-  background-color: hsl(0, 0%, 98%);
+  background-color: whitesmoke;
   color: #333;
 }
 
 .main-button {
-  margin-top: 30px;
+  margin-top: 0px;
   margin-left: 0%;
 }
 
@@ -88,6 +89,7 @@ h6 {
   width: fit-content;
 }
 
+
 .adder--form {
   box-sizing: border-box;
   border-radius: 1rem;
@@ -103,6 +105,8 @@ h6 {
   padding: 4rem;
   background-color: hsl(0, 28%, 95%);
 }
+
+
 
 .objectives {
   display: flex;
@@ -148,7 +152,7 @@ h6 {
     box-sizing: border-box;
     border-radius: 0.5rem;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 2rem;
     background-color: hsl(0, 28%, 95%);  
 }
@@ -162,6 +166,7 @@ h6 {
   border-radius: 10px;
   margin-top: 20px;
   padding: 2rem;
+  background-color: antiquewhite;
 }
 
  
@@ -181,7 +186,7 @@ th {
 
 button {
   width:fit-content;
-  margin-left:20px;
+  margin-left:0px;
   margin-top:20px;
   margin-right: -10%;
   padding: 10px;

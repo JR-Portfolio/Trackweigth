@@ -13,22 +13,23 @@ function Main(props) {
       navigate("/readMeasures");
     } else if (e.target.value === "addMess") {
       navigate("/addMeasures");
+    } else if (e.target.value === "addSafka") {
+      navigate("/addSafka");
+    } else if (e.target.value === "readSafka") {
+      navigate("/readSafka");
     } else if (e.target.value === "addObjectives") {
       navigate("/addObjectives");
     } else if (e.target.value === "readObjectives") {
       navigate("/readObjectives");
-    }
-    else if (e.target.value === "addExercise") {
+    } else if (e.target.value === "addExercise") {
       navigate("/addExercise");
     } else if (e.target.value === "readExercise") {
       navigate("/readExercise");
-    }
-    else if (e.target.value === "addWkFasting") {
+    } else if (e.target.value === "addWkFasting") {
       navigate("/addWkFasting");
     } else if (e.target.value === "readFasting") {
       navigate("/readFasting");
-    }
-    else if (e.target.value === "readJson") {
+    } else if (e.target.value === "readJson") {
       navigate("/readJson");
     }
   };
@@ -36,22 +37,24 @@ function Main(props) {
   return (
     <>
       <div className="selections">
-        <h1>Ultimaattinen Painonhallinta Systeemi</h1>
+        <h1>UPS</h1>
+        <bold>
+          Ultimaattinen<br></br>
+          Painonhallinta<br></br>
+          Systeemi
+        </bold>
 
         <ErrorBoundary>
           <select name="mitat" onChange={(event) => handler(event)}>
             <option value="def">Valitse</option>
+            <option value="addSafka">Lisää safka</option>
+            <option value="readSafka">Lue safka</option>
             <option value="addMess">Lisää mitat</option>
             <option value="readMess">Lue mitat</option>
             <option value="addExercise">Lisää harjoitus</option>
             <option value="readExercise">Lue harjoitukset</option>
             <option value="addObjectives">Aseta tavoite</option>
             <option value="readObjectives">Tavoitteet</option>
-            <option value="addWkFasting">Aseta paasto pläni</option>
-            <option value="readFasting">Paastomistaulu</option>
-            <option value="readJson">Näytä koko data</option>
-
-
           </select>
         </ErrorBoundary>
       </div>
