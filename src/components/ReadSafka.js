@@ -78,15 +78,15 @@ const ReadReceipts = () => {
 
   return (
     <div>
-      <h3>
-        Safkat / reseptit
-        <p />
+      
+      <h3 className = "main--info">
+        Safkat / reseptit      
       </h3>
-      <h4>
+      <h4 className = "main--info">
         Päivän kaloreiden summa {sum}, kulutettujen kaloreiden summa{" "}
-        {minSum}, {sum - minSum}
+        {minSum}, {sum - minSum}. Jos alle 1500 plussalla päivän lopuksi niin aika yes.
       </h4>
-      <h5>Jos alle 1500 plussalla päivän lopuksi niin aika yes.</h5>
+      
       <div className="main">
         <button className="main-button" onClick={() => navigate("/")}>
           Pääsivu

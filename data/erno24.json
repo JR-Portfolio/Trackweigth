@@ -116,6 +116,15 @@
       "lostCalories": 0,
       "diff": 400,
       "id": 12
+    },
+    {
+      "today": "11-1.2024",
+      "category": "",
+      "receipt": "Klo 6:00: Kahvi + ruisleivän puolisko kurkulla ja \nkinkulla. Duunissa kahvi kello 7:30 ja pikapuuro jossain 9:n maissa.",
+      "plusCalories": "400",
+      "lostCalories": 0,
+      "diff": 400,
+      "id": 13
     }
   ],
   "Harjoitus": [],
