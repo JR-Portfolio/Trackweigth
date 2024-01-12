@@ -161,6 +161,51 @@
       "lostCalories": "300",
       "diff": 100,
       "id": 17
+    },
+    {
+      "today": "12.1.2024",
+      "category": "",
+      "receipt": "Pikapuuro mustikoilla, leipä leikkeileillä + kahvia useampi kuppi.",
+      "plusCalories": "300",
+      "lostCalories": 0,
+      "diff": 300,
+      "id": 18
+    },
+    {
+      "today": "12.1.2024",
+      "category": "Lounas",
+      "receipt": "Broileri + salaatti &  vesi ja kahvi.",
+      "plusCalories": "400",
+      "lostCalories": 0,
+      "diff": 400,
+      "id": 19
+    },
+    {
+      "today": "12.1.2024",
+      "category": "Paivallinen",
+      "receipt": "Broileri + salaatti..",
+      "plusCalories": "400",
+      "lostCalories": 0,
+      "diff": 400,
+      "id": 20
+    },
+    {
+      "today": "12.1.2024",
+      "category": "Valipala",
+      "receipt": "2 porkkana + leipä leikkeleillä.",
+      "plusCalories": "200",
+      "lostCalories": 0,
+      "diff": 200,
+      "id": 21
+    },
+    {
+      "today": "12.1.2024",
+      "category": "",
+      "receipt": "Tee + vaasan ruispalojen pari puoliskoa. Hk-sininen leikkeleenä..",
+      "plusCalories": "400",
+      "lostCalories": 0,
+      "diff": 400,
+      "id": 22
     }
   ],
   "Harjoitus": [

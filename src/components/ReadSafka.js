@@ -44,7 +44,7 @@ const ReadReceipts = () => {
 
   const plusResult = rData.map((r) => {
     const curdate = new Date().toLocaleDateString("fi-FI");
-    console.log("today:", r.today + ", curdate:", curdate)
+    console.log("today:", r.today + ", curdate:", curdate);
     if (curdate === r.today) {
       sum += parseInt(r.plusCalories);
     }
@@ -53,9 +53,9 @@ const ReadReceipts = () => {
 
   const minusResult = rData.map((r) => {
     const curdate = new Date().toLocaleDateString("fi-FI");
-    console.log("today:", r.today + ", curdate:", curdate)
+    console.log("today:", r.today + ", curdate:", curdate);
     if (curdate === r.today) {
-    minSum += parseInt(r.lostCalories);
+      minSum += parseInt(r.lostCalories);
     }
     return minSum;
   });
@@ -76,23 +76,21 @@ const ReadReceipts = () => {
       });
   };
 
+
+
+  const latestReportDay = rData[rData.length-1]?.today
   return (
-    <div>
-      
-      <h3 className = "main--info">
-        Safkat / reseptit      
-      </h3>
-      <h4 className = "main--info">
-        Päivän kaloreiden summa {sum}, kulutettujen kaloreiden summa{" "}
-        {minSum}, {sum - minSum}. Jos alle 1500 plussalla päivän lopuksi niin aika yes.
-      </h4>
-      
-      <div className="main">
+    <div className="main">
+      <div className ="safka--text">
+        {latestReportDay} päivän kalorit {sum}, kulutettuja raportoitu {minSum},{" "}
+        {sum - minSum}. Säästö {2500 - (sum + minSum)} oletuksella, että päivän normi
+        kalorit olisivat 2500.
+        </div>
+        <br></br>
         <button className="main-button" onClick={() => navigate("/")}>
           Pääsivu
         </button>
         <h1 className="main-otsikko">Mittari</h1>
-
         <table className="taulu" key={nanoid()}>
           <thead key={nanoid()}>
             <th key={nanoid()}>PVM</th>
@@ -123,8 +121,7 @@ const ReadReceipts = () => {
             </tbody>
           ))}
         </table>
-      </div>
-    </div>
+      </div>    
   );
 };
 
