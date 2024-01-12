@@ -125,9 +125,58 @@
       "lostCalories": 0,
       "diff": 400,
       "id": 13
+    },
+    {
+      "today": "11-1.2024",
+      "category": "Lounas",
+      "receipt": "Salaatti + wingsit. Vettä ja kahvia juomaksi.",
+      "plusCalories": "400",
+      "lostCalories": 0,
+      "diff": 400,
+      "id": 14
+    },
+    {
+      "today": "11-1.2024",
+      "category": "Paivallinen",
+      "receipt": "Grilliboileria + salaattia. Vettä ja kahvia juomaksi.",
+      "plusCalories": "400",
+      "lostCalories": 0,
+      "diff": 400,
+      "id": 15
+    },
+    {
+      "today": "11-1.2024",
+      "category": "Valipala",
+      "receipt": "Ruissipsejä leikkeleillä.",
+      "plusCalories": "150",
+      "lostCalories": 0,
+      "diff": 150,
+      "id": 16
+    },
+    {
+      "today": "11-1.2024",
+      "category": "",
+      "receipt": "Paivallinen\tGrilliboileria + salaattia. Vettä ja kahvia juomaksi.",
+      "plusCalories": "400",
+      "lostCalories": "300",
+      "diff": 100,
+      "id": 17
     }
   ],
-  "Harjoitus": [],
+  "Harjoitus": [
+    {
+      "harjoitus": "Työpaikan kuntosali treeni. ",
+      "kommentti": "Selkää, hauista, vähän juoksua, vatsaa jne.",
+      "today": "11.1.2024",
+      "id": 1
+    },
+    {
+      "harjoitus": "Työpaikankuntosali treeni.",
+      "kommentti": "",
+      "today": "8.1.2024",
+      "id": 2
+    }
+  ],
   "Tavoitteet": [
     {
       "today": "13.8.2023",

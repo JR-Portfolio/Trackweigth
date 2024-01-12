@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 import bmi from "../Images/Screenshot_20230814_081657_BodyFast.jpg";
 import { useGetExercices, deleteExercise } from "../hooks/useData";
-import { deleteItem } from "../common/utils.js"
+import { deleteItem } from "../common/utils.js";
 
 const Readexercises = () => {
   const [error, setError] = useState(null);
@@ -22,8 +22,10 @@ const Readexercises = () => {
   });
 
   const deleteExercise = (ind) => {
-    deleteItem("http://localhost:8000/Harjoitus/", ind)    
+    deleteItem("http://localhost:8000/Harjoitus/", ind);
   };
+
+  console.log(exercises);
 
   return (
     <div className="main">
@@ -33,42 +35,34 @@ const Readexercises = () => {
       <h1 className="main-otsikko">
         <a href={bmi}>Harjoitus Mittari</a>
       </h1>
+      <>
+        <table className="taulu">
+          <thead>
+            <th>PVM</th>
+            <th>Harjoitus</th>
+            <th>Kommentit</th>
+          </thead>
 
-      {exercises?.map((training, index) => {
-        console.log(exercises);
-        var kommenttiLines = training?.kommentti?.split(".");
-        var harjoitusLines = training?.harjoitus?.split(".");
+          {exercises?.map((training, index) => (
+            //var harjoitusLines = training?.harjoitus?.split(".");
 
-        return (
-          <>
-            <table className="taulu">
-              <thead>
-                <th>PVM</th>
-                <th>Harjoitus</th>
-                <th>Kommentit</th>
-              </thead>
-              <tbody key={nanoid()}>
-                <tr key={nanoid()}>
-                  <td>{training.today}</td>
-                  {harjoitusLines?.map((t) => (
-                    <td>{t}</td>
-                  ))}
+            <tbody key={nanoid()}>
+              <tr key={nanoid()}>
+                <td key={nanoid()}>{training.today}</td>
+                <td key={nanoid()}>{training.harjoitus}</td>
 
-                  {kommenttiLines?.map((l) => (
-                    <td>{l}</td>
-                  ))}
+                <td key={nanoid()}>{training.kommentti}</td>
 
-                  <td>
-                    <button onClick={(e) => deleteExercise(training.id)}>
-                      x
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </>
-        );
-      })}
+                <td>
+                  <button onClick={(e) => deleteExercise(training.id)}>
+                    x
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          ))}
+        </table>
+      </>
     </div>
   );
 };

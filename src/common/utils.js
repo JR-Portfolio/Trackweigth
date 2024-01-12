@@ -1,10 +1,9 @@
 export function postFetch(url, data) {
   
   const today = new Date().toLocaleDateString("fi-FI");
-  const fToday = today.replace(".","-")
-
+  
   //const data = { today, paino, vyotaro, kommentti };
-  data.today = fToday;
+  data.today = today;
   fetch(url, {
     method: "POST",
     headers: {
