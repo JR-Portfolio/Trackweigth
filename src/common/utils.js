@@ -4,8 +4,10 @@ export function postFetch(url, data) {
   
   //const data = { today, paino, vyotaro, kommentti };
   data.today = today;
+  console.log("url: ", url)
   fetch(url, {
     method: "POST",
+    //mode: 'no_cors',
     headers: {
       "Content-Type": "application/json",
     },
@@ -18,7 +20,6 @@ export function postFetch(url, data) {
       console.log("Error: ", err);
     });
 }
-
 
 
 //WIP

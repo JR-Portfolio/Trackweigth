@@ -2,6 +2,7 @@ import "../eight.css";
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import { useNavigate } from "react-router-dom";
+import { updateRecord } from "../common/utils";
 
 // import { Line } from './Line.ts';
 
@@ -63,6 +64,8 @@ const ReadReceipts = () => {
   if (error) {
   }
 
+  let savings = 2500 - (sum + minSum);
+
   //Delete path
   const handleChange = (e) => {
     //delete json item
@@ -76,52 +79,62 @@ const ReadReceipts = () => {
       });
   };
 
+  let summa = 0;
+  rData.forEach((s) => {
+    console.log(s.diff);
+    summa += parseInt(s.diff);
+  });
 
-
-  const latestReportDay = rData[rData.length-1]?.today
+  const latestReportDay = rData[rData.length - 1]?.today;
   return (
     <div className="main">
-      <div className ="safka--text">
-        {latestReportDay} päivän kalorit {sum}, kulutettuja raportoitu {minSum},{" "}
-        {sum - minSum}. Säästö {2500 - (sum + minSum)} oletuksella, että päivän normi
-        kalorit olisivat 2500.
-        </div>
-        <br></br>
-        <button className="main-button" onClick={() => navigate("/")}>
-          Pääsivu
-        </button>
-        <h1 className="main-otsikko">Mittari</h1>
-        <table className="taulu" key={nanoid()}>
-          <thead key={nanoid()}>
+      <div className="safka--text">
+        <ul>
+          <li>
+            {latestReportDay} päivän kalorit {sum}, kulutettuja raportoitu{" "}
+            {minSum}, {sum - minSum}.{" "}
+          </li>
+          <li>Päivän säästö (lukuhekellä) {savings}, oletus 2500 / pv.</li>
+          <li>Säästöt yhteensä {summa}</li>
+        </ul>
+      </div>
+      <br></br>
+      <button className="main-button" onClick={() => navigate("/")}>
+        Pääsivu
+      </button>
+      <h1 className="main-otsikko">Mittari</h1>
+      <table className="taulu" key={nanoid()}>
+        <thead>
+          <tr key = {nanoid()}>
             <th key={nanoid()}>PVM</th>
             <th key={nanoid()}>Luokitus</th>
             <th key={nanoid()}>Safka</th>
             <th key={nanoid()}>+ Kalorit</th>
             <th key={nanoid()}>- Kalorit</th>
-            <th key={nanoid()}>Erotus</th>
-          </thead>
-
-          {rData.map((safka) => (
-            <tbody>
-              {safka.today.includes("2024") && (
-                <tr>
-                  <>
-                    <td>{safka.today}</td>
-                    <td>{safka.category}</td>
-                    <td>{safka.receipt}</td>
-                    <td>{safka.plusCalories}</td>
-                    <td>{safka.lostCalories}</td>
-                    <td>{safka.diff}</td>
-                    <td>
-                      <button onClick={(e) => handleChange(safka.id)}>x</button>
-                    </td>
-                  </>
-                </tr>
-              )}
-            </tbody>
-          ))}
-        </table>
-      </div>    
+            <th key={nanoid()}>Säästö</th>
+          </tr>
+        </thead>
+        {rData.map((safka) => (
+          <tbody key = {nanoid()}>
+            {safka.today.includes("2024") && (
+              <tr>
+                <>
+                  <td>{safka.today}</td>
+                  <td>{safka.category}</td>
+                  <td>{safka.receipt}</td>
+                  <td>{safka.plusCalories}</td>
+                  <td>{safka.lostCalories}</td>
+                  <td>{safka.diff}</td>
+                  <td>
+                    <button onClick={(e) => handleChange(safka.id)}>x</button>
+                  </td>
+                </>
+              </tr>
+            )}
+          </tbody>
+        ))}
+      </table>
+    </div>
   );
 };
 

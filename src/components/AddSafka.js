@@ -21,7 +21,7 @@ const Food = () => {
     const diff = plusCalories - lostCalories;
 
     const data = { today, category, receipt, plusCalories, lostCalories, diff };
-
+    console.log("Adding food data: ", data)
     postFetch("http://localhost:8000/Safka", data);
   };
 

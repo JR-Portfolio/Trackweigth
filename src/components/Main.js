@@ -38,11 +38,11 @@ function Main(props) {
     <>
       <div className="selections">
         <h1>UPS</h1>
-        <bold>
+        <strong>
           Ultimaattinen<br></br>
           Painonhallinta<br></br>
           Systeemi
-        </bold>
+        </strong>
 
         <ErrorBoundary>
           <select name="mitat" onChange={(event) => handler(event)}>
