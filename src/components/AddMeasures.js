@@ -35,7 +35,7 @@ const AddMeasures = () => {
           <input
             type="number"
             name="paino"
-            onChange={(e) => setPaino(e.target.value)}
+            onChange={(e) => setPaino(parseFloat(e.target.value))}
             placeholder="paino"
             value={paino}
           />
@@ -43,7 +43,7 @@ const AddMeasures = () => {
           <input
             type="number"
             name="vyotaro"
-            onChange={(e) => setVyotaro(e.target.value)}
+            onChange={(e) => setVyotaro(parseFloat(e.target.value))}
             placeholder="vyotaro"
             value={vyotaro}
           />
@@ -51,7 +51,7 @@ const AddMeasures = () => {
           <input
             type="number"
             name="lantio"
-            onChange={(e) => setLantio(e.target.value)}
+            onChange={(e) => setLantio(parseFloat(e.target.value))}
             placeholder="lantio"
             value={lantio}
           />
@@ -59,7 +59,7 @@ const AddMeasures = () => {
           <input
             type="number"
             name="rinta"
-            onChange={(e) => setRinta(e.target.value)}
+            onChange={(e) => setRinta(parseFloat(e.target.value))}
             placeholder="rinta"
             value={rinta}
           />

@@ -39,22 +39,27 @@ const Reader = () => {
 
   let painonMuutos = 0;
   let vyotaroMuutos = 0;
+  let rinnanMuutos = 0;
+  let lantionMuutos = 0;
   let bmi = 0;
   let lines = [];
   let level = "";
 
   const nData = data.slice(1);
-  nData.map((item, index) => {
+  nData.map((item) => {
     vyotaroMuutos = (
       parseFloat(item.vyotaro) - parseFloat(data[0].vyotaro)
     ).toFixed(2);
     painonMuutos = (item.paino - data[0].paino).toFixed(2);
+    
+    lantionMuutos = (item.lantio - data[0].lantio).toFixed(2);
+    rinnanMuutos = (item.rinta - data[0].rinta).toFixed(2);
+
     bmi = item.paino / (1.75 * 1.75).toFixed(2);
     lines = item.kommentti?.split(".");
 
-    console.log("p.muuto: ", painonMuutos + ", v.muutos: ", vyotaroMuutos);
+    console.log("p.muuto: ", painonMuutos + ", v.muutos: ", vyotaroMuutos, ", lantionMuutos: ", lantionMuutos, ", rinnanMuutos: ", rinnanMuutos);
 
-    //const level = bmi > 28 ? 'highLevel' : 'orangeLevel'
     console.log("bmi: ", bmi);
     if (bmi > 28) {
       level = "highLevel";
@@ -66,8 +71,6 @@ const Reader = () => {
 
     console.log("level: ", level);
   });
-
-  
 
   console.log("zeroData: ", data);
   console.log("nData: ", nData);
@@ -86,8 +89,10 @@ const Reader = () => {
             <th key={nanoid()}>PVM</th>
             <th key={nanoid()}>Paino</th>
             <th key={nanoid()}>Vyötärö</th>
-            <th key={nanoid()}>V.muutos</th>
-            <th key={nanoid()}>P.muutos</th>
+            <th key={nanoid()}>Vyötärön muutos</th>
+            <th key={nanoid()}>Painon muutos</th>
+            <th key={nanoid()}>Lantion muutos</th>
+            <th key={nanoid()}>Rinnan muutos</th>
             <th key={nanoid()}>BMI</th>
             <th key={nanoid()}>Kommentti</th>
           </thead>
@@ -95,9 +100,7 @@ const Reader = () => {
           <tbody key={nanoid()}>
             <tr className={level} key={nanoid()}>
               <td key={nanoid()}>{data[0]?.today}</td>
-              {!!data[0]?.paino && (
-                <td key={nanoid()}>{data[0]?.paino} kg</td>
-              )}
+              {!!data[0]?.paino && <td key={nanoid()}>{data[0]?.paino} kg</td>}
               {!!data[0]?.vyotaro && (
                 <td key={nanoid()}>{data[0]?.vyotaro} cm</td>
               )}
@@ -105,9 +108,7 @@ const Reader = () => {
               <td></td>
               <td></td>
 
-              
-                <td key={nanoid()}>{data[0]?.kommentti}</td>
-            
+              <td key={nanoid()}>{data[0]?.kommentti}</td>
             </tr>
 
             {nData.map((item2) => (
@@ -123,6 +124,10 @@ const Reader = () => {
                 )}
 
                 {!isNaN(painonMuutos) && <td key={nanoid()}>{painonMuutos}</td>}
+                {!isNaN(lantionMuutos) && (
+                  <td key={nanoid()}>{lantionMuutos}</td>
+                )}
+                {!isNaN(rinnanMuutos) && <td key={nanoid()}>{rinnanMuutos}</td>}
 
                 {!isNaN(bmi) && <td key={nanoid()}>{bmi}</td>}
 

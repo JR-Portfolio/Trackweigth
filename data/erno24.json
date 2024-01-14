@@ -2,18 +2,18 @@
   "Mitat": [
     {
       "today": "8.1.2024",
-      "paino": "92.9",
-      "vyotaro": "106",
-      "lantio": "105",
-      "rinta" :"-",
+      "paino": 92.9,
+      "vyotaro": 106,
+      "lantio": 105,
+      "rinta": 0,
       "kommentti": "Erno 2:n aloituspäivä, lantio: 105\n",
       "id": 4
     },
     {
-      "paino": "89.8",
-      "vyotaro": "101",
-      "lantio": "102",
-      "rinta" :"-",
+      "paino": 89.8,
+      "vyotaro": 101,
+      "lantio": 102,
+      "rinta": 0,
       "kommentti": "lantio 102",
       "today": "14.1.2024",
       "id": 5
