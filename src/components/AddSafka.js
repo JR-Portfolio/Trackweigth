@@ -21,8 +21,9 @@ const Food = () => {
     const diff = plusCalories - lostCalories;
 
     const data = { today, category, receipt, plusCalories, lostCalories, diff };
-    console.log("Adding food data: ", data)
+    console.log("Adding food data: ", data);
     postFetch("http://localhost:8000/Safka", data);
+    
   };
 
   return (
@@ -34,19 +35,18 @@ const Food = () => {
       <h1 className="main-otsikko">Aterian syöttö</h1>
 
       <form className="adder--form">
-      
-          <select
-            name="tapahtuma"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="Aamiainen">Aamiainen</option>
-            <option value="Lounas">Lounas</option>
-            <option value="Valipala">Välipala</option>
-            <option value="Paivallinen">Päivällinen</option>
-            <option value="Iltapala">Iltapala</option>
-          </select>
-        
+        <select
+          name="tapahtuma"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="Aamiainen">Aamiainen</option>
+          <option value="Lounas">Lounas</option>
+          <option value="Valipala">Välipala</option>
+          <option value="Paivallinen">Päivällinen</option>
+          <option value="Iltapala">Iltapala</option>
+        </select>
+
         <textarea
           name="resepti"
           placeholder="Safka"

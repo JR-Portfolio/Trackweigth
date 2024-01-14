@@ -3,9 +3,20 @@
     {
       "today": "8.1.2024",
       "paino": "92.9",
-      "vyotaro": "102",
-      "kommentti": "Erno 2:n aloituspäivä 8-1-2024\n\nLantio: 105\n",
+      "vyotaro": "106",
+      "lantio": "105",
+      "rinta" :"-",
+      "kommentti": "Erno 2:n aloituspäivä, lantio: 105\n",
       "id": 4
+    },
+    {
+      "paino": "89.8",
+      "vyotaro": "101",
+      "lantio": "102",
+      "rinta" :"-",
+      "kommentti": "lantio 102",
+      "today": "14.1.2024",
+      "id": 5
     }
   ],
   "Safka": [
@@ -147,8 +158,61 @@
       "lostCalories": 0,
       "diff": 250,
       "id": 23
+    },
+    {
+      "today": "13.1.2024",
+      "category": "Lounas",
+      "receipt": "Subway hitaasti kypsytetty kanasalaatti(tupla kanalla). Juomaksi pari light kokista.",
+      "plusCalories": "300",
+      "lostCalories": 0,
+      "diff": 300,
+      "id": 24
+    },
+    {
+      "today": "13.1.2024",
+      "category": "Lounas",
+      "receipt": "Subway hitaasti kypsytetty kanasalaatti(tupla kanalla). Juomaksi pari light kokista.",
+      "plusCalories": "300",
+      "lostCalories": "300",
+      "diff": 0,
+      "id": 25
+    },
+    {
+      "today": "14.1.2024",
+      "category": "Lounas",
+      "receipt": "Maltillisesti pastaa, broilerin koipi + salaattia.",
+      "plusCalories": "350",
+      "lostCalories": 0,
+      "diff": 350,
+      "id": 26
+    },
+    {
+      "today": "14.1.2024",
+      "category": "",
+      "receipt": "Kahvia + ruisleipä leikkeleillä. ",
+      "plusCalories": "200",
+      "lostCalories": 0,
+      "diff": 200,
+      "id": 27
+    },
+    {
+      "today": "14.1.2024",
+      "category": "Valipala",
+      "receipt": "Kulhollinen porkkanoita (2), viinirypäleitä, jalopenoja.",
+      "plusCalories": "100",
+      "lostCalories": 0,
+      "diff": 100,
+      "id": 28
+    },
+    {
+      "today": "14.1.2024",
+      "category": "Valipala",
+      "receipt": "Kaakao + pari kahvi, hapankorppu ilman mitään.",
+      "plusCalories": "200",
+      "lostCalories": "575",
+      "diff": -375,
+      "id": 29
     }
-
   ],
   "Harjoitus": [
     {
@@ -162,6 +226,12 @@
       "kommentti": "",
       "today": "8.1.2024",
       "id": 2
+    },
+    {
+      "harjoitus": "Uimahallin kuntosali treeni.",
+      "kommentti": "+10 min juoksua, 5.5 leukaa, vatsaa ja  jalkaprässiä.",
+      "today": "13.1.2024",
+      "id": 3
     }
   ],
   "Tavoitteet": [

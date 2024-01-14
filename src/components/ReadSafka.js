@@ -67,9 +67,9 @@ const ReadReceipts = () => {
   let savings = 2500 - (sum + minSum);
 
   //Delete path
-  const handleChange = (e) => {
+  const deleteRecord = (e) => {
     //delete json item
-    fetch("http://localhost:8000/Reseptit/" + e, {
+    fetch("http://localhost:8000/Safka/" + e, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -91,10 +91,9 @@ const ReadReceipts = () => {
       <div className="safka--text">
         <ul>
           <li>
-            {latestReportDay} päivän kalorit {sum}, kulutettuja raportoitu{" "}
-            {minSum}, {sum - minSum}.{" "}
+            {latestReportDay} päivän kalorit {sum}, kulutettuja raportoitu {minSum}, erotus {sum - minSum}.
           </li>
-          <li>Päivän säästö (lukuhekellä) {savings}, oletus 2500 / pv.</li>
+          <li>Päivän säästö (lukuhekellä) {savings}, oletuskulutus 2500 / pv.</li>
           <li>Säästöt yhteensä {summa}</li>
         </ul>
       </div>
@@ -126,7 +125,7 @@ const ReadReceipts = () => {
                   <td>{safka.lostCalories}</td>
                   <td>{safka.diff}</td>
                   <td>
-                    <button onClick={(e) => handleChange(safka.id)}>x</button>
+                    <button onClick={(e) => deleteRecord(safka.id)}>x</button>
                   </td>
                 </>
               </tr>

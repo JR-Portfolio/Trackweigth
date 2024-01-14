@@ -1,10 +1,12 @@
+//import { Navigate, useNavigate } from "react-router-dom";
+
 export function postFetch(url, data) {
-  
+  //const navigate = useNavigate();
   const today = new Date().toLocaleDateString("fi-FI");
-  
+
   //const data = { today, paino, vyotaro, kommentti };
   data.today = today;
-  console.log("url: ", url)
+  console.log("url: ", url);
   fetch(url, {
     method: "POST",
     //mode: 'no_cors',
@@ -14,25 +16,23 @@ export function postFetch(url, data) {
     body: JSON.stringify(data),
   })
     .then(() => {
-      window.location.href = "http://localhost:3000";
+      window.open("http://localhost:3000/#/readSafka", 'self')
     })
     .catch((err) => {
       console.log("Error: ", err);
     });
 }
 
-
 //WIP
 export function deleteItem(url, e) {
-  console.log(url, e)
+  console.log(url, e);
   fetch(url + e, {
     method: "DELETE",
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log("delete response: ", data)
+      console.log("delete response: ", data);
       window.location.reload();
       return;
     });
 }
-
