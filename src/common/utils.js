@@ -16,7 +16,7 @@ export function postFetch(url, data) {
     body: JSON.stringify(data),
   })
     .then(() => {
-      window.open("http://localhost:3000", 'self')
+      window.open("http://localhost:3000","_self")
     })
     .catch((err) => {
       console.log("Error: ", err);

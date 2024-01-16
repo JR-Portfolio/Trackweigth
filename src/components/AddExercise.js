@@ -7,10 +7,11 @@ const AddExercise = () => {
   
   const [harjoitus, setHarjoitus] = useState();
   const [kommentti, setKommentti] = useState("");
+  const [lostCalories, setLostCalories] = useState(0);
 
   const navigate = useNavigate();
 
-  const data = {harjoitus, kommentti}
+  const data = {harjoitus, lostCalories, kommentti}
 
   const handleSubmit = () => {
     postFetch("http://localhost:8000/Harjoitus", data)
@@ -28,6 +29,14 @@ const AddExercise = () => {
             placeholder="Harjoitus"
             onChange={(e) => setHarjoitus(e.target.value)}
           />
+                  <input
+          type="number"
+          name="meno"
+          placeholder="Liikunta calorit"
+          value={lostCalories}
+          onChange={(e) => setLostCalories(e.target.value)}
+        />
+
           <textarea
             placeholder="Kommentti"
             onChange={(e) => setKommentti(e.target.value)}

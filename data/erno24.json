@@ -212,6 +212,104 @@
       "lostCalories": "575",
       "diff": -375,
       "id": 29
+    },
+    {
+      "today": "14.1.2024",
+      "category": "Paivallinen",
+      "receipt": "Perunamuusia, neljä jauhelihapihviä (ei jättejä), salaattia runsaasti ja vettä.",
+      "plusCalories": "500",
+      "lostCalories": 0,
+      "diff": 500,
+      "id": 30
+    },
+    {
+      "today": "14.1.2024",
+      "category": "Valipala",
+      "receipt": "Hapankorppuja (4 kpl koko päivänä) + teetä",
+      "plusCalories": "200",
+      "lostCalories": 0,
+      "diff": 200,
+      "id": 31
+    },
+    {
+      "today": "15.1.2024",
+      "category": "",
+      "receipt": "5:45, Vaasan ruispalapuolisko leikkeleillä + kahvia.",
+      "plusCalories": "100",
+      "lostCalories": 0,
+      "diff": 100,
+      "id": 32
+    },
+    {
+      "today": "15.1.2024",
+      "category": "",
+      "receipt": "Pikapuuro klo 09:45",
+      "plusCalories": "130",
+      "lostCalories": 0,
+      "diff": 130,
+      "id": 33
+    },
+    {
+      "today": "15.1.2024",
+      "category": "",
+      "receipt": "Iso salaatti kahdella pikku jauhelihapihvillä.\n",
+      "plusCalories": "500",
+      "lostCalories": "400",
+      "diff": 100,
+      "id": 34
+    },
+    {
+      "today": "15.1.2024",
+      "category": "Paivallinen",
+      "receipt": "Kanatorttila * 2 salaatilla ja vedellä.",
+      "plusCalories": "550",
+      "lostCalories": 0,
+      "diff": 550,
+      "id": 35
+    },
+    {
+      "today": "15.1.2024",
+      "category": "Paivallinen",
+      "receipt": "Hapankorppuja ja teetä",
+      "plusCalories": "100",
+      "lostCalories": 0,
+      "diff": 100,
+      "id": 36
+    },
+    {
+      "today": "16.1.2024",
+      "category": "",
+      "receipt": "Kahvia + 2 x hapankorppu paprikalla ja kurkuviipaleita.",
+      "plusCalories": "100",
+      "id": 37
+    },
+    {
+      "today": "16.1.2024",
+      "category": "",
+      "receipt": "Pikapuuro mustikoilla.",
+      "plusCalories": "150",
+      "id": 38
+    },
+    {
+      "today": "16.1.2024",
+      "category": "Lounas",
+      "receipt": "Kinkkupastaa + salaattia.",
+      "plusCalories": "400",
+      "id": 39
+    },
+    {
+      "today": "16.1.2024",
+      "category": "Välipala",
+      "receipt": "Hapankorppuja 2 x + pikku omena.",
+      "plusCalories": "180",
+      "id": 40
+    },
+    {
+      "today": "16.1.2024",
+      "category": "Päivällinen",
+      "receipt": "Makkarasoppa, vaasan ruisleipä puolisko ja vettä.",
+      "plusCalories": "300",
+      "id": 41
     }
   ],
   "Harjoitus": [
@@ -232,6 +330,12 @@
       "kommentti": "+10 min juoksua, 5.5 leukaa, vatsaa ja  jalkaprässiä.",
       "today": "13.1.2024",
       "id": 3
+    },
+    {
+      "harjoitus": "Duunipaikan kuntosalitreeni",
+      "kommentti": "Juoksumattoa 10 min, farmarikävelyä, leukoja, penkkiä, hauiuksia ja ojentajia.",
+      "today": "15.1.2024",
+      "id": 4
     }
   ],
   "Tavoitteet": [
