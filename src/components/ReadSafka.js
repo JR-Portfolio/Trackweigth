@@ -10,6 +10,7 @@ const ReadReceipts = () => {
   const [rData, setReceipt] = useState([]);
   const [isPending, setPending] = useState(true);
   const [error, setError] = useState(null);
+  const [exercise, setExercise] = useState([]);
   const [sumPlusCalories, setPlusCalories] = useState(0);
   const [sumMinusCalories, setMinusCalories] = useState(0);
 
@@ -43,6 +44,32 @@ const ReadReceipts = () => {
     }, 1000);
   }, []);
 
+
+  useEffect(() => {
+    setTimeout(() => {
+      fetch("http://localhost:8000/Harjoitus")
+        .then((res) => {
+          if (!res.ok) {
+            throw Error(
+              "Could not fetch the data for that resource, check json server startup"
+            );
+          }
+          return res.json();
+        })
+        .then((rData) => {
+          setExercise(rData);          
+        })
+        .catch((err) => {
+          setError(err.message);
+          setPending(false);
+        });
+    }, 1000);
+  }, []);
+
+
+console.log("Harjoitus data: ", exercise)
+
+
   const plusResult = rData.map((r) => {
     const curdate = new Date().toLocaleDateString("fi-FI");
     console.log("today:", r.today + ", curdate:", curdate);
@@ -52,11 +79,11 @@ const ReadReceipts = () => {
     return sum;
   });
 
-  const minusResult = rData.map((r) => {
+  const minusResult = exercise.map((e) => {
     const curdate = new Date().toLocaleDateString("fi-FI");
-    console.log("today:", r.today + ", curdate:", curdate);
-    if (curdate === r.today) {
-      minSum += parseInt(r.lostCalories);
+    console.log("today:", e.today + ", curdate:", curdate);
+    if (curdate === e.today) {
+      minSum += parseInt(e.lostCalories);
     }
     return minSum;
   });

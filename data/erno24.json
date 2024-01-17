@@ -310,6 +310,27 @@
       "receipt": "Makkarasoppa, vaasan ruisleipä puolisko ja vettä.",
       "plusCalories": "300",
       "id": 41
+    },
+    {
+      "today": "16.1.2024",
+      "category": "Iltapala",
+      "receipt": "Makkara salaatilla ennen saunaa, saunan jälkeen sämpylä johon keitetty kananmuna ja pari kinkkuleikettä + vesi.",
+      "plusCalories": "500",
+      "id": 42
+    },
+    {
+      "today": "17.1.2024",
+      "category": "Aamiainen",
+      "receipt": "Kotisämpylä jossa rehuja, kananmunan puolikas ja pari kinkkua.",
+      "plusCalories": "200",
+      "id": 43
+    },
+    {
+      "today": "17.1.2024",
+      "category": "Lounas",
+      "receipt": "Pari tortilaa kanalla, pikku tortilat ja salaattia lisukkeeksi.\nEi kastikkeita, juustoja yms.",
+      "plusCalories": "300",
+      "id": 44
     }
   ],
   "Harjoitus": [
@@ -336,6 +357,13 @@
       "kommentti": "Juoksumattoa 10 min, farmarikävelyä, leukoja, penkkiä, hauiuksia ja ojentajia.",
       "today": "15.1.2024",
       "id": 4
+    },
+    {
+      "harjoitus": "Kuntopyöräily",
+      "lostCalories": "150",
+      "kommentti": "15 min, pieni hiki.",
+      "today": "16.1.2024",
+      "id": 5
     }
   ],
   "Tavoitteet": [
