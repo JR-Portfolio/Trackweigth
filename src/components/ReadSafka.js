@@ -91,7 +91,7 @@ console.log("Harjoitus data: ", exercise)
   if (error) {
   }
 
-  let savings = 2500 - (sum + minSum);
+  let savings = 2700 - (sum + minSum);
 
   //Delete path
   const deleteRecord = (e) => {
@@ -120,7 +120,7 @@ console.log("Harjoitus data: ", exercise)
           <li>
             {latestReportDay} päivän kalorit {sum}, kulutettuja raportoitu {minSum}, erotus {sum - minSum}.
           </li>
-          <li>Päivän säästö (lukuhekellä) {savings}, oletuskulutus 2500 / pv.</li>
+          <li>Päivän säästö (lukuhekellä) {savings}, oletuskulutus 2700 / pv.</li>
           <li>Säästöt yhteensä {summa}</li>
         </ul>
       </div>

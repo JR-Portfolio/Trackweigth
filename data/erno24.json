@@ -331,6 +331,20 @@
       "receipt": "Pari tortilaa kanalla, pikku tortilat ja salaattia lisukkeeksi.\nEi kastikkeita, juustoja yms.",
       "plusCalories": "300",
       "id": 44
+    },
+    {
+      "today": "17.1.2024",
+      "category": "Päivällinen",
+      "receipt": "Pala lasagnea + rehut.",
+      "plusCalories": "500",
+      "id": 45
+    },
+    {
+      "today": "17.1.2024",
+      "category": "Iltapala",
+      "receipt": "Tee + pari hapankorppua leikkeleillä + rehuilla.",
+      "plusCalories": "100",
+      "id": 46
     }
   ],
   "Harjoitus": [
