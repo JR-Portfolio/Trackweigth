@@ -345,6 +345,27 @@
       "receipt": "Tee + pari hapankorppua leikkeleillä + rehuilla.",
       "plusCalories": "100",
       "id": 46
+    },
+    {
+      "today": "18.1.2024",
+      "category": "Aamiainen",
+      "receipt": "klo 6:30, kahvia ja leikkeleleipä.",
+      "plusCalories": "150",
+      "id": 47
+    },
+    {
+      "today": "18.1.2024",
+      "category": "Lounas",
+      "receipt": "Siskonmakkarakeitto + salaatti ja vesi.",
+      "plusCalories": "200",
+      "id": 48
+    },
+    {
+      "today": "18.1.2024",
+      "category": "Välipala",
+      "receipt": "Sämpylä leikkeleillä",
+      "plusCalories": "150",
+      "id": 49
     }
   ],
   "Harjoitus": [

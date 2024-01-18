@@ -121,7 +121,6 @@ console.log("Harjoitus data: ", exercise)
             {latestReportDay} päivän kalorit {sum}, kulutettuja raportoitu {minSum}, erotus {sum - minSum}.
           </li>
           <li>Päivän säästö (lukuhekellä) {savings}, oletuskulutus 2700 / pv.</li>
-          <li>Säästöt yhteensä {summa}</li>
         </ul>
       </div>
       <br></br>
