@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { updateRecord } from "../common/utils";
 //https://www.makeuseof.com/react-pagination-using-reactpaginate-library/
 // import { Line } from './Line.ts';
+import ReactPaginate from 'react-paginate'
 
 const ReadReceipts = () => {
   const [rData, setReceipt] = useState([]);
@@ -13,7 +14,7 @@ const ReadReceipts = () => {
   const [exercise, setExercise] = useState([]);
   const [sumPlusCalories, setPlusCalories] = useState(0);
   const [sumMinusCalories, setMinusCalories] = useState(0);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const navigate = useNavigate();
 
@@ -176,8 +177,15 @@ const ReadReceipts = () => {
             )}
           </tbody>
         ))}
+        
       </table>
-      <button onClick = {handlePageChange}>Next {currentPage} / {totalPages}</button>
+      
+      <ReactPaginate
+        pageCount={totalPages}
+        onPageChange={handlePageChange}
+        forcePage={currentPage}
+    />
+      
     </div>
   );
 };
