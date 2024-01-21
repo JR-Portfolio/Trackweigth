@@ -478,8 +478,29 @@
       "today": "21.1.2024",
       "category": "Lounas",
       "receipt": "Possunulkofilepaloja + salaatti, zero kokiksella.",
-      "plusCalories": "200",
+      "plusCalories": "400",
       "id": 64
+    },
+    {
+      "today": "21.1.2024",
+      "category": "Päivällinen",
+      "receipt": "Lihapullia (itse tehtyjä) tommaattikastikkeessa, perunamuusia ja salaatti.",
+      "plusCalories": "500",
+      "id": 65
+    },
+    {
+      "today": "21.1.2024",
+      "category": "Välipala",
+      "receipt": "3 porkkanaa",
+      "plusCalories": "75",
+      "id": 66
+    },
+    {
+      "today": "21.1.2024",
+      "category": "Iltapala",
+      "receipt": "Tee + hapankorppu salaatilla ja leikkeleellä.",
+      "plusCalories": "100",
+      "id": 67
     }
   ],
   "Harjoitus": [
@@ -527,6 +548,13 @@
       "kommentti": "Juoksumattoa, leuanvetoa (ennätys 7), alaselkää ja vatsaa. Uinti + kylmäallas.",
       "today": "19.1.2024",
       "id": 7
+    },
+    {
+      "harjoitus": "Puusilta kävely, samalla reissulla kaupan kautta kotiin",
+      "lostCalories": "200",
+      "kommentti": "",
+      "today": "21.1.2024",
+      "id": 8
     }
   ],
   "Tavoitteet": [
@@ -550,6 +578,13 @@
       "week": "2",
       "addInfo": "Liikuntaa 3 krt viikko, sokerit ja liika hiilari pois.",
       "id": 3
+    },
+    {
+      "today": "21.1.2024",
+      "objective": "1. Lisää veden juontia.\n2. Leukoja 8.",
+      "week": "4",
+      "addInfo": "",
+      "id": 4
     }
   ]
 }

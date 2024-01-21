@@ -12,6 +12,11 @@ const Reader = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  
+  const cWidth = (kommentti) => {
+    kommentti.length > 30 ? cWidth = "wide" : cWidth = "narrow"
+  }
+  
   useEffect(() => {
     setTimeout(() => {
       fetch("http://localhost:8000/Mitat")
@@ -92,7 +97,7 @@ const Reader = () => {
             <th key={nanoid()}>Lantion muutos</th>
             <th key={nanoid()}>Rinnan muutos</th>
             <th key={nanoid()}>BMI</th>
-            <th key={nanoid()}>Kommentti</th>
+            <th className = {cWidth} key={nanoid()}>Kommentti</th>
             <th>Kg matkaa</th>
             <th>Poista</th>
           </thead>
@@ -152,7 +157,7 @@ const Reader = () => {
                   </td>
                 }
 
-                <td key={nanoid()}>{(lines = showLines(item2))}</td>
+                <td className = {cWidth} key={nanoid()}>{(lines = showLines(item2))}</td>
                 <td key={nanoid()}>{(item2.paino - 76.56).toFixed(2)}</td>
 
                 <td>

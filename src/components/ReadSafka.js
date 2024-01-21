@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import { useNavigate } from "react-router-dom";
 import { updateRecord } from "../common/utils";
-
+//https://www.makeuseof.com/react-pagination-using-reactpaginate-library/
 // import { Line } from './Line.ts';
 
 const ReadReceipts = () => {
@@ -13,13 +13,19 @@ const ReadReceipts = () => {
   const [exercise, setExercise] = useState([]);
   const [sumPlusCalories, setPlusCalories] = useState(0);
   const [sumMinusCalories, setMinusCalories] = useState(0);
-
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
   const navigate = useNavigate();
 
   let plusList = [];
   let minusList = [];
   let sum = 0;
   let minSum = 0;
+
+  const itemsPerPage = 10;
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const subset = rData.slice(startIndex, endIndex);
 
   useEffect(() => {
     setTimeout(() => {
@@ -36,6 +42,7 @@ const ReadReceipts = () => {
           setReceipt(rData);
           setPending(false);
           setError(null);
+          setTotalPages(Math.ceil(rData.length / itemsPerPage));
         })
         .catch((err) => {
           setError(err.message);
@@ -64,6 +71,10 @@ const ReadReceipts = () => {
         });
     }, 1000);
   }, []);
+
+  const handlePageChange = (selectedPage) => {
+    setCurrentPage(selectedPage.selected);
+};
 
   console.log("Harjoitus data: ", exercise);
 
@@ -111,7 +122,7 @@ const ReadReceipts = () => {
 
   //Parse date strings to the date objects
   rData.sort((a, b) => b.today - a.today);
-  console.log("rData: ", rData)
+  console.log("rData: ", rData);
 
   const latestReportDay = rData[rData.length - 1]?.today;
   return (
@@ -146,6 +157,7 @@ const ReadReceipts = () => {
         {rData.map((safka) => (
           <tbody key={nanoid()}>
             {safka.today.includes("2024") && (
+              <>
               <tr>
                 <>
                   <td>{safka.today}</td>
@@ -159,10 +171,13 @@ const ReadReceipts = () => {
                   </td>
                 </>
               </tr>
+              
+              </>
             )}
           </tbody>
         ))}
       </table>
+      <button onClick = {handlePageChange}>Next {currentPage} / {totalPages}</button>
     </div>
   );
 };
