@@ -11,6 +11,7 @@ const Reader = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+
   useEffect(() => {
     setTimeout(() => {
       fetch("http://localhost:8000/Mitat")
@@ -37,6 +38,8 @@ const Reader = () => {
     deleteItem("http://localhost:8000/Mitat/", e);
   };
 
+  let newLines = [];
+  let bmiRes = 0;
   let painonMuutos = 0;
   let vyotaroMuutos = 0;
   let rinnanMuutos = 0;
@@ -45,50 +48,30 @@ const Reader = () => {
   let lines = [];
   let level = "";
 
-  const nData = data.slice(1);
-  nData.map((item) => {
-    vyotaroMuutos = (
-      parseFloat(item.vyotaro) - parseFloat(data[0].vyotaro)
-    ).toFixed(2);
-    painonMuutos = (item.paino - data[0].paino).toFixed(2);
-
-    lantionMuutos = (item.lantio - data[0].lantio).toFixed(2);
-    rinnanMuutos = (item.rinta - data[0].rinta).toFixed(2);
-
-    //bmi = item.paino / (1.75 * 1.75).toFixed(2);
-    lines = item.kommentti?.split(".");
-
-    console.log(
-      "p.muuto: ",
-      painonMuutos + ", v.muutos: ",
-      vyotaroMuutos,
-      ", lantionMuutos: ",
-      lantionMuutos,
-      ", rinnanMuutos: ",
-      rinnanMuutos
-    );
-
-    /*
-    if (bmi > 28) {
+  const bmiCheck = (paino) => {
+    let bmiRes = 1.3 * (paino / Math.pow(1.75, 2.5)).toFixed(2);
+    console.log("bmi: ", bmiRes);
+    if (bmiRes > 28) {
       level = "highLevel";
-    } else if (bmi < 28 && bmi > 26) {
+    } else if (bmiRes < 28 && bmi > 26) {
       level = "midLevel";
-    } else if (bmi < 26) {
+    } else if (bmiRes < 26) {
       level = "lowLevel";
     }
-    */
 
-    console.log("level: ", level);
-  });
+    return bmiRes;
+  };
+  console.log("bmiRes: " + bmiRes + ", level: " + level);
 
-  let newLines = []
+  //Json row handler
+  const nData = data.slice(1);
 
-  const showLines = (item2) =>{
-    const lines = item2?.kommentti?.split(".")
-    newLines = lines.join('.\n\n')
-    console.log("newLine: ", newLines)
-    return newLines
-  }
+  const showLines = (item2) => {
+    const lines = item2?.kommentti?.split(".");
+    newLines = lines.join(".\n\n");
+    console.log("newLine: ", newLines);
+    return newLines;
+  };
 
   return (
     <div className="main">
@@ -110,6 +93,8 @@ const Reader = () => {
             <th key={nanoid()}>Rinnan muutos</th>
             <th key={nanoid()}>BMI</th>
             <th key={nanoid()}>Kommentti</th>
+            <th>Kg matkaa</th>
+            <th>Poista</th>
           </thead>
 
           <tbody key={nanoid()}>
@@ -159,12 +144,16 @@ const Reader = () => {
                 )}
 
                 {
-                  <td key={nanoid()}>
-                    {(item2.paino / (1.75 * 1.75)).toFixed(2)}
+                  <td
+                    className = {level}
+                    key={nanoid()}
+                  >
+                    {(bmiRes = bmiCheck(item2.paino))}
                   </td>
                 }
 
-                <td key={nanoid()}>{lines = showLines(item2)}</td>
+                <td key={nanoid()}>{(lines = showLines(item2))}</td>
+                <td key={nanoid()}>{(item2.paino - 76.56).toFixed(2)}</td>
 
                 <td>
                   <button onClick={(e) => deleteRecord(item2.id)}>x</button>

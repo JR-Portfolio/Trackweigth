@@ -23,7 +23,7 @@
       "vyotaro": 99,
       "lantio": 104,
       "rinta": 108,
-      "kommentti": "Salitreeni varmaan osalta vaikuttaa, että lantio on vähän leventynyt.. Mittaaminen pitäisi tehdä juuri samasta paikkaa ja samalla kireydellä josta tulee toleranssia. Rinta mitattu",
+      "kommentti": "Salitreeni varmaan osalta vaikuttaa, että lantio on vähän leventynyt.\n\nMittaaminen pitäisi tehdä juuri samasta paikkaa ja samalla kireydellä muuten tulee toleranssia.\nRinta mitattu",
       "today": "21.1.2024",
       "id": 6
     }
@@ -466,6 +466,20 @@
       "receipt": "Ölppä * 2 + leipä leikkeleillä.",
       "plusCalories": "200",
       "id": 62
+    },
+    {
+      "today": "21.1.2024",
+      "category": "Aamiainen",
+      "receipt": "1. Kahvi + salaatti leipä.\n2. Pikapuuro vähäisellä mansikkahillolla ja mustikoilla.",
+      "plusCalories": "300",
+      "id": 63
+    },
+    {
+      "today": "21.1.2024",
+      "category": "Lounas",
+      "receipt": "Possunulkofilepaloja + salaatti, zero kokiksella.",
+      "plusCalories": "200",
+      "id": 64
     }
   ],
   "Harjoitus": [
