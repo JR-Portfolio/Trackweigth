@@ -51,16 +51,24 @@ const Reader = () => {
       parseFloat(item.vyotaro) - parseFloat(data[0].vyotaro)
     ).toFixed(2);
     painonMuutos = (item.paino - data[0].paino).toFixed(2);
-    
+
     lantionMuutos = (item.lantio - data[0].lantio).toFixed(2);
     rinnanMuutos = (item.rinta - data[0].rinta).toFixed(2);
 
-    bmi = item.paino / (1.75 * 1.75).toFixed(2);
+    //bmi = item.paino / (1.75 * 1.75).toFixed(2);
     lines = item.kommentti?.split(".");
 
-    console.log("p.muuto: ", painonMuutos + ", v.muutos: ", vyotaroMuutos, ", lantionMuutos: ", lantionMuutos, ", rinnanMuutos: ", rinnanMuutos);
+    console.log(
+      "p.muuto: ",
+      painonMuutos + ", v.muutos: ",
+      vyotaroMuutos,
+      ", lantionMuutos: ",
+      lantionMuutos,
+      ", rinnanMuutos: ",
+      rinnanMuutos
+    );
 
-    console.log("bmi: ", bmi);
+    /*
     if (bmi > 28) {
       level = "highLevel";
     } else if (bmi < 28 && bmi > 26) {
@@ -68,12 +76,19 @@ const Reader = () => {
     } else if (bmi < 26) {
       level = "lowLevel";
     }
+    */
 
     console.log("level: ", level);
   });
 
-  console.log("zeroData: ", data);
-  console.log("nData: ", nData);
+  let newLines = []
+
+  const showLines = (item2) =>{
+    const lines = item2?.kommentti?.split(".")
+    newLines = lines.join('.\n\n')
+    console.log("newLine: ", newLines)
+    return newLines
+  }
 
   return (
     <div className="main">
@@ -108,6 +123,10 @@ const Reader = () => {
               <td></td>
               <td></td>
 
+              <td></td>
+              <td key={nanoid()}>
+                {(data[0]?.paino / (1.75 * 1.75)).toFixed(2)}
+              </td>
               <td key={nanoid()}>{data[0]?.kommentti}</td>
             </tr>
 
@@ -119,21 +138,33 @@ const Reader = () => {
                   <td key={nanoid()}>{item2?.vyotaro} cm</td>
                 )}
 
-                {!isNaN(vyotaroMuutos) && (
-                  <td key={nanoid()}>{vyotaroMuutos}</td>
+                {!isNaN(item2?.vyotaro) && (
+                  <td key={nanoid()}>{data[0].vyotaro - item2.vyotaro}</td>
                 )}
 
-                {!isNaN(painonMuutos) && <td key={nanoid()}>{painonMuutos}</td>}
+                {!isNaN(painonMuutos) && (
+                  <td key={nanoid()}>
+                    {(data[0].paino.toFixed(2) - item2.paino).toFixed(2)}
+                  </td>
+                )}
                 {!isNaN(lantionMuutos) && (
-                  <td key={nanoid()}>{lantionMuutos}</td>
+                  <td key={nanoid()}>
+                    {(data[0].lantio.toFixed(2) - item2.lantio).toFixed(2)}
+                  </td>
                 )}
-                {!isNaN(rinnanMuutos) && <td key={nanoid()}>{rinnanMuutos}</td>}
+                {!isNaN(rinnanMuutos) && (
+                  <td key={nanoid()}>
+                    {(data[0].rinta.toFixed(2) - item2.rinta).toFixed(2)}
+                  </td>
+                )}
 
-                {!isNaN(bmi) && <td key={nanoid()}>{bmi}</td>}
+                {
+                  <td key={nanoid()}>
+                    {(item2.paino / (1.75 * 1.75)).toFixed(2)}
+                  </td>
+                }
 
-                {lines?.map((l) => (
-                  <td key={nanoid()}>{l}</td>
-                ))}
+                <td key={nanoid()}>{lines = showLines(item2)}</td>
 
                 <td>
                   <button onClick={(e) => deleteRecord(item2.id)}>x</button>

@@ -5,18 +5,27 @@
       "paino": 92.9,
       "vyotaro": 106,
       "lantio": 105,
-      "rinta": 0,
-      "kommentti": "Erno 2:n aloituspäivä, lantio: 105\n",
+      "rinta": 108,
+      "kommentti": "Erno 2:n aloituspäivä. Rintaa ei mitattu/kirjattu oikeasti.",
       "id": 4
     },
     {
       "paino": 89.8,
       "vyotaro": 101,
       "lantio": 102,
-      "rinta": 0,
-      "kommentti": "lantio 102",
+      "rinta": 108,
+      "kommentti": "Rinta vain arvio",
       "today": "14.1.2024",
       "id": 5
+    },
+    {
+      "paino": 88.7,
+      "vyotaro": 99,
+      "lantio": 104,
+      "rinta": 108,
+      "kommentti": "Salitreeni varmaan osalta vaikuttaa, että lantio on vähän leventynyt.. Mittaaminen pitäisi tehdä juuri samasta paikkaa ja samalla kireydellä josta tulee toleranssia. Rinta mitattu",
+      "today": "21.1.2024",
+      "id": 6
     }
   ],
   "Safka": [
@@ -61,7 +70,7 @@
       "savings": 1750
     },
     {
-      "today": "11-1.2024",
+      "today": "11.1.2024",
       "category": "",
       "receipt": "Klo 6:00: Kahvi + ruisleivän puolisko kurkulla ja \nkinkulla. Duunissa kahvi kello 7:30 ja pikapuuro jossain 9:n maissa.",
       "plusCalories": "400",
@@ -70,7 +79,7 @@
       "id": 13
     },
     {
-      "today": "11-1.2024",
+      "today": "11.1.2024",
       "category": "Lounas",
       "receipt": "Salaatti + wingsit. Vettä ja kahvia juomaksi.",
       "plusCalories": "400",
@@ -79,7 +88,7 @@
       "id": 14
     },
     {
-      "today": "11-1.2024",
+      "today": "11.1.2024",
       "category": "Paivallinen",
       "receipt": "Grilliboileria + salaattia. Vettä ja kahvia juomaksi.",
       "plusCalories": "400",
@@ -88,7 +97,7 @@
       "id": 15
     },
     {
-      "today": "11-1.2024",
+      "today": "11.1.2024",
       "category": "Valipala",
       "receipt": "Ruissipsejä leikkeleillä.",
       "plusCalories": "150",
@@ -97,7 +106,7 @@
       "id": 16
     },
     {
-      "today": "11-1.2024",
+      "today": "11.1.2024",
       "category": "",
       "receipt": "Paivallinen\tGrilliboileria + salaattia. Vettä ja kahvia juomaksi.",
       "plusCalories": "400",
@@ -366,6 +375,97 @@
       "receipt": "Sämpylä leikkeleillä",
       "plusCalories": "150",
       "id": 49
+    },
+    {
+      "today": "18.1.2024",
+      "category": "Välipala",
+      "receipt": "Pieni lätty, pari piparia ja kahvi. Omena ja porkkana päälle.",
+      "plusCalories": "400",
+      "id": 50
+    },
+    {
+      "today": "19.1.2024",
+      "category": "Aamiainen",
+      "receipt": "Kahvia + kauraleipä (2 puoliskoa) yhdellä metukalla + lehtisalaatilla. ",
+      "plusCalories": "170",
+      "id": 51
+    },
+    {
+      "today": "19.1.2024",
+      "category": "Aamiainen",
+      "receipt": "Pikapuuro mustikoilla.",
+      "plusCalories": "140",
+      "id": 52
+    },
+    {
+      "today": "19.1.2024",
+      "category": "Lounas",
+      "receipt": "Kahden munan grillimakkara munakas muutamalla tomaattiviipaleella.",
+      "plusCalories": "450",
+      "id": 53
+    },
+    {
+      "today": "19.1.2024",
+      "category": "Välipala",
+      "receipt": "3 porkkanaa",
+      "plusCalories": "75",
+      "id": 54
+    },
+    {
+      "today": "19.1.2024",
+      "category": "Päivällinen",
+      "receipt": "Uunikanaa (250 kcal) + täysjyväpastaa (100 kcal) + salaattia.",
+      "plusCalories": "400",
+      "id": 55
+    },
+    {
+      "today": "20.1.2024",
+      "category": "Aamiainen",
+      "receipt": "Kahvi + täysjyvä leipä leikkeleillä (yksi kinkku ja paprikaa).",
+      "plusCalories": "130",
+      "id": 56
+    },
+    {
+      "today": "20.1.2024",
+      "category": "Aamiainen",
+      "receipt": "Pikapuuro, mansikkahillolla.",
+      "plusCalories": "200",
+      "id": 57
+    },
+    {
+      "today": "20.1.2024",
+      "category": "Lounas",
+      "receipt": "Uunikanaa, täysjyvä pastaa + salaattia.",
+      "plusCalories": "400",
+      "id": 58
+    },
+    {
+      "today": "20.1.2024",
+      "category": "Päivällinen",
+      "receipt": "Possun ulkofilettä (2 kpl), maalaisranskiksia kourallinen ja salaattia. 0%:n ölppä.",
+      "plusCalories": "400",
+      "id": 59
+    },
+    {
+      "today": "20.1.2024",
+      "category": "Välipala",
+      "receipt": "Pari porkkanaa",
+      "plusCalories": "50",
+      "id": 60
+    },
+    {
+      "today": "20.1.2024",
+      "category": "Välipala",
+      "receipt": "Leikkele täysjyvä ruisleipä metukalla ja rehuilla.",
+      "plusCalories": "130",
+      "id": 61
+    },
+    {
+      "today": "20.1.2024",
+      "category": "Iltapala",
+      "receipt": "Ölppä * 2 + leipä leikkeleillä.",
+      "plusCalories": "200",
+      "id": 62
     }
   ],
   "Harjoitus": [
@@ -399,6 +499,20 @@
       "kommentti": "15 min, pieni hiki.",
       "today": "16.1.2024",
       "id": 5
+    },
+    {
+      "harjoitus": "Kuntopyöräily",
+      "lostCalories": "126",
+      "kommentti": "15 min",
+      "today": "18.1.2024",
+      "id": 6
+    },
+    {
+      "harjoitus": "Uimahalin kuntosali",
+      "lostCalories": "300",
+      "kommentti": "Juoksumattoa, leuanvetoa (ennätys 7), alaselkää ja vatsaa. Uinti + kylmäallas.",
+      "today": "19.1.2024",
+      "id": 7
     }
   ],
   "Tavoitteet": [

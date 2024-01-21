@@ -44,7 +44,6 @@ const ReadReceipts = () => {
     }, 1000);
   }, []);
 
-
   useEffect(() => {
     setTimeout(() => {
       fetch("http://localhost:8000/Harjoitus")
@@ -57,7 +56,7 @@ const ReadReceipts = () => {
           return res.json();
         })
         .then((rData) => {
-          setExercise(rData);          
+          setExercise(rData);
         })
         .catch((err) => {
           setError(err.message);
@@ -66,9 +65,7 @@ const ReadReceipts = () => {
     }, 1000);
   }, []);
 
-
-console.log("Harjoitus data: ", exercise)
-
+  console.log("Harjoitus data: ", exercise);
 
   const plusResult = rData.map((r) => {
     const curdate = new Date().toLocaleDateString("fi-FI");
@@ -112,15 +109,22 @@ console.log("Harjoitus data: ", exercise)
     summa += parseInt(s.diff);
   });
 
+  //Parse date strings to the date objects
+  rData.sort((a, b) => b.today - a.today);
+  console.log("rData: ", rData)
+
   const latestReportDay = rData[rData.length - 1]?.today;
   return (
     <div className="main">
       <div className="safka--text">
         <ul>
           <li>
-            {latestReportDay} päivän kalorit {sum}, kulutettuja raportoitu {minSum}, erotus {sum - minSum}.
+            {latestReportDay} päivän kalorit {sum}, kulutettuja raportoitu{" "}
+            {minSum}, erotus {sum - minSum}.
           </li>
-          <li>Päivän säästö (lukuhekellä) {savings}, oletuskulutus 2700 / pv.</li>
+          <li>
+            Päivän säästö (lukuhekellä) {savings}, oletuskulutus 2700 / pv.
+          </li>
         </ul>
       </div>
       <br></br>
@@ -130,7 +134,7 @@ console.log("Harjoitus data: ", exercise)
       <h1 className="main-otsikko">Mittari</h1>
       <table className="taulu" key={nanoid()}>
         <thead>
-          <tr key = {nanoid()}>
+          <tr key={nanoid()}>
             <th key={nanoid()}>PVM</th>
             <th key={nanoid()}>Luokitus</th>
             <th key={nanoid()}>Safka</th>
@@ -140,7 +144,7 @@ console.log("Harjoitus data: ", exercise)
           </tr>
         </thead>
         {rData.map((safka) => (
-          <tbody key = {nanoid()}>
+          <tbody key={nanoid()}>
             {safka.today.includes("2024") && (
               <tr>
                 <>
