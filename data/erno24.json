@@ -530,14 +530,35 @@
       "plusCalories": "150",
       "id": 69
     },
-  {
-    "today": "23.1.2024",
-    "category": "Aamupala",
-    "receipt": "1. Kahvi, sämpylä, kananmunalla ja kinkkuviipaleella.\n2.",
-    "plusCalories": "200",
-    "id": 68
-  }],
-
+    {
+      "today": "23.1.2024",
+      "category": "Aamupala",
+      "receipt": "1. Kahvi, sämpylä, kananmunalla ja kinkkuviipaleella.\n2.",
+      "plusCalories": "200",
+      "id": 68
+    },
+    {
+      "today": "23.1.2024",
+      "category": "Lounas",
+      "receipt": "Possunulkofile + kanamuna salaatti, coca cola zerolla.",
+      "plusCalories": "350",
+      "id": 70
+    },
+    {
+      "today": "23.1.2024",
+      "category": "Päivällinen",
+      "receipt": "Lohikeitto, kevyellä näkkärillä. ",
+      "plusCalories": "250",
+      "id": 71
+    },
+    {
+      "today": "23.1.2024",
+      "category": "Välipala",
+      "receipt": "Omena ja sämpylä kinkulla + paprikalla.",
+      "plusCalories": "250",
+      "id": 72
+    }
+  ],
   "Harjoitus": [
     {
       "harjoitus": "Työpaikan kuntosali treeni. ",

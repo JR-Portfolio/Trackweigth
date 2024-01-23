@@ -24,7 +24,7 @@ const ReadReceipts = () => {
   const [exercise, setExercise] = useState([]);
   const [sumPlusCalories, setPlusCalories] = useState(0);
   const [sumMinusCalories, setMinusCalories] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
+  let [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const navigate = useNavigate();
 
@@ -32,6 +32,9 @@ const ReadReceipts = () => {
   let minusList = [];
   let sum = 0;
   let minSum = 0;
+
+  const sortedData = rData.sort((a,b) =>  b.id - a.id )
+  console.log("sorted: ", sortedData)
 
   const itemsPerPage = 5;
   const startIndex = currentPage * itemsPerPage;
@@ -63,38 +66,7 @@ const ReadReceipts = () => {
     }, 1000);
   }, []);
 
-  //Fetch paging data
-  const fetchPaging = () => {
-    console.log(
-      "fetchPaging func, currentPage: " +
-        currentPage +
-        ", itemsPerPage:" +
-        itemsPerPage
-    );
-    fetch(
-      "http://localhost:8000/Safka?_page=_${currentPage}&_limit=${itemsPerPage}`);"
-    )
-      .then((res) => {
-        if (!res.ok) {
-          throw Error(
-            "Could not fetch the data for that resource, check json server startup"
-          );
-        }
-        return res.json();
-      })
-      .then((rData) => {
-        console.log("pargin resp: ", rData);
-        setReceipt(rData);
-        //setTotalPages(Math.ceil(rData.length / itemsPerPage));
-      })
-      .catch((err) => {
-        setError(err.message);
-        setPending(false);
-      });
-
-    console.log("Array length:", rData.length);
-  };
-
+  
   //Fetch Harjoitus data
   useEffect(() => {
     setTimeout(() => {
@@ -118,19 +90,21 @@ const ReadReceipts = () => {
   }, []);
 
   const prevPage = (selectedPage) => {
-    selectedPage <= totalPages - 1
-      ? setCurrentPage(currentPage--)
-      : setCurrentPage(1);
-  };
+    console.log("prev- clicked, selectedPage: ", selectedPage);
+    if (selectedPage < totalPages-1 && selectedPage > 0){
+      setCurrentPage(currentPage--)
+    };
+  }
 
   const nextPage = (selectedPage) => {
-    selectedPage <= totalPages - 1
-      ? setCurrentPage(currentPage++)
-      : setCurrentPage(totalPages - 1);
+    console.log("next- clicked, selectedPage: ", selectedPage)
+    if (selectedPage > 0 && selectedPage <= totalPages-1){
+      setCurrentPage(currentPage++)
+    };
   };
 
   const handlePageChange = (selectedPage) => {
-    setCurrentPage(selectedPage.selected);
+    setCurrentPage(selectedPage);
   };
 
   const plusResult = rData.map((r) => {
@@ -229,8 +203,8 @@ const ReadReceipts = () => {
           {currentPage}/{totalPages}
         </span>
         <div className="pagingButtons">
-          <button onClick={prevPage}>Prev</button>
-          <button onClick={nextPage}>Next</button>
+          <button onClick={() => prevPage(currentPage)}>Prev</button>
+          <button onClick={() => nextPage(currentPage)}>Next</button>
         </div>
       </table>
     </div>
