@@ -5,7 +5,17 @@ import { useNavigate } from "react-router-dom";
 import { updateRecord } from "../common/utils";
 //https://www.makeuseof.com/react-pagination-using-reactpaginate-library/
 // import { Line } from './Line.ts';
-import ReactPaginate from 'react-paginate'
+import ReactPaginate from "react-paginate";
+
+/*
+        <ReactPaginate
+          pageCount={totalPages}
+          onPageChange={handlePageChange}
+          forcePage={currentPage}
+          previousLabel={"<<"}
+          nextLabel={">>"}
+        />
+*/
 
 const ReadReceipts = () => {
   const [rData, setReceipt] = useState([]);
@@ -23,11 +33,12 @@ const ReadReceipts = () => {
   let sum = 0;
   let minSum = 0;
 
-  const itemsPerPage = 10;
+  const itemsPerPage = 5;
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const subset = rData.slice(startIndex, endIndex);
 
+  //Fetch all
   useEffect(() => {
     setTimeout(() => {
       fetch("http://localhost:8000/Safka")
@@ -52,6 +63,39 @@ const ReadReceipts = () => {
     }, 1000);
   }, []);
 
+  //Fetch paging data
+  const fetchPaging = () => {
+    console.log(
+      "fetchPaging func, currentPage: " +
+        currentPage +
+        ", itemsPerPage:" +
+        itemsPerPage
+    );
+    fetch(
+      "http://localhost:8000/Safka?_page=_${currentPage}&_limit=${itemsPerPage}`);"
+    )
+      .then((res) => {
+        if (!res.ok) {
+          throw Error(
+            "Could not fetch the data for that resource, check json server startup"
+          );
+        }
+        return res.json();
+      })
+      .then((rData) => {
+        console.log("pargin resp: ", rData);
+        setReceipt(rData);
+        //setTotalPages(Math.ceil(rData.length / itemsPerPage));
+      })
+      .catch((err) => {
+        setError(err.message);
+        setPending(false);
+      });
+
+    console.log("Array length:", rData.length);
+  };
+
+  //Fetch Harjoitus data
   useEffect(() => {
     setTimeout(() => {
       fetch("http://localhost:8000/Harjoitus")
@@ -73,11 +117,21 @@ const ReadReceipts = () => {
     }, 1000);
   }, []);
 
+  const prevPage = (selectedPage) => {
+    selectedPage <= totalPages - 1
+      ? setCurrentPage(currentPage--)
+      : setCurrentPage(1);
+  };
+
+  const nextPage = (selectedPage) => {
+    selectedPage <= totalPages - 1
+      ? setCurrentPage(currentPage++)
+      : setCurrentPage(totalPages - 1);
+  };
+
   const handlePageChange = (selectedPage) => {
     setCurrentPage(selectedPage.selected);
-};
-
-  console.log("Harjoitus data: ", exercise);
+  };
 
   const plusResult = rData.map((r) => {
     const curdate = new Date().toLocaleDateString("fi-FI");
@@ -121,10 +175,6 @@ const ReadReceipts = () => {
     summa += parseInt(s.diff);
   });
 
-  //Parse date strings to the date objects
-  rData.sort((a, b) => b.today - a.today);
-  console.log("rData: ", rData);
-
   const latestReportDay = rData[rData.length - 1]?.today;
   return (
     <div className="main">
@@ -155,12 +205,11 @@ const ReadReceipts = () => {
             <th key={nanoid()}>Säästö</th>
           </tr>
         </thead>
-        {rData.map((safka) => (
+        {subset.map((safka) => (
           <tbody key={nanoid()}>
             {safka.today.includes("2024") && (
               <>
-              <tr>
-                <>
+                <tr>
                   <td>{safka.today}</td>
                   <td>{safka.category}</td>
                   <td>{safka.receipt}</td>
@@ -170,22 +219,20 @@ const ReadReceipts = () => {
                   <td>
                     <button onClick={(e) => deleteRecord(safka.id)}>x</button>
                   </td>
-                </>
-              </tr>
-              
+                </tr>
               </>
             )}
           </tbody>
         ))}
-        
+
+        <span className="pagingButtons-text">
+          {currentPage}/{totalPages}
+        </span>
+        <div className="pagingButtons">
+          <button onClick={prevPage}>Prev</button>
+          <button onClick={nextPage}>Next</button>
+        </div>
       </table>
-      
-      <ReactPaginate
-        pageCount={totalPages}
-        onPageChange={handlePageChange}
-        forcePage={currentPage}
-    />
-      
     </div>
   );
 };

@@ -501,8 +501,43 @@
       "receipt": "Tee + hapankorppu salaatilla ja leikkeleellä.",
       "plusCalories": "100",
       "id": 67
-    }
-  ],
+    },
+    {
+      "today": "22.1.2024",
+      "category": "Aamupala",
+      "receipt": "1. Kahvi, kauraleivän puolikas + kananmunan puolikas kinkkuviipaleella.\n2. Pikapuuro.",
+      "plusCalories": "300",
+      "id": 68
+    },
+    {
+      "today": "22.1.2024",
+      "category": "Lounas",
+      "receipt": "Salaatti jossa kananmuna + possunliha viipaleita.",
+      "plusCalories": "400",
+      "id": 69
+    },
+    {
+      "today": "22.1.2024",
+      "category": "Päivällinen",
+      "receipt": "Salaatti lihapulla muusilla.",
+      "plusCalories": "500",
+      "id": 69
+    },
+    {
+      "today": "22.1.2024",
+      "category": "Illallinen",
+      "receipt": "Teetä + leipä leikkeleillä",
+      "plusCalories": "150",
+      "id": 69
+    },
+  {
+    "today": "23.1.2024",
+    "category": "Aamupala",
+    "receipt": "1. Kahvi, sämpylä, kananmunalla ja kinkkuviipaleella.\n2.",
+    "plusCalories": "200",
+    "id": 68
+  }],
+
   "Harjoitus": [
     {
       "harjoitus": "Työpaikan kuntosali treeni. ",
@@ -555,6 +590,13 @@
       "kommentti": "",
       "today": "21.1.2024",
       "id": 8
+    },
+    {
+      "harjoitus": "Duunipaikan kuntosalitreeni",
+      "lostCalories": "400",
+      "kommentti": "Juoksumatto, lihaskuntotreeni.",
+      "today": "22.1.2024",
+      "id": 9
     }
   ],
   "Tavoitteet": [
