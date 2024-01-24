@@ -24,7 +24,7 @@ const ReadReceipts = () => {
   const [exercise, setExercise] = useState([]);
   const [sumPlusCalories, setPlusCalories] = useState(0);
   const [sumMinusCalories, setMinusCalories] = useState(0);
-  let [currentPage, setCurrentPage] = useState(1);
+  let [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const navigate = useNavigate();
 
@@ -33,10 +33,10 @@ const ReadReceipts = () => {
   let sum = 0;
   let minSum = 0;
 
-  const sortedData = rData.sort((a,b) =>  b.id - a.id )
-  console.log("sorted: ", sortedData)
+  const sortedData = rData.sort((a, b) => b.id - a.id);
+  console.log("sorted: ", sortedData);
 
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const subset = rData.slice(startIndex, endIndex);
@@ -66,7 +66,6 @@ const ReadReceipts = () => {
     }, 1000);
   }, []);
 
-  
   //Fetch Harjoitus data
   useEffect(() => {
     setTimeout(() => {
@@ -91,16 +90,16 @@ const ReadReceipts = () => {
 
   const prevPage = (selectedPage) => {
     console.log("prev- clicked, selectedPage: ", selectedPage);
-    if (selectedPage < totalPages-1 && selectedPage > 0){
-      setCurrentPage(currentPage--)
-    };
-  }
+    if (selectedPage < totalPages - 1 && selectedPage >= 0) {
+      setCurrentPage(currentPage--);
+    }
+  };
 
   const nextPage = (selectedPage) => {
-    console.log("next- clicked, selectedPage: ", selectedPage)
-    if (selectedPage > 0 && selectedPage <= totalPages-1){
-      setCurrentPage(currentPage++)
-    };
+    console.log("next- clicked, selectedPage: ", selectedPage);
+    if ((selectedPage) => 0 && selectedPage <= totalPages) {
+      setCurrentPage(currentPage++);
+    }
   };
 
   const handlePageChange = (selectedPage) => {
@@ -198,15 +197,14 @@ const ReadReceipts = () => {
             )}
           </tbody>
         ))}
-
-        <span className="pagingButtons-text">
-          {currentPage}/{totalPages}
-        </span>
-        <div className="pagingButtons">
-          <button onClick={() => prevPage(currentPage)}>Prev</button>
-          <button onClick={() => nextPage(currentPage)}>Next</button>
-        </div>
+        <span className="pagingButtons-text">{currentPage} / {totalPages}</span>
       </table>
+      <div className="pagingButtons">        
+        <div className="pagingButtons-buttons">
+          <button onClick={() => prevPage(currentPage)}>Prev</button>
+          <button onClick={() => nextPage(currentPage)}>Next</button>          
+        </div>
+      </div>
     </div>
   );
 };

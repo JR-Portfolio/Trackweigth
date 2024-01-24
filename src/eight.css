@@ -20,17 +20,21 @@ h6 {
 }
 
 .pagingButtons-text {
+  display: inline-flex;
   font-weight: bold;
+  align-items:flex-end;
 }
 
 .pagingButtons {
-  display: grid;
-  grid-template-columns: auto auto;
   margin-top:10px;
-  border-radius: 5px;
-gap:10px;
+  display: inline-flex;
 }
 
+.pagingButtons-buttons{
+  display:inline-flex;
+  justify-content: space-between;  
+  border-radius: 15px;
+}
 
 
 .narrow{
