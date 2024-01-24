@@ -557,6 +557,34 @@
       "receipt": "Omena ja sämpylä kinkulla + paprikalla.",
       "plusCalories": "250",
       "id": 72
+    },
+    {
+      "today": "24.1.2024",
+      "category": "Aamiainen",
+      "receipt": "Kahvia + kauraleivän puolisko jossa kinkku + paprikaa ja kurkkua.",
+      "plusCalories": "200",
+      "id": 73
+    },
+    {
+      "today": "24.1.2024",
+      "category": "Lounas",
+      "receipt": "Salaattia puoli lautasta, riisiä maltillisesti ja joku lihakastike.",
+      "plusCalories": "500",
+      "id": 74
+    },
+    {
+      "today": "24.1.2024",
+      "category": "Päivällinen",
+      "receipt": "Riisi, salaatti ja kanakastike.",
+      "plusCalories": "400",
+      "id": 75
+    },
+    {
+      "today": "24.1.2024",
+      "category": "Välipala",
+      "receipt": "Omena",
+      "plusCalories": "50",
+      "id": 76
     }
   ],
   "Harjoitus": [

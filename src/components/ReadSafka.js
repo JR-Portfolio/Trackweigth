@@ -148,7 +148,7 @@ const ReadReceipts = () => {
     summa += parseInt(s.diff);
   });
 
-  const latestReportDay = rData[rData.length - 1]?.today;
+  const latestReportDay = rData[0]?.today;
   return (
     <div className="main">
       <div className="safka--text">
