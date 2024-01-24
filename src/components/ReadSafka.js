@@ -102,9 +102,11 @@ const ReadReceipts = () => {
     }
   };
 
+  /*
   const handlePageChange = (selectedPage) => {
     setCurrentPage(selectedPage);
   };
+  */
 
   const plusResult = rData.map((r) => {
     const curdate = new Date().toLocaleDateString("fi-FI");
@@ -112,7 +114,6 @@ const ReadReceipts = () => {
     if (curdate === r.today) {
       sum += parseInt(r.plusCalories);
     }
-    return sum;
   });
 
   const minusResult = exercise.map((e) => {
@@ -121,13 +122,11 @@ const ReadReceipts = () => {
     if (curdate === e.today) {
       minSum += parseInt(e.lostCalories);
     }
-    return minSum;
   });
 
-  if (error) {
-  }
 
-  let savings = 2700 - (sum + minSum);
+  console.log("Plus: " + sum + ", minus: ", minSum)
+  let savings = 2700 - (sum - minSum);
 
   //Delete path
   const deleteRecord = (e) => {

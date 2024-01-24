@@ -585,6 +585,13 @@
       "receipt": "Omena",
       "plusCalories": "50",
       "id": 76
+    },
+    {
+      "today": "24.1.2024",
+      "category": "Iltapala",
+      "receipt": "Pirkka smoothie, sämpylän puolisko possun ulkofileellä tuorekurkuilla ja paprikalla.",
+      "plusCalories": "200",
+      "id": 77
     }
   ],
   "Harjoitus": [
@@ -646,6 +653,13 @@
       "kommentti": "Juoksumatto, lihaskuntotreeni.",
       "today": "22.1.2024",
       "id": 9
+    },
+    {
+      "harjoitus": "Kuntopyöräily",
+      "lostCalories": "150",
+      "kommentti": "15 minsaa, hiki tuli.",
+      "today": "24.1.2024",
+      "id": 10
     }
   ],
   "Tavoitteet": [
