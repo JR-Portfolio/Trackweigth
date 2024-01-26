@@ -592,6 +592,62 @@
       "receipt": "Pirkka smoothie, sämpylän puolisko possun ulkofileellä tuorekurkuilla ja paprikalla.",
       "plusCalories": "200",
       "id": 77
+    },
+    {
+      "today": "25.1.2024",
+      "category": "Aamiainen",
+      "receipt": "Kahvi + sämpylän puolisko leikkeleillä ja rehuilla.",
+      "plusCalories": "150",
+      "id": 78
+    },
+    {
+      "today": "25.1.2024",
+      "category": "Lounas",
+      "receipt": "Lohikeittoa + vaasan ruispala + kahvit.",
+      "plusCalories": "300",
+      "id": 79
+    },
+    {
+      "today": "25.1.2024",
+      "category": "Päivällinen",
+      "receipt": "Riisiä kanakastikkeella.",
+      "plusCalories": "400",
+      "id": 80
+    },
+    {
+      "today": "25.1.2024",
+      "category": "Iltapala",
+      "receipt": "Sämpylän puolisko kinkulla ja paprikalla.",
+      "plusCalories": "200",
+      "id": 81
+    },
+    {
+      "today": "25.1.2024",
+      "category": "Päivällinen",
+      "receipt": "Omena",
+      "plusCalories": "100",
+      "id": 82
+    },
+    {
+      "today": "26.1.2024",
+      "category": "Aamiainen",
+      "receipt": "Vaasan ruispalat kaksi puoliskoa, keitetty kananmuna, banaani, kinkkuleike ja salaatinlehti + tuorekurkkua runsaalla kahvilla.",
+      "plusCalories": "300",
+      "id": 83
+    },
+    {
+      "today": "26.1.2024",
+      "category": "Lounas",
+      "receipt": "Subway hiljaisesti kypsennetty kana (2x) salaatti.",
+      "plusCalories": "200",
+      "id": 84
+    },
+    {
+      "today": "26.1.2024",
+      "category": "Välipala",
+      "receipt": "Omena, useampi musta kahvi.",
+      "plusCalories": "80",
+      "id": 85
     }
   ],
   "Harjoitus": [
@@ -660,6 +716,13 @@
       "kommentti": "15 minsaa, hiki tuli.",
       "today": "24.1.2024",
       "id": 10
+    },
+    {
+      "harjoitus": "Kuntopyöräily ",
+      "lostCalories": "150",
+      "kommentti": "16.5 minuuttia",
+      "today": "25.1.2024",
+      "id": 11
     }
   ],
   "Tavoitteet": [
@@ -690,6 +753,13 @@
       "week": "4",
       "addInfo": "",
       "id": 4
+    },
+    {
+      "today": "26.1.2024",
+      "objective": "Shape your body",
+      "week": "4",
+      "addInfo": "1. Lihasten kehittyminen nopeutuu hitailla liikkeillä (37% :n kasvu).\n\n2. Hiilarit on pakollisia jos treenaa ja liian vähäinen hiilari annos tarkoittaa aineenvaihdunnan dramaattista hidastumista. Ota välillä vähä hiilarinen päivä ja toisiaan isompi hiilari annos jotta saat elimistön aineenvaihduntaan potkua.\n\n3. HIIT- treenit on ajankäytöllisesti ja aineenvaihdunnan jatkumiselle oleellista (3 krt viikossa). ",
+      "id": 5
     }
   ]
 }

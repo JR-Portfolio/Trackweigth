@@ -53,6 +53,8 @@ const ReadObjectives = () => {
     deleteItem("http://localhost:8000/Tavoitteet", e)
   };
 
+  //Sort
+  const sortedObj = obj.sort((a,b) => {return b.id - a.id})
 
   return (
     <div>
@@ -65,7 +67,7 @@ const ReadObjectives = () => {
       </button>
       <h1 className="main-otsikko">Tavoitteet</h1>    
 
-        {obj.map(o => {
+        {sortedObj.map(o => {
           return(
             <div>
               {obj.length > 0 && <table id="cal" key={nanoid()}>

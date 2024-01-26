@@ -27,6 +27,10 @@ const Readexercises = () => {
 
   console.log(exercises);
 
+//Sort
+const sortedExercise = exercises.sort((a,b) => {return b.id - a.id})
+
+
   return (
     <div className="main">
       <button className="main-button" onClick={() => navigate("/")}>
@@ -43,7 +47,7 @@ const Readexercises = () => {
             <th>Kommentit</th>
           </thead>
 
-          {exercises?.map((training, index) => (
+          {sortedExercise?.map((training, index) => (
             //var harjoitusLines = training?.harjoitus?.split(".");
 
             <tbody key={nanoid()}>
