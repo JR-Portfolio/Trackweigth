@@ -45,6 +45,7 @@ function Main(props) {
           Painonhallinta<br></br>
           Systeemi
         </strong>
+        <h5>(Desktop supported)</h5>
 
         <ErrorBoundary>
           <select name="mitat" onChange={(event) => handler(event)}>
