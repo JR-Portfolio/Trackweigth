@@ -26,6 +26,15 @@
       "kommentti": "Salitreeni varmaan osalta vaikuttaa, että lantio on vähän leventynyt.\n\nMittaaminen pitäisi tehdä juuri samasta paikkaa ja samalla kireydellä muuten tulee toleranssia.\nRinta mitattu",
       "today": "21.1.2024",
       "id": 6
+    },
+    {
+      "paino": 88.8,
+      "vyotaro": 99,
+      "lantio": 104,
+      "rinta": 110,
+      "kommentti": "Mittauskohta ja kireys vaikuttaa paljon. Yritetty kohtuu löysällä vetää.",
+      "today": "28.1.2024",
+      "id": 7
     }
   ],
   "Safka": [
@@ -648,6 +657,41 @@
       "receipt": "Omena, useampi musta kahvi.",
       "plusCalories": "80",
       "id": 85
+    },
+    {
+      "today": "27.1.2024",
+      "category": "Aamiainen",
+      "receipt": "1. Kahvia + kauraleivän puolisko kinkulla, kananmunalla ja salaatilla.",
+      "plusCalories": "180",
+      "id": 86
+    },
+    {
+      "today": "27.1.2024",
+      "category": "Aamiainen",
+      "receipt": "2. Aamiainen sisälsi kaksi paistettu kananmunaa possun ulkofile viipaleilla.",
+      "plusCalories": "300",
+      "id": 87
+    },
+    {
+      "today": "27.1.2024",
+      "category": "Välipala",
+      "receipt": "Porkkana + kaksi ruispalaa kinkuilla ja tuorekurkuilla.",
+      "plusCalories": "200",
+      "id": 88
+    },
+    {
+      "today": "27.1.2024",
+      "category": "Päivällinen",
+      "receipt": "Perunamuusi, 2 x possun ulkofilepihvi + sormustillinen kastiketta.",
+      "plusCalories": "550",
+      "id": 89
+    },
+    {
+      "today": "28.1.2024",
+      "category": "Aamiainen",
+      "receipt": "Parit kahvit, pari ruiskauraleipää kinkuilla, paprikalla ja tuorekurkuilla. Vettä 0,3 l muki. ",
+      "plusCalories": "250",
+      "id": 90
     }
   ],
   "Harjoitus": [
@@ -723,6 +767,20 @@
       "kommentti": "16.5 minuuttia",
       "today": "25.1.2024",
       "id": 11
+    },
+    {
+      "harjoitus": "Kuntopyöräily",
+      "lostCalories": "130",
+      "kommentti": "15 min (https://www.kilokalori.net/liikunta/energiankulutus/pyoraily-kuntopyora-yleinen)",
+      "today": "27.1.2024",
+      "id": 12
+    },
+    {
+      "harjoitus": "Lumenpudotus",
+      "lostCalories": "150",
+      "kommentti": "Lumenpudotus käyttäen uutta 6 m:n lumenpudotinta. Rankkaa oli käytellä  ja paita oli kyllä märkä. Vedän tämän samaan tehotasoon kuin 15 minsan pyöräily.",
+      "today": "28.1.2024",
+      "id": 13
     }
   ],
   "Tavoitteet": [

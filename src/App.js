@@ -13,6 +13,7 @@ import ReadObjectives from "./components/ReadObjectives";
 import AddObjectives from "./components/AddObjectives";
 import AddWkFastinge from "./components/AddWkFasting"
 import ReadFasting from "./components/ReadFasting";
+import Savings from "./components/Savings";
 import ReadJson from "./components/ReadJson"
 import { HashRouter, Route, Routes } from "react-router-dom";
 import "./eight.css";
@@ -59,6 +60,7 @@ const App = () => {
           <Route path="/addWkFasting" element={<AddWkFastinge key={nanoid()} />} />
           <Route path="/readFasting" element={<ReadFasting key={nanoid()} />} />
           <Route path="/readJson" element={<ReadJson key={nanoid()} />} />
+          <Route path="/savings" element={<Savings key={nanoid()} />} />
 
         </Routes>
       </HashRouter>

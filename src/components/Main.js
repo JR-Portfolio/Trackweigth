@@ -31,6 +31,8 @@ function Main(props) {
       navigate("/readFasting");
     } else if (e.target.value === "readJson") {
       navigate("/readJson");
+    } else if (e.target.value === "savings") {
+      navigate("/savings");
     }
   };
 
@@ -55,6 +57,7 @@ function Main(props) {
             <option value="readExercise">Lue harjoitukset</option>
             <option value="addObjectives">Aseta tavoite</option>
             <option value="readObjectives">Tavoitteet</option>
+            <option value="savings">Säästöt</option>
           </select>
         </ErrorBoundary>
       </div>

@@ -48,6 +48,10 @@ h6 {
   word-wrap: true;
 }
 
+.savings{
+  margin-left: 50%;
+  margin-top: 50%;
+}
 
 .highLevel{
   color: red;
