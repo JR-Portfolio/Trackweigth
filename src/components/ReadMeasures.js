@@ -12,11 +12,14 @@ const Reader = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  
+  const sortedData = data.sort((a, b) => b.id - a.id);
+
   const cWidth = (kommentti) => {
-    kommentti.length > 30 ? cWidth = "wide" : cWidth = "narrow"
-  }
-  
+    kommentti.length > 30 ? (cWidth = "wide") : (cWidth = "narrow");
+  };
+
+  const ALKUPAINO = 92.9
+
   useEffect(() => {
     setTimeout(() => {
       fetch("http://localhost:8000/Mitat")
@@ -64,7 +67,7 @@ const Reader = () => {
       level = "lowLevel";
     }
 
-    return bmiRes;
+    return bmiRes.toFixed(2);
   };
   console.log("bmiRes: " + bmiRes + ", level: " + level);
 
@@ -78,6 +81,14 @@ const Reader = () => {
     return newLines;
   };
 
+  /*
+                <td>
+                  <button onClick={(e) => deleteRecord(item2.id)}>x</button>
+                </td>
+*/
+
+  console.log("Viimeinen ... ", data[data.length - 1] + ", eka eli data[0]: ", data[0].paino);
+  console.log("Alku rinta: ", data[data.length-1].rinta.toFixed(2))
   return (
     <div className="main">
       <button className="main-button" onClick={() => navigate("/")}>
@@ -97,30 +108,15 @@ const Reader = () => {
             <th key={nanoid()}>Lantion muutos</th>
             <th key={nanoid()}>Rinnan muutos</th>
             <th key={nanoid()}>BMI</th>
-            <th className = {cWidth} key={nanoid()}>Kommentti</th>
+            <th className={cWidth} key={nanoid()}>
+              Kommentti
+            </th>
             <th>Kg matkaa</th>
             <th>Poista</th>
           </thead>
 
           <tbody key={nanoid()}>
-            <tr className={level} key={nanoid()}>
-              <td key={nanoid()}>{data[0]?.today}</td>
-              {!!data[0]?.paino && <td key={nanoid()}>{data[0]?.paino} kg</td>}
-              {!!data[0]?.vyotaro && (
-                <td key={nanoid()}>{data[0]?.vyotaro} cm</td>
-              )}
-              <td></td>
-              <td></td>
-              <td></td>
-
-              <td></td>
-              <td key={nanoid()}>
-                {(data[0]?.paino / (1.75 * 1.75)).toFixed(2)}
-              </td>
-              <td key={nanoid()}>{data[0]?.kommentti}</td>
-            </tr>
-
-            {nData.map((item2) => (
+            {data.map((item2) => (
               <tr className={level} key={nanoid()}>
                 <td key={nanoid()}>{item2?.today}</td>
                 {!!item2?.paino && <td key={nanoid()}>{item2?.paino} kg</td>}
@@ -129,40 +125,35 @@ const Reader = () => {
                 )}
 
                 {!isNaN(item2?.vyotaro) && (
-                  <td key={nanoid()}>{data[0].vyotaro - item2.vyotaro}</td>
+                  <td key={nanoid()}>{data[data.length-1].vyotaro - item2.vyotaro}</td>
                 )}
 
                 {!isNaN(painonMuutos) && (
                   <td key={nanoid()}>
-                    {(data[0].paino.toFixed(2) - item2.paino).toFixed(2)}
+                    {(data[data.length-1].paino.toFixed(2) - item2.paino).toFixed(2)}
                   </td>
                 )}
                 {!isNaN(lantionMuutos) && (
                   <td key={nanoid()}>
-                    {(data[0].lantio.toFixed(2) - item2.lantio).toFixed(2)}
+                    {(data[data.length-1].lantio.toFixed(2) - item2.lantio).toFixed(2)}
                   </td>
                 )}
                 {!isNaN(rinnanMuutos) && (
                   <td key={nanoid()}>
-                    {(data[0].rinta.toFixed(2) - item2.rinta).toFixed(2)}
+                    {(data[data.length-1].rinta.toFixed(2) - item2.rinta).toFixed(2)}
                   </td>
                 )}
 
                 {
-                  <td
-                    className = {level}
-                    key={nanoid()}
-                  >
+                  <td className={level} key={nanoid()}>
                     {(bmiRes = bmiCheck(item2.paino))}
                   </td>
                 }
 
-                <td className = {cWidth} key={nanoid()}>{(lines = showLines(item2))}</td>
-                <td key={nanoid()}>{(item2.paino - 76.56).toFixed(2)}</td>
-
-                <td>
-                  <button onClick={(e) => deleteRecord(item2.id)}>x</button>
+                <td className={cWidth} key={nanoid()}>
+                  {(lines = showLines(item2))}
                 </td>
+                <td key={nanoid()}>{(item2.paino - 76.56).toFixed(2)}</td>
               </tr>
             ))}
           </tbody>

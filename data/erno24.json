@@ -35,6 +35,15 @@
       "kommentti": "Mittauskohta ja kireys vaikuttaa paljon. Yritetty kohtuu löysällä vetää.",
       "today": "28.1.2024",
       "id": 7
+    },
+    {
+      "paino": 88.1,
+      "vyotaro": 99,
+      "lantio": 104,
+      "rinta": 107,
+      "kommentti": "Rintakehä sentillä alas ja oikeasti vyötärö ja lantio pyöristetty ylöspäin eli oikeasti noin puoli senttiä mittaukset alempana  kuin luvut osoittavat.",
+      "today": "4.2.2024",
+      "id": 8
     }
   ],
   "Safka": [
@@ -818,6 +827,20 @@
       "week": "4",
       "addInfo": "1. Lihasten kehittyminen nopeutuu hitailla liikkeillä (37% :n kasvu).\n\n2. Hiilarit on pakollisia jos treenaa ja liian vähäinen hiilari annos tarkoittaa aineenvaihdunnan dramaattista hidastumista. Ota välillä vähä hiilarinen päivä ja toisiaan isompi hiilari annos jotta saat elimistön aineenvaihduntaan potkua.\n\n3. HIIT- treenit on ajankäytöllisesti ja aineenvaihdunnan jatkumiselle oleellista (3 krt viikossa). ",
       "id": 5
+    },
+    {
+      "today": "28.1.2024",
+      "objective": "Ateriatasapainon hakeminen.",
+      "week": "5",
+      "addInfo": "Enemmän vettä, vähemmän leipää paitsi kun menee salille.",
+      "id": 6
+    },
+    {
+      "today": "28.1.2024",
+      "objective": "85",
+      "week": "6",
+      "addInfo": "Viikon lopuksi / 11.2.2024 sunnuntai aamun paino olisi hyvä olla min 85.99",
+      "id": 7
     }
   ]
 }

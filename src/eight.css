@@ -1,5 +1,5 @@
-body{
-  width:60%;
+body {
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -9,7 +9,6 @@ h1 {
 
 h3,
 h4,
-
 h6 {
   top: 1px;
   margin-left: 30%;
@@ -18,50 +17,47 @@ h6 {
 .pagingButtons-text {
   display: inline-flex;
   font-weight: bold;
-  align-items:flex-end;
+  align-items: flex-end;
 }
 
 .pagingButtons {
-  margin-top:10px;
+  margin-top: 10px;
   display: inline-flex;
 }
 
-.pagingButtons-buttons{
-  display:inline-flex;
-  justify-content: space-between;  
+.pagingButtons-buttons {
+  display: inline-flex;
+  justify-content: space-between;
   border-radius: 15px;
 }
 
-
-.narrow{
-  width:20;
+.narrow {
+  width: 20;
   word-wrap: true;
 }
 
-
-.wide{
-  width:60;
+.wide {
+  width: 60;
   word-wrap: true;
 }
 
-.savings{
+.savings {
   margin-left: 50%;
   margin-top: 50%;
 }
 
-.highLevel{
+.highLevel {
   color: red;
   font-weight: bold;
 }
 
-.midLevel{
+.midLevel {
   background-color: orange;
 }
 
-.lowLevel{
+.lowLevel {
   background-color: green;
 }
-
 
 .selections {
   display: grid;
@@ -73,7 +69,7 @@ h6 {
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
   border: 4px solid hsl(0, 0%, 90%);
-    margin: 0 auto;
+  margin: 0 auto;
   margin-top: 10%;
   gap: 2rem;
   padding: 4rem;
@@ -92,12 +88,12 @@ h6 {
   color: #333;
 }
 
-.safka--text{
-  maring-left:620px;
+.safka--text {
+  maring-left: 620px;
 }
 
-.main--info{
- margin-left: 640px;
+.main--info {
+  margin-left: 640px;
 }
 
 .main-button {
@@ -133,7 +129,6 @@ h6 {
   width: fit-content;
 }
 
-
 .adder--form {
   box-sizing: border-box;
   border-radius: 1rem;
@@ -150,8 +145,6 @@ h6 {
   background-color: hsl(0, 28%, 95%);
 }
 
-
-
 .objectives {
   display: flex;
   flex-direction: column;
@@ -163,7 +156,6 @@ h6 {
 }
 
 .main-otsikko {
-  
 }
 
 .main-otsikko--info {
@@ -179,26 +171,25 @@ h6 {
   grid-template-columns: repeat(6, 1fr);
   column-gap: 0px;
   row-gap: 20px;
-  
 }
 
-.paasto--item input[type=number] {
+.paasto--item input[type="number"] {
   margin-left: 10px;
-  width:40px;
+  width: 40px;
 }
 
 .target {
-    display: table;
-    table-layout: auto;
-    border: 1px solid red;
-    text-align: left;
-    margin: 0 auto;
-    box-sizing: border-box;
-    border-radius: 0.5rem;
-    justify-content: center;
-    margin-top: 5px;
-    padding: 2rem;
-    background-color: hsl(0, 28%, 95%);  
+  display: table;
+  table-layout: auto;
+  border: 1px solid red;
+  text-align: left;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 2rem;
+  background-color: hsl(0, 28%, 95%);
 }
 
 .taulu {
@@ -207,13 +198,12 @@ h6 {
   border: 1px solid black;
   text-align: left;
   box-sizing: border-box;
-  border-radius: 10px;
-  margin-top: 20px;
-  padding: 2rem;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 0px;
   background-color: antiquewhite;
 }
 
- 
 td,
 th {
   padding: 8px;
@@ -229,31 +219,30 @@ th {
 }
 
 button {
-  width:fit-content;
-  margin-left:0px;
-  margin-top:20px;
+  width: fit-content;
+  margin-left: 0px;
+  margin-top: 20px;
   margin-right: -10%;
   padding: 10px;
 }
 
 #space {
-  padding-left:5px;
-  padding-right:5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-.confirmation{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 700;
-  }
-
-#confirm-button{
-  margin-left:0px;
+.confirmation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 700;
 }
 
-#cancel-button{
-  margin-left:200px;
+#confirm-button {
+  margin-left: 0px;
 }
 
+#cancel-button {
+  margin-left: 200px;
+}
