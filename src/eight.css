@@ -192,6 +192,25 @@ h6 {
   background-color: hsl(0, 28%, 95%);
 }
 
+
+.searchValue{
+  margin-top:10px;
+  width:200px;
+}
+
+.buttons{
+  display: flex;  
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom:60px;  
+}
+
+.buttons > button{
+  background-color: black;
+  color: white;
+  margin-right:10px;
+}
+
 .taulu {
   display: table;
   table-layout: auto;

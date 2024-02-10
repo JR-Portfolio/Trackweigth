@@ -1,20 +1,22 @@
 import "../eight.css";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { nanoid } from "nanoid";
 import bmi from "../Images/Screenshot_20230814_081657_BodyFast.jpg";
 import { deleteItem } from "../common/utils";
 
+
 // import { Line } from './Line.ts';
 
 const Reader = () => {
-  let [data, setData] = useState([]);
+  const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const searchRef = useRef()
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const typeFilter = searchParams.get("paino");
+  const [searchParams, setSearchParams] = useSearchParams()  
+  const typeFilter = searchParams.get("paino")
+  
+  
 
   const sortedData = data.sort((a, b) => b.id - a.id);
 
@@ -22,7 +24,7 @@ const Reader = () => {
     kommentti.length > 30 ? (cWidth = "wide") : (cWidth = "narrow");
   };
 
-  const ALKUPAINO = 92.9;
+  const ALKUPAINO = 92.9
 
   useEffect(() => {
     setTimeout(() => {
@@ -85,24 +87,24 @@ const Reader = () => {
     return newLines;
   };
 
-  const handleFilterChange = (key, value) => {
-    console.log("key: ", key, "value:", value);
-    setSearchParams((prevParams) => {
-      if (!value) {
-        prevParams.delete(key);
-        window.location.reload();
-      } else {
-        const displayWeightAbove885 = data.filter(
-          (w) => w.paino > parseFloat(value).toFixed(2)
-        );
-        setData(displayWeightAbove885);
-        prevParams.set(key, value);
-      }
-      return prevParams;
-    });
-  };
 
-  //console.log("prevParams: ", prevParams);
+  let displayWeightAbove885 = 0
+  const handleFilterChange = (key, value) => {    
+    console.log('key: ', key, 'value:', value)        
+    setSearchParams(prevParams => {
+      if (!value){
+        prevParams.delete(key)        
+      } else {
+        displayWeightAbove885 = data.filter(w => w.paino > value)    
+        console.log("dw: ", displayWeightAbove885)
+        prevParams.set(key, value)
+      }
+
+      console.log("prevParams: ", prevParams)
+      return prevParams;
+    })
+  }
+  
 
   return (
     <div className="main">
@@ -113,15 +115,10 @@ const Reader = () => {
         <a href={bmi}>Mittari</a>
       </h1>
       <>
-        <input className="searchValue" ref = {searchRef}/>
-        <div className="buttons">
-          <button onClick={() => handleFilterChange("paino", searchRef.current.value)}>
-            Paino
-          </button>
-          <button onClick={() => handleFilterChange("paino", null)}>
-            Poista filter
-          </button>
-        </div>
+
+
+      <button onClick = {() => handleFilterChange("paino", 88.5) }>Paino yli 88.5 kg</button>
+      <button onClick = {() => handleFilterChange("paino", null) }>Poista filter</button>
         <table key={nanoid()} className="taulu">
           <thead key={nanoid()}>
             <th key={nanoid()}>PVM</th>
@@ -140,39 +137,32 @@ const Reader = () => {
           </thead>
 
           <tbody key={nanoid()}>
+           
             {data.map((item2) => (
               <tr className={level} key={nanoid()}>
                 <td key={nanoid()}>{item2?.today}</td>
-                <td key={nanoid()}>{item2.paino} kg</td>
+                {!!item2?.paino && <td key={nanoid()}>{!displayWeightAbove885 ? item2.paino : displayWeightAbove885} kg</td>}
                 {!!item2?.vyotaro && (
                   <td key={nanoid()}>{item2?.vyotaro} cm</td>
                 )}
 
                 {!isNaN(item2?.vyotaro) && (
-                  <td key={nanoid()}>
-                    {data[data.length - 1].vyotaro - item2.vyotaro}
-                  </td>
+                  <td key={nanoid()}>{data[data.length-1].vyotaro - item2.vyotaro}</td>
                 )}
 
                 {!isNaN(painonMuutos) && (
                   <td key={nanoid()}>
-                    {(
-                      data[data.length - 1].paino.toFixed(2) - item2.paino
-                    ).toFixed(2)}
+                    {(data[data.length-1].paino.toFixed(2) - item2.paino).toFixed(2)}
                   </td>
                 )}
                 {!isNaN(lantionMuutos) && (
                   <td key={nanoid()}>
-                    {(
-                      data[data.length - 1].lantio.toFixed(2) - item2.lantio
-                    ).toFixed(2)}
+                    {(data[data.length-1].lantio.toFixed(2) - item2.lantio).toFixed(2)}
                   </td>
                 )}
                 {!isNaN(rinnanMuutos) && (
                   <td key={nanoid()}>
-                    {(
-                      data[data.length - 1].rinta.toFixed(2) - item2.rinta
-                    ).toFixed(2)}
+                    {(data[data.length-1].rinta.toFixed(2) - item2.rinta).toFixed(2)}
                   </td>
                 )}
 
@@ -188,7 +178,9 @@ const Reader = () => {
                 <td key={nanoid()}>{(item2.paino - 76.56).toFixed(2)}</td>
               </tr>
             ))}
+          
           </tbody>
+          
         </table>
       </>
     </div>
