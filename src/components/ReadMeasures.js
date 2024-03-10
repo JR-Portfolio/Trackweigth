@@ -11,7 +11,7 @@ const Reader = () => {
   let [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const searchRef = useRef()
+  const searchRef = useRef();
 
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("paino");
@@ -113,9 +113,11 @@ const Reader = () => {
         <a href={bmi}>Mittari</a>
       </h1>
       <>
-        <input className="searchValue" ref = {searchRef}/>
+        <input className="searchValue" ref={searchRef} />
         <div className="buttons">
-          <button onClick={() => handleFilterChange("paino", searchRef.current.value)}>
+          <button
+            onClick={() => handleFilterChange("paino", searchRef.current.value)}
+          >
             Paino
           </button>
           <button onClick={() => handleFilterChange("paino", null)}>
@@ -185,7 +187,7 @@ const Reader = () => {
                 <td className={cWidth} key={nanoid()}>
                   {(lines = showLines(item2))}
                 </td>
-                <td key={nanoid()}>{(item2.paino - 76.56).toFixed(2)}</td>
+                <td key={nanoid()}>{(item2.paino - 82).toFixed(2)}</td>
               </tr>
             ))}
           </tbody>

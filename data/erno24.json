@@ -44,6 +44,51 @@
       "kommentti": "Rintakehä sentillä alas ja oikeasti vyötärö ja lantio pyöristetty ylöspäin eli oikeasti noin puoli senttiä mittaukset alempana  kuin luvut osoittavat.",
       "today": "4.2.2024",
       "id": 8
+    },
+    {
+      "paino": 87.6,
+      "vyotaro": 98,
+      "lantio": 103,
+      "rinta": 108,
+      "kommentti": "1. Protskuviikko takana tai ainakin useampi päivä. Nyt tankkauspäivä ja sitten uusi viikko vähemmillä hiilareilla.",
+      "today": "11.2.2024",
+      "id": 9
+    },
+    {
+      "paino": 89.1,
+      "vyotaro": 99,
+      "lantio": 103,
+      "rinta": 109,
+      "kommentti": "Pettymys painon nousun takia, vaikka lipsumisia ei ole tapahtunut. Jatketaan metabolish syklin suorittamista kuitenkin.",
+      "today": "17.2.2024",
+      "id": 10
+    },
+    {
+      "paino": 88.5,
+      "vyotaro": 97,
+      "lantio": 104,
+      "rinta": 107,
+      "kommentti": "Virityssarjan viimeisen viikon datat.",
+      "today": "26.2.2024",
+      "id": 11
+    },
+    {
+      "paino": 87.9,
+      "vyotaro": 97,
+      "lantio": 105,
+      "rinta": 107,
+      "kommentti": "Erno 2:n kahdeksan viikon pudotus loppumassa. Masu alkaa olla normaali ja varpaat näkyy. 10  leukaa maksimissaan joskin normi päivänä  8 menee. Keep up pushing bro!",
+      "today": "1.3.2024",
+      "id": 12
+    },
+    {
+      "paino": 87.5,
+      "vyotaro": 96,
+      "lantio": 104,
+      "rinta": 107,
+      "kommentti": "Pysyvän vähäisen laihutuksen ja painonhallinnan tie aloitettu.",
+      "today": "9.3.2024",
+      "id": 13
     }
   ],
   "Safka": [
@@ -841,6 +886,13 @@
       "week": "6",
       "addInfo": "Viikon lopuksi / 11.2.2024 sunnuntai aamun paino olisi hyvä olla min 85.99",
       "id": 7
+    },
+    {
+      "today": "17.2.2024",
+      "objective": "1. Älä näänytä itseäsi.\n\nLisää hyvien rasvojen käyttöä.\n\n3. HIIT- treeniä.",
+      "week": "8",
+      "addInfo": "1. Methodi on pitää korkean ja matalan hiilaritason päiviä.\n\n2. Pihvejä, kanaa, munia jne ei kuitenkaan pizzoja ja +10 % rasvoja omaavia.\n\n3. 15 minuuttia kerrallaan kolmesti viikossa eli esim n. 5 min lämmittely, 5 x minuutin työ ja 30 sekunnin lepo syklejä ja cooling down periodi loppuun.",
+      "id": 8
     }
   ]
 }
